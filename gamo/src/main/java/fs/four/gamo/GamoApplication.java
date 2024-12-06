@@ -9,5 +9,5 @@ public class GamoApplication {
     public static void main(String[] args) {
         SpringApplication.run(GamoApplication.class, args);
     }
-//ㅁㄴ
+//ㅁㄴㅁㄴㅇ
 }
