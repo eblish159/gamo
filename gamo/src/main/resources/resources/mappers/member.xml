@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mapper namespace="mapper.member">
+
+	<select id="selectAllMemberList" resultMap="memList">
+      <![CDATA[
+         select * from test	 	
+      ]]>
+	</select>
+</mapper>
