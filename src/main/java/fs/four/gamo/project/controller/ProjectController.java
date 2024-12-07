@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ProjectController {
 
     @GetMapping("/project")
+    //매핑 뭐로할지 주소입력이걸로
     public String project(Model model) {
         model.addAttribute("pageTitle", "프로젝트"); // 페이지 제목 설정
         model.addAttribute("message", "프로젝트 리스트 페이지"); // 메시지 설정
