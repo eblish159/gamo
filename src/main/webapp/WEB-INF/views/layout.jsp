@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div id="content">
-                <jsp:include page="${contentPage}.jsp" />
+                <jsp:include page="/WEB-INF/views/${contentPage}.jsp" />
             </div>
         </div>
     </div>
