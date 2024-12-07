@@ -3,39 +3,39 @@
 <html>
 <head>
     <title>${pageTitle}</title>
+    <!-- 공통 CSS -->
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- 공통 JavaScript -->
+    <script src="/js/menuHandler.js" defer></script>
 </head>
 <body>
-    <div class="maindan">
-        <h1>${message}</h1>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Gamo</a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">로그인</a></li>
-                </ul>
+    <div class="app">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user">
+                <div class="user-name">Gamo</div>
             </div>
-        </nav>
-        <div id="sidebar">
-            <ul>
-                <li><a href="#">출결 관리</a></li>
-                <li><a href="#">캘린더</a></li>
-                <li><a href="#">할 일</a></li>
-                <li><a href="#">점심룰렛</a></li>
-                <li><a href="#">마이페이지</a></li>
-                <li><a href="#">관리자 페이지</a></li>
-            </ul>
+            <div class="sidebar-menu">
+                <a href="#" class="sidebar-menulink active">Todo 스케줄</a>
+                <a href="#" class="sidebar-menulink">프로젝트</a>
+                <a href="#" class="sidebar-menulink">게시판</a>
+                <a href="#" class="sidebar-menulink">휴식 하기</a>
+                <a href="#" class="sidebar-menulink">마이 페이지</a>
+                <a href="#" class="sidebar-menulink">회원 관리</a>
+            </div>
         </div>
-        <!-- 각 JSP에서 컨텐츠를 넣을 공간 -->
-        <div id="content">
-            <jsp:include page="${contentPage}.jsp" />
-        </div>
-        <!-- 예제 요소 -->
-                <div class="rectangle">
-                    예제 텍스트
+        <!-- Main Content -->
+        <div class="main">
+            <div class="main-header">
+                <div class="main-header-nav">
+                    <a href="#" class="nav-logout">로그아웃</a>
                 </div>
+            </div>
+            <div id="content">
+                <!-- 동적으로 삽입될 콘텐츠 -->
+                <jsp:include page="${contentPage}.jsp" />
+            </div>
+        </div>
     </div>
 </body>
 </html>
