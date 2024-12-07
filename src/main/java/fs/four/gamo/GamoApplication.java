@@ -10,5 +10,5 @@ public class GamoApplication {
         SpringApplication.run(GamoApplication.class, args);
     }
 //ㅁㄴㅁㄴㅇ
-    //이상형
+    //이상형112
 }
