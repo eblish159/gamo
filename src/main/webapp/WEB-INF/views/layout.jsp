@@ -33,5 +33,6 @@
             </div>
         </div>
     </div>
+    <script src="/js/layout.js"></script>
 </body>
 </html>
