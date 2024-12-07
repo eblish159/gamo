@@ -3,10 +3,7 @@
 <html>
 <head>
     <title>${pageTitle}</title>
-    <!-- 공통 CSS -->
     <link rel="stylesheet" href="/css/styles.css">
-    <!-- 공통 JavaScript -->
-    <script src="/js/menuHandler.js" defer></script>
 </head>
 <body>
     <div class="app">
@@ -16,8 +13,8 @@
                 <div class="user-name">Gamo</div>
             </div>
             <div class="sidebar-menu">
-                <a href="#" class="sidebar-menulink active">Todo 스케줄</a>
-                <a href="#" class="sidebar-menulink">프로젝트</a>
+                <a href="/calendar" class="sidebar-menulink active">Todo 스케줄</a>
+                <a href="/project" class="sidebar-menulink">프로젝트</a>
                 <a href="#" class="sidebar-menulink">게시판</a>
                 <a href="#" class="sidebar-menulink">휴식 하기</a>
                 <a href="#" class="sidebar-menulink">마이 페이지</a>
@@ -32,7 +29,6 @@
                 </div>
             </div>
             <div id="content">
-                <!-- 동적으로 삽입될 콘텐츠 -->
                 <jsp:include page="${contentPage}.jsp" />
             </div>
         </div>
