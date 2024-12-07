@@ -1,0 +1,51 @@
+.maindan.body {
+    padding-top: 80px;
+}
+
+#sidebar {
+    position: fixed;
+    top: 50px;
+    left: 220px;
+    width: 220px;
+    margin-left: -220px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: black;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+}
+
+.side-bar > li > a {
+    color: #eee;
+    width: 220px;
+    text-align: left;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+.side-bar li a:hover,
+.side-bar li a:focus {
+    background-color: #333 !important;
+    font-size: 25px;
+}
+
+.tmargin {
+    margin-top: 15px;
+}
+
+.rectangle {
+    width: 800px;
+    height: 30px;
+    background-color: yellow;
+    border: 3px solid gray;
+    border-radius: 2%;
+    margin-top: 1000px;
+    margin-left: 220px;
+}
+
+.navbar-inverse {
+    background-color: black;
+    border-color: transparent; /* 경계선 제거 */
+}
