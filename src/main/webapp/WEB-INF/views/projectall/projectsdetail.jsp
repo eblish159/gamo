@@ -23,11 +23,11 @@
                     <div class="project-box-wrapper">
                         <div class="project-box" style="background-color: skyblue;">
                             <div class="project-box-header">
-                                <span>프로젝트 제목</span>
+                                <span>프로젝트 제목: ${project.projectTitle}</span>
                             </div>
                             <div class="project-box-content-header">
                                 <p class="box-content-header">프로젝트 기간</p>
-                                <p class="box-content-subheader">프로젝트 내용</p>
+                                <p class="box-content-subheader">프로젝트 내용: ${project.projectContent}</p>
                             </div>
                             <div class="box-progress-wrapper">
                                 <div class="box-progress-bar">
