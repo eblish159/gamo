@@ -1,5 +1,11 @@
 /* Body 스타일 */
-body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.layout {
   display: flex;
   flex-direction: row; /* 사이드바와 메인 영역을 나란히 배치 */
   margin: 0; /* 기본 margin 제거 */
@@ -12,7 +18,7 @@ body {
 }
 
 /* App 컨테이너 */
-.app {
+.layout .app1 {
   display: flex;
   width: 100%;
   height: 100%; /* 화면 전체 높이 */
@@ -20,7 +26,7 @@ body {
 }
 
 /* Sidebar 스타일 */
-.sidebar {
+.layout .sidebar {
   flex: 0 0 284px; /* 고정 너비 */
   display: flex;
   flex-direction: column;
@@ -34,13 +40,13 @@ body {
 }
 
 /* Sidebar 메뉴 스타일 */
-.sidebar-menu {
+.layout .sidebar-menu {
   display: flex;
   flex-direction: column;
   padding-top: 20px;
 }
 
-.sidebar-menulink {
+.layout .sidebar-menulink {
   color: #5c5c5c;
   text-decoration: none;
   font-size: 18px;
@@ -48,27 +54,27 @@ body {
   transition: color 0.3s ease;
 }
 
-.sidebar-menulink:hover,
-.sidebar-menulink.active {
+.layout .sidebar-menulink:hover,
+.layout .sidebar-menulink.active {
   color: #ffffff;
 }
 
 /* User 정보 영역 */
-.user {
+.layout .user {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
   border-bottom: 1px solid #252424;
 }
 
-.user-name {
+.layout .user-name {
   font-size: 24px;
   font-weight: bold;
   color: #ffffff;
 }
 
 /* Main 컨텐츠 */
-.main {
+.layout .main {
   flex: 1;
   display: flex;
   flex-direction: column;

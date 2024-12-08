@@ -136,3 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   appendPageLinks(projectList.children); // 초기 페이지 링크 설정
 });
+
+const menuItems = document.querySelectorAll(".sidebar-menu__link");
+
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener("click", (e) => {
+    const activeItem = document.querySelector(".sidebar-menu__link.active");
+    if (activeItem) activeItem.classList.remove("active");
+    e.target.classList.add("active");
+  });
+});

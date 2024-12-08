@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<c:url value='/css/project/projects.css'/>">
   </head>
   <body>
+  <div class="projectone">
     <div class="page">
       <div class="page-header cf">
         <h2>진행중인 프로젝트</h2>
@@ -62,6 +63,7 @@
 
       </ul>
       <div class="pagination"></div> <!-- 페이지네이션 공간 -->
+    </div>
     </div>
 <script src="<c:url value='/js/project/projects.js'/>"></script>
 

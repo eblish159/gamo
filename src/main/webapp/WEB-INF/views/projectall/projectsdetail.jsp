@@ -1,12 +1,15 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로젝트 관리</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="<c:url value='/css/project/projectsdetail.css'/>">
 </head>
 <body>
+<div class="projecttwo">
     <div class="app-container">
         <div class="projects-and-todoprojects">
             <!-- 프로젝트 섹션 -->
@@ -97,7 +100,8 @@
             </div>
         </div>
     </div>
+    </div>
 
-    <script src="script.js"></script>
+<script src="<c:url value='/js/project/projectsdetail.js'/>"></script>
 </body>
 </html>
