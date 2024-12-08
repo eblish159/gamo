@@ -1,0 +1,213 @@
+/* 기본 스타일 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #f3f6fd;
+  margin: 0;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1800px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.projects-and-todoprojects {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.projects-section {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 32px;
+  padding: 32px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projects-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.projects-section-header p {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.project-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-box-wrapper {
+  width: 100%;
+}
+
+.project-box {
+  border-radius: 30px;
+  padding: 16px;
+  background-color: skyblue;
+}
+
+.project-box-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.project-box-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  position: relative;
+}
+
+/* 메시지 섹션 (할일 목록) */
+.todoprojects-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 32px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.todoprojects-section-header {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.todoproject-box {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #e9ebf0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.todoproject-box:hover {
+  background-color: #fafcff;
+}
+
+.todoproject-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-weight: bold;
+  color: #333;
+}
+
+.todoproject-line {
+  margin: 5px 0;
+  color: #666;
+}
+
+.status {
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+}
+
+.progress-container {
+  display: flex;
+  gap: 5px;
+}
+
+.progress-btn {
+  background-color: navy;
+  color: white;
+  border-style: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.progress-btn:hover {
+  background-color: #3b7ea0;
+}
+
+/* 할일 목록 삭제 버튼 */
+.todo-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.add-todo-btn, .remove-todo-btn {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* 할일 내용 입력 폼 */
+.todo-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.todo-input textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.todo-input input {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.save-todo-btn {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* 모바일 최적화 */
+@media screen and (max-width: 880px) {
+  .projects-and-todoprojects {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .projects-section,
+  .todoprojects-section {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .todoprojects-section {
+    margin-top: 20px;
+  }
+}
