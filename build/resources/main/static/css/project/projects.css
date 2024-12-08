@@ -1,0 +1,192 @@
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  color: #222;
+  background-color: #e1f1f6;
+  line-height: 1.6;
+}
+
+/* 페이지 컨테이너 */
+.page {
+  margin: 50px auto;
+  width: 70%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 페이지 헤더 */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.page-header .project-search input,
+.page-header .project-search button {
+  padding: 8px 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+}
+
+.page-header .project-search button {
+  background-color: #4ba6c3;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 카테고리 드롭다운 버튼 */
+.project-category-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.category-btn {
+  padding: 8px 15px;
+  background-color: #4ba6c3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.category-btn:hover {
+  background-color: #357a8a;
+}
+
+/* 카테고리 드롭다운 내용 */
+.category-dropdown-content {
+  display: none; /* 기본적으로 숨김 */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.category-dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* 드롭다운 클릭 시 보이게 */
+.project-category-dropdown:hover .category-dropdown-content {
+  display: block;
+}
+
+/* 추가 버튼 스타일 */
+.add-project-btn {
+  padding: 10px 20px;
+  background-color: #4ba6c3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-project-btn:hover {
+  background-color: #357a8a;
+}
+
+/* 프로젝트 리스트 */
+.project-list {
+  list-style: none;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* 프로젝트 세부사항 (가로 정렬) */
+.project-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 프로젝트 링크 스타일 */
+.project-link {
+  font-weight: bold;
+  color: #4ba6c3;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #222;
+}
+
+/* 이메일 스타일 */
+.status {
+  font-size: 14px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* 가입 날짜 스타일 */
+.date {
+  font-size: 14px;
+  color: #999;
+  white-space: nowrap;
+}
+
+/* 마지막 프로젝트 항목 스타일 (마지막 줄 경계선 제거) */
+.project-item:last-child {
+  border-bottom: none;
+}
+
+/* 페이지네이션 */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.pagination li a {
+  padding: 5px 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  color: #4ba6c3;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination li a.active,
+.pagination li a:hover {
+  background-color: #4ba6c3;
+  color: #fff;
+}
