@@ -16,7 +16,7 @@
             <div class="projects-section">
                 <div class="projects-section-header">
                     <p>Projects</p>
-                    <p class="status">총 진행률: <span id="total-progress">0%</span></p>
+                    <p class="status">프로젝트 진행률: <span id="total-progress">0%</span></p>
                 </div>
 
                 <div class="project-boxes">

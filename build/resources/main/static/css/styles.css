@@ -47,17 +47,17 @@
 }
 
 .layout .sidebar-menulink {
-  color: #5c5c5c;
+  color: white;
   text-decoration: none;
-  font-size: 18px;
-  margin-top: 15px;
+  font-size: 20px;
+  margin-top: 45px;
   transition: color 0.3s ease;
 }
 
-.layout .sidebar-menulink:hover,
-.layout .sidebar-menulink.active {
-  color: #ffffff;
+.layout .sidebar-menulink:hover  {
+  color: orange;
 }
+
 
 /* User 정보 영역 */
 .layout .user {
@@ -68,9 +68,10 @@
 }
 
 .layout .user-name {
-  font-size: 24px;
+  font-size: 35px;
   font-weight: bold;
   color: #ffffff;
+  text-decoration-line: none;
 }
 
 /* Main 컨텐츠 */

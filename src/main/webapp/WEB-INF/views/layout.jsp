@@ -11,7 +11,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="user">
-                <div class="user-name">Gamo</div>
+                <a href="/" class="user-name">Gamo</a>
             </div>
             <div class="sidebar-menu">
                 <a href="/calendar" class="sidebar-menulink active">Todo 스케줄</a>

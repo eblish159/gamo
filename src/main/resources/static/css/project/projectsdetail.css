@@ -9,6 +9,9 @@
   font-family: 'DM Sans', sans-serif;
   background-color: #f3f6fd;
   margin: 0;
+  margin-top: 50px;
+  border-radius: 9px;
+  height: 1000px;
 }
 
 .projecttwo .app-container {
@@ -62,6 +65,7 @@
   border-radius: 30px;
   padding: 16px;
   background-color: skyblue;
+  height: 300px;
 }
 
 .projecttwo .project-box-header {
@@ -77,7 +81,7 @@
   position: relative;
 }
 
-/* 메시지 섹션 (할일 목록) */
+/* 할일 섹션 (할일 목록) */
 .projecttwo .todoprojects-section {
   flex: 1;
   background-color: #fff;
@@ -123,7 +127,7 @@
 }
 
 .projecttwo .status {
-  font-size: 12px;
+  font-size: 5px;
   color: #999;
   text-align: right;
 }

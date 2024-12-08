@@ -1,3 +1,11 @@
+// 종료된 프로젝트 버튼 클릭 시 동작
+document.querySelector('.end-project-btn').addEventListener('click', function() {
+  // 종료된 프로젝트 페이지로 이동
+  window.location.href = '/path-to-ended-projects'; // 종료된 프로젝트 페이지로 리디렉션
+});
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const projectList = document.querySelector('.project-list');
   const searchInput = document.querySelector('#search-input');
