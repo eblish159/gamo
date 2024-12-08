@@ -126,6 +126,13 @@
   color: #666;
 }
 
+.projecttwo .progress-status {
+  font-size: 18px; /* 진행률 텍스트 크기 증가 */
+  font-weight: bold;
+}
+
+
+
 .projecttwo .status {
   font-size: 5px;
   color: #999;
@@ -135,6 +142,17 @@
 .projecttwo .progress-container {
   display: flex;
   gap: 5px;
+}
+
+.projecttwo .todoproject-line.status {
+  font-size: 12px; /* 원하는 폰트 크기로 변경 */
+  font-weight: bold; /* 글자를 두껍게 */
+}
+
+.projecttwo .progress-status {
+  font-size: 12px; /* 진행률 퍼센트 텍스트 크기 */
+  font-weight: bold;
+  color: #4f94d1; /* 원하는 텍스트 색상으로 변경 */
 }
 
 .projecttwo .progress-btn {
