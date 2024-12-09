@@ -1,0 +1,64 @@
+body {
+    background-image: url(../../img/stars.jpg);
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sel {
+    position: absolute;
+    left: 350px;
+    top: 125px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.updown_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    margin-left: 30%;
+    color: white;
+    border: 10px solid white;
+    border-radius: 50px;
+    width: 400px;
+    height: 500px;
+}
+.updown_form .updown_title {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+.updown_form .updown_info {
+    font-size: 30px;
+    text-align: center;
+}
+.updown_form .updown_input {
+    font-size: 20px;
+    padding: 5px;
+    width: 65px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.updown_form .updown_button {
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 60px;
+    background-color: #4ccb32;
+    color: white;
+    cursor: pointer;
+}
+.updown_form .updown_button:hover {
+    background-color: #8c8c8c;
+}
