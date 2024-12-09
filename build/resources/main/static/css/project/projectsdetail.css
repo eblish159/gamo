@@ -1,0 +1,237 @@
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.projecttwo {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #f3f6fd;
+  margin: 0;
+  margin-top: 50px;
+  border-radius: 9px;
+  height: 1000px;
+}
+
+.projecttwo .app-container {
+  width: 100%;
+  max-width: 1800px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.projecttwo .projects-and-todoprojects {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.projecttwo .projects-section {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 32px;
+  padding: 32px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projecttwo .projects-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.projecttwo .projects-section-header p {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.projecttwo .project-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projecttwo .project-box-wrapper {
+  width: 100%;
+}
+
+.projecttwo .project-box {
+  border-radius: 30px;
+  padding: 16px;
+  background-color: skyblue;
+  height: 300px;
+}
+
+.projecttwo .project-box-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.projecttwo .project-box-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  position: relative;
+}
+
+/* 할일 섹션 (할일 목록) */
+.projecttwo .todoprojects-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 32px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.projecttwo .todoprojects-section-header {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.projecttwo .todoproject-box {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #e9ebf0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.projecttwo .todoproject-box:hover {
+  background-color: #fafcff;
+}
+
+.projecttwo .todoproject-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projecttwo .name {
+  font-weight: bold;
+  color: #333;
+}
+
+.projecttwo .todoproject-line {
+  margin: 5px 0;
+  color: #666;
+}
+
+.projecttwo .progress-status {
+  font-size: 18px; /* 진행률 텍스트 크기 증가 */
+  font-weight: bold;
+}
+
+
+
+.projecttwo .status {
+  font-size: 5px;
+  color: #999;
+  text-align: right;
+}
+
+.projecttwo .progress-container {
+  display: flex;
+  gap: 5px;
+}
+
+.projecttwo .todoproject-line.status {
+  font-size: 12px; /* 원하는 폰트 크기로 변경 */
+  font-weight: bold; /* 글자를 두껍게 */
+}
+
+.projecttwo .progress-status {
+  font-size: 12px; /* 진행률 퍼센트 텍스트 크기 */
+  font-weight: bold;
+  color: #4f94d1; /* 원하는 텍스트 색상으로 변경 */
+}
+
+.projecttwo .progress-btn {
+  background-color: navy;
+  color: white;
+  border-style: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.projecttwo .progress-btn:hover {
+  background-color: #3b7ea0;
+}
+
+/* 할일 목록 삭제 버튼 */
+.projecttwo .todo-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.projecttwo .add-todo-btn, .remove-todo-btn {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* 할일 내용 입력 폼 */
+.projecttwo .todo-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.projecttwo .todo-input textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.projecttwo .todo-input input {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.projecttwo .save-todo-btn {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* 모바일 최적화 *//*
+@media screen and (max-width: 880px) {
+  .projects-and-todoprojects {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .projects-section,
+  .todoprojects-section {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .todoprojects-section {
+    margin-top: 20px;
+  }*/
+}

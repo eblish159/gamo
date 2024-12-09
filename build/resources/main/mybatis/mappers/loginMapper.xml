@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fs.four.gamo.member.dao.LoginDAO">
+    <select id="login" resultType="fs.four.gamo.member.vo.LoginVO">
+        SELECT member_id, member_pw
+        FROM member
+        WHERE member_id=#{member_id} and member_pw=#{member_pw}
+    </select>
+</mapper>

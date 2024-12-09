@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<c:url value='/css/project/projects.css'/>">
   </head>
   <body>
+  <div class="projectone">
     <div class="page">
       <div class="page-header cf">
         <h2>진행중인 프로젝트</h2>
@@ -31,7 +32,7 @@
       <ul class="project-list">
         <li class="project-item cf" data-category="in-progress">
           <div class="project-details">
-            <a href="#" class="project-link">사파리 프로젝트</a>
+            <a href="/projectsdetail" class="project-link">사파리 프로젝트</a>
             <span class="status">진행률</span>
             <div class="joined-details">
               <span class="date">Joined 07/15/15</span>
@@ -41,17 +42,17 @@
         </li>
         <li class="project-item cf" data-category="completed">
           <div class="project-details">
-            <a href="#" class="project-link">사파리 프로젝트</a>
+            <a href="/projectsdetail" class="project-link">천안시 프로젝트</a>
             <span class="status">진행률</span>
             <div class="joined-details">
               <span class="date">Joined 07/15/15</span>
-              <span class="category">종료</span>
+              <span class="category">진행중</span>
             </div>
           </div>
         </li>
         <li class="project-item cf" data-category="pending">
           <div class="project-details">
-            <a href="#" class="project-link">사파리 프로젝트</a>
+            <a href="/projectsdetail" class="project-link">초파리 프로젝트</a>
             <span class="status">진행률</span>
             <div class="joined-details">
               <span class="date">Joined 07/15/15</span>
@@ -61,7 +62,12 @@
         </li>
 
       </ul>
+      <div class="end-project-btn-container">
+        <button class="end-project-btn">종료된 프로젝트</button>
+      </div>
       <div class="pagination"></div> <!-- 페이지네이션 공간 -->
+    </div>
+
     </div>
 <script src="<c:url value='/js/project/projects.js'/>"></script>
 

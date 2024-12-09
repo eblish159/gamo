@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div class="app">
+    <div class="layout">
+    <div class="app1">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="user">
-                <div class="user-name">Gamo</div>
+                <a href="/" class="user-name">Gamo</a>
             </div>
             <div class="sidebar-menu">
                 <a href="/calendar" class="sidebar-menulink active">Todo 스케줄</a>
                 <a href="/project" class="sidebar-menulink">프로젝트</a>
-                <a href="#" class="sidebar-menulink">게시판</a>
+                <a href="/projectsdetail" class="sidebar-menulink">게시판</a>
                 <a href="#" class="sidebar-menulink">휴식 하기</a>
                 <a href="#" class="sidebar-menulink">마이 페이지</a>
                 <a href="#" class="sidebar-menulink">회원 관리</a>
@@ -33,6 +34,8 @@
             </div>
         </div>
     </div>
+    </div>
     <script src="/js/layout.js"></script>
+
 </body>
 </html>

@@ -136,3 +136,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   appendPageLinks(projectList.children); // 초기 페이지 링크 설정
 });
+<<<<<<< HEAD
+=======
+
+const menuItems = document.querySelectorAll(".sidebar-menu__link");
+
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener("click", (e) => {
+    const activeItem = document.querySelector(".sidebar-menu__link.active");
+    if (activeItem) activeItem.classList.remove("active");
+    e.target.classList.add("active");
+  });
+});
+>>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
