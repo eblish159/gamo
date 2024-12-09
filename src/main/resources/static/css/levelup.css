@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://via.placeholder.com/800x600?text=Background+Space') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 카드 스타일 */
+.level-up-card {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* 텍스트 스타일 */
+.level-up-card h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* 이미지 스타일 */
+.alien-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 3px solid white;
+}
+
+/* 버튼 스타일 */
+.level-button,
+.confirm-button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #ff6b6b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 버튼 hover 효과 */
+.level-button:hover,
+.confirm-button:hover {
+    background-color: #ff5252;
+}

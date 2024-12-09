@@ -37,7 +37,6 @@
             <th>5</th>
             <th>6</th>
             <th>7</th>
-
         </tr>
         </thead>
         <tr>
