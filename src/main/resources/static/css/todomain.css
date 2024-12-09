@@ -10,7 +10,7 @@ table, th, td {
     border: 3px solid #dfd3d3;
     text-align: center;
     margin-top: 100px;
-    margin-left: 200px;
+    margin-left: 120px;
 }
 
 th, td {
@@ -22,7 +22,7 @@ th, td {
 .pagination {
     position: absolute;
     top: 820px;
-    left: 50%;
+    left: 63%;
     right: 50%;
     display: flex;
     justify-content: center;
@@ -53,7 +53,7 @@ th, td {
 /* 검색창 스타일 */
 .search-container {
     display: flex;
-    margin-top: -5%;
+    margin-top: -39%;
     margin-left: 100px;
     width: 5%;
 }
@@ -61,13 +61,13 @@ th, td {
 /* 날짜 선택 스타일 */
 .date {
     position: absolute;
-    height: 30px;
+    height: 40px;
     background-color: #ddd;
     border: none;
     padding: 5px 13px;
     color: black;
     margin-top: -28%;
-    left: 76%;
+    left: 72%;
     cursor: pointer;
     font-family: sans-serif;
 }
@@ -102,12 +102,12 @@ th, td {
 
 /* 레벨 카드 스타일 */
 .card {
-    width: 250px;
+    width: 220px;
     background-color: #000;
     color: white;
     border: 1px solid #00f;
     border-radius: 10px;
-    padding: 10px;
+    padding: 7px;
     font-family: Arial, sans-serif;
     text-align: center;
     margin-left: 76%;

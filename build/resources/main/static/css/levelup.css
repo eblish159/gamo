@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('https://via.placeholder.com/800x600?text=Background+Space') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,11 +9,14 @@ body {
 
 /* 카드 스타일 */
 .level-up-card {
+    position:absolute;
+    left:49%;
+    top:30%;
     background-color: rgba(0, 0, 0, 0.8);
     border: 2px solid white;
     border-radius: 20px;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     width: 300px;
     color: white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -27,7 +29,7 @@ body {
 }
 
 /* 이미지 스타일 */
-.alien-image {
+.alien-img {
     width: 150px;
     height: 150px;
     object-fit: cover;

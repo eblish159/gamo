@@ -11,8 +11,8 @@
 <body>
     <div class="level-up-card">
         <h1>Level up !!</h1>
-        <img src="https://via.placeholder.com/150" alt="Alien Image" class="alien-image">
-        <button class="level-button">LV.30</button>
+        <img src="img/level3.png" alt="Alien Image" class="alien-img">
+        <button class="level-button">LV.29</button>
         <button class="confirm-button">확인</button>
     </div>
 </body>

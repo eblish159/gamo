@@ -5,19 +5,6 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-body {
-  font-family: Helvetica, sans-serif;
-  color: #222;
-  background-color: #e1f1f6;
-  line-height: 1.6;
-}
-
-/* 페이지 컨테이너 */
-.page {
-  margin: 50px auto;
-  width: 70%;
-=======
 .projectone {
   color: #222;
   background-color: #e1f1f6;
@@ -29,7 +16,6 @@ body {
   margin: 50px auto;
   width: 100%;
   height: 1000px;
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   background: #fff;
   border-radius: 5px;
   padding: 20px;
@@ -37,65 +23,40 @@ body {
 }
 
 /* 페이지 헤더 */
-<<<<<<< HEAD
-.page-header {
-=======
 .projectone .page-header {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
-.page-header h2 {
-=======
 .projectone .page-header h2 {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   font-size: 22px;
   font-weight: bold;
   color: #555;
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
-.page-header .project-search input,
-.page-header .project-search button {
-=======
 .projectone .page-header .project-search input,
 .projectone .page-header .project-search button {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   padding: 8px 10px;
   border: 1px solid #eaeaea;
   border-radius: 5px;
 }
 
-<<<<<<< HEAD
-.page-header .project-search button {
-=======
 .projectone .page-header .project-search button {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   background-color: #4ba6c3;
   color: #fff;
   cursor: pointer;
 }
 
 /* 카테고리 드롭다운 버튼 */
-<<<<<<< HEAD
-.project-category-dropdown {
-=======
 .projectone .project-category-dropdown {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   position: relative;
   display: inline-block;
 }
 
-<<<<<<< HEAD
-.category-btn {
-=======
 .projectone .category-btn {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   padding: 8px 15px;
   background-color: #4ba6c3;
   color: white;
@@ -104,20 +65,12 @@ body {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-.category-btn:hover {
-=======
 .projectone .category-btn:hover {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   background-color: #357a8a;
 }
 
 /* 카테고리 드롭다운 내용 */
-<<<<<<< HEAD
-.category-dropdown-content {
-=======
 .projectone .category-dropdown-content {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   display: none; /* 기본적으로 숨김 */
   position: absolute;
   background-color: #f9f9f9;
@@ -127,11 +80,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-<<<<<<< HEAD
-.category-dropdown-content a {
-=======
 .projectone .category-dropdown-content a {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -139,23 +88,11 @@ body {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-.category-dropdown-content a:hover {
-=======
 .projectone .category-dropdown-content a:hover {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   background-color: #ddd;
 }
 
 /* 드롭다운 클릭 시 보이게 */
-<<<<<<< HEAD
-.project-category-dropdown:hover .category-dropdown-content {
-  display: block;
-}
-
-/* 추가 버튼 스타일 */
-.add-project-btn {
-=======
 .projectone .project-category-dropdown:hover .category-dropdown-content {
   display: block;
 }
@@ -172,7 +109,6 @@ body {
 
 /* 추가 버튼 스타일 */
 .projectone .add-project-btn {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   padding: 10px 20px;
   background-color: #4ba6c3;
   color: white;
@@ -183,28 +119,16 @@ body {
   transition: background-color 0.3s ease;
 }
 
-<<<<<<< HEAD
-.add-project-btn:hover {
-=======
 .projectone .add-project-btn:hover {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   background-color: #357a8a;
 }
 
 /* 프로젝트 리스트 */
-<<<<<<< HEAD
-.project-list {
-  list-style: none;
-}
-
-.project-item {
-=======
 .projectone .project-list {
   list-style: none;
 }
 
 .projectone .project-item {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -213,51 +137,27 @@ body {
 }
 
 /* 프로젝트 세부사항 (가로 정렬) */
-<<<<<<< HEAD
-.project-details {
-=======
 .projectone .project-details {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
 /* 프로젝트 링크 스타일 */
-<<<<<<< HEAD
-.project-link {
-=======
 .projectone .project-link {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   font-weight: bold;
   color: #4ba6c3;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
-<<<<<<< HEAD
-}
-
-.project-link:hover {
-=======
   margin-left: 30px;
 }
 
 .projectone .project-link:hover {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   color: #222;
 }
 
 /* 이메일 스타일 */
-<<<<<<< HEAD
-.status {
-  font-size: 14px;
-  color: #888;
-  white-space: nowrap;
-}
-
-/* 가입 날짜 스타일 */
-.date {
-=======
 .projectone .status {
   font-size: 14px;
   color: #888;
@@ -268,45 +168,28 @@ body {
 
 /* 가입 날짜 스타일 */
 .projectone .date {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   font-size: 14px;
   color: #999;
   white-space: nowrap;
 }
 
 /* 마지막 프로젝트 항목 스타일 (마지막 줄 경계선 제거) */
-<<<<<<< HEAD
-.project-item:last-child {
-=======
 .projectone .project-item:last-child {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   border-bottom: none;
 }
 
 /* 페이지네이션 */
-<<<<<<< HEAD
-.pagination {
-=======
 .projectone .pagination {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   margin-top: 20px;
   text-align: center;
 }
 
-<<<<<<< HEAD
-.pagination li {
-=======
 .projectone .pagination li {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   display: inline-block;
   margin: 0 5px;
 }
 
-<<<<<<< HEAD
-.pagination li a {
-=======
 .projectone .pagination li a {
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
   padding: 5px 10px;
   border: 1px solid #eaeaea;
   border-radius: 5px;
@@ -315,13 +198,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-<<<<<<< HEAD
-.pagination li a.active,
-.pagination li a:hover {
-  background-color: #4ba6c3;
-  color: #fff;
-}
-=======
 .projectone .pagination li a.active,
 .projectone .pagination li a:hover {
   background-color: #4ba6c3;
@@ -350,4 +226,3 @@ body {
   background-color: #cc3c3c; /* 버튼 호버 시 색상 변화 */
 }
 
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8

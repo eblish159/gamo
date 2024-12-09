@@ -14,8 +14,7 @@
 <div>
     <h1>스케줄</h1>
 </div>
-
-<table>
+<table cl>
     <thead>
         <tr>
             <th>일</th>
@@ -78,8 +77,8 @@
     </tbody>
 </table>
 <div class="card">
-    <img src="img/level30.png">
-    <div class="level">LV - 30</div>
+    <img src="img/level5.png">
+    <div class="level">LV - 78</div>
     <div>문진배</div>
     <div>exp</div>
     <div class="exp-bar">
