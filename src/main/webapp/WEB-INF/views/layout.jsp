@@ -16,8 +16,8 @@
             <div class="sidebar-menu">
                 <a href="/calendar" class="sidebar-menulink active">Todo 스케줄</a>
                 <a href="/project" class="sidebar-menulink">프로젝트</a>
-                <a href="/projectsdetail" class="sidebar-menulink">게시판</a>
-                <a href="#" class="sidebar-menulink">휴식 하기</a>
+                <a href="/board" class="sidebar-menulink">게시판</a>
+                <a href="/rest" class="sidebar-menulink">휴식 하기</a>
                 <a href="#" class="sidebar-menulink">마이 페이지</a>
                 <a href="#" class="sidebar-menulink">회원 관리</a>
             </div>
