@@ -68,11 +68,28 @@
   height: 300px;
 }
 
+
+
+
 .projecttwo .project-box-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
 }
+
+.projecttwo .project-box-header span{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.projecttwo .project-box-content-header p{
+    color: black;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+
 
 .projecttwo .project-box-footer {
   display: flex;
