@@ -25,7 +25,7 @@
 
                 <button class="btn-search">검색</button>
             </div>
-        <button class="btn-new-post" onclick="location.href='/boardall/boardWrite'">새 글 작성</button>
+        <button class="btn-new-post" onclick="location.href='/boardWrite'">새 글 작성</button>
         </div>
     </div>
 
