@@ -9,6 +9,8 @@ public class ProjectVO {
     private int project_progress;
     private String project_category;
     private String member_id;
+    private Date created_date;
+    private Date updated_date;
 
     public String getProjectNo() {
         return projectNo;
@@ -73,10 +75,4 @@ public class ProjectVO {
     public void setUpdated_date(Date updated_date) {
         this.updated_date = updated_date;
     }
-
-    private Date created_date;
-    private Date updated_date;
-
-
-
 }
