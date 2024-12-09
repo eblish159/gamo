@@ -32,7 +32,7 @@
       <ul class="project-list">
         <li class="project-item cf" data-category="in-progress">
           <div class="project-details">
-            <a href="/projectsdetail" class="project-link">사파리 프로젝트</a>
+            <a href="/projectsdetail" class="project-link">${project.projectTitle}</a>
             <span class="status">진행률</span>
             <div class="joined-details">
               <span class="date">Joined 07/15/15</span>
@@ -65,7 +65,7 @@
         </li>
       </ul>
       <div class="end-project-btn-container">
-        <button class="end-project-btn">종료된 프로젝트</button>
+        <button class="end-project-btn" onclick="location.href='/endprojects'">종료된 프로젝트</button>
       </div>
       <div class="pagination"></div> <!-- 페이지네이션 공간 -->
     </div>
