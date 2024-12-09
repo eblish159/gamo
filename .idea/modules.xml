@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fs.four.gamo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fs.four.gamo.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gamo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gamo.main.iml" />
     </modules>
   </component>
