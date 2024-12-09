@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // 종료된 프로젝트 버튼 클릭 시 동작
 document.querySelector('.end-project-btn').addEventListener('click', function() {
   // 종료된 프로젝트 페이지로 이동
@@ -8,7 +6,6 @@ document.querySelector('.end-project-btn').addEventListener('click', function() 
 
 
 
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8
 document.addEventListener('DOMContentLoaded', () => {
   const projectList = document.querySelector('.project-list');
   const searchInput = document.querySelector('#search-input');
@@ -147,8 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   appendPageLinks(projectList.children); // 초기 페이지 링크 설정
 });
-<<<<<<< HEAD
-=======
 
 const menuItems = document.querySelectorAll(".sidebar-menu__link");
 
@@ -164,4 +159,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
->>>>>>> b36bacac59f3b5c3a0b63e5192b64bcf7fe2b8b8

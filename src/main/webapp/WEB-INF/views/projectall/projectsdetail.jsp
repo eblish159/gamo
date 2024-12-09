@@ -31,7 +31,7 @@
                             </div>
                             <div class="box-progress-wrapper">
                                 <div class="box-progress-bar">
-                                    <span class="box-progress" style="width: 60%; background-color: skyblue"></span>
+                                    <span class="box-progress" style="width: 60%; background-color: rgb(192, 197, 241);"></span>
                                 </div>
                                 <div class="participants"></div>
                                 <div class="days-left" style="color: skyblue;"></div>
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="project-box-wrapper">
-                        <div class="project-box" style="background-color: pink;">
+                        <div class="project-box" style="background-color: rgb(192, 197, 241);">
                             <div class="project-box-header">
                                 <span>참여자</span>
                             </div>

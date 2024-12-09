@@ -12,7 +12,7 @@ public class ProjectDAO {
     private JdbcTemplate jdbcTemplate; // JdbcTemplate을 주입받습니다.
 
     public ProjectVO getProjectDetails() {
-        String sql = "SELECT project_title, project_content, project_period FROM project WHERE project_id = 1"; // 쿼리문 정의
+        String sql = "SELECT project_title, project_content FROM project WHERE project_no = 1"; // 쿼리문 정의
         return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
             // `queryForObject`는 하나의 결과를 가져오는 메서드로, 결과가 여러 개일 경우 예외가 발생합니다.
             ProjectVO project = new ProjectVO(); // 결과를 담을 VO 객체 생성
