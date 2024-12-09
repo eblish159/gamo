@@ -4,14 +4,14 @@
     font-weight: normal;
     font-style: normal;
 }
-body {
+.mypage {
     margin: 0;
     background-size: cover;
     color: #000;
   }
 
   /* 컨테이너 */
-  .container {
+  .mypage .container {
     width: 85%;
     margin: 100px auto;
     margin-left: 7%;
@@ -19,7 +19,7 @@ body {
   }
 
   /* 프로필 섹션 */
-  .profile-section {
+  .mypage .profile-section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,20 +30,20 @@ body {
     background: #fff;
   }
 
-  .profile-image {
+  .mypage .profile-image {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-right: 15px;
   }
 
-  .profile-title {
+  .mypage .profile-title {
     font-size: 24px;
     color: #000;
   }
 
   /* 프로젝트 섹션 */
-  .projects-section {
+  .mypage .projects-section {
     border: 2px solid #3B1C32;
     padding: 10px;
     border-radius: 10px;
@@ -52,13 +52,13 @@ body {
     color: #000;
   }
 
-  .filter-buttons {
+  .mypage .filter-buttons {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
   }
 
-  .filter-btn, .add-btn {
+  .mypage .filter-btn, .add-btn {
     background: #fff;
     color: #000;
     border: 1px solid #fff;
@@ -66,39 +66,39 @@ body {
     cursor: pointer;
   }
 
-  .filter-btn:hover, .add-btn:hover {
+  .mypage .filter-btn:hover, .add-btn:hover {
     background: #555;
   }
 
-  .project-box {
+  .mypage .project-box {
     border-top: 1px solid #fff;
     padding: 10px 0;
   }
 
-  .project-row {
+  .mypage .project-row {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
   }
 
-  .project-row.ongoing {
+  .mypage .project-row.ongoing {
     background: rgba(255, 0, 0, 0.2);
   }
 
-  .project-row.completed {
+  .mypage .project-row.completed {
     background: rgba(0, 255, 0, 0.2);
   }
 
-  .project-date, .project-status {
+  .mypage .project-date, .project-status {
     flex: 1;
     text-align: center;
     color: #000;
   }
-  .project-name{
+  .mypage .project-name{
    color: #000;
    }
   /* 글 리스트 섹션 */
-  .posts-section {
+  .mypage .posts-section {
     border: 2px solid #fff;
     padding: 10px;
     border-radius: 10px;
@@ -106,7 +106,7 @@ body {
     color: #000;
   }
 
-  .section-title {
+  .mypage .section-title {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -114,31 +114,31 @@ body {
     color: #000;
   }
 
-  .posts-table {
+  .mypage .posts-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 15px;
     color: #000;
   }
 
-  .posts-table th,
-  .posts-table td {
+  .mypage .posts-table th,
+  .mypage .posts-table td {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #fff;
     color: #000;
   }
 
-  .posts-table tr:hover {
+  .mypage .posts-table tr:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 
-  .pagination {
+  .mypage .pagination {
     text-align: center;
     font-size: 16px;
     color: black;
   }
 
-  .pagination span {
+  .mypage .pagination span {
     color: #ffeb3b;
   }

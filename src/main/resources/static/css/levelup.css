@@ -1,4 +1,4 @@
-body {
+.level {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
@@ -8,7 +8,7 @@ body {
 }
 
 /* 카드 스타일 */
-.level-up-card {
+.level .level-up-card {
     position:absolute;
     left:49%;
     top:30%;
@@ -23,13 +23,13 @@ body {
 }
 
 /* 텍스트 스타일 */
-.level-up-card h1 {
+.level .level-up-card h1 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
 /* 이미지 스타일 */
-.alien-img {
+.level .alien-img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -39,8 +39,8 @@ body {
 }
 
 /* 버튼 스타일 */
-.level-button,
-.confirm-button {
+.level .level-button,
+.level .confirm-button {
     display: block;
     width: 80%;
     margin: 10px auto;
@@ -55,7 +55,7 @@ body {
 }
 
 /* 버튼 hover 효과 */
-.level-button:hover,
-.confirm-button:hover {
+.level .level-button:hover,
+.level .confirm-button:hover {
     background-color: #ff5252;
 }

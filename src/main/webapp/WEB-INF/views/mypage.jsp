@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/mypage.css">
 </head>
 <body>
+<div class="mypage">
   <div class="container">
     <!-- 프로필 섹션 -->
     <div class="profile-section">
@@ -85,6 +86,7 @@
       </table>
       <div class="pagination">1 <span>2</span> 3</div>
     </div>
+  </div>
   </div>
 </body>
 </html>
