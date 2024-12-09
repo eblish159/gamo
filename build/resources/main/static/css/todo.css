@@ -16,6 +16,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    font-family: Sans-seri;
 }
 
 .dropdown-menu {
@@ -39,12 +40,13 @@
 .input-field,
 .textarea-field,
 .date-input {
-    width: 390px;
+    width: 350px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+    font-family: Sans-seri;
 }
 
 .textarea-field {
@@ -61,6 +63,7 @@
     border-radius: 5px;
     cursor: pointer;
     color: #fff;
+    font-family: Sans-seri;
 }
 
 .add-btn {
@@ -80,4 +83,5 @@
 }
 .labell{
     color:black;
+    font-family: Sans-seri;
 }
