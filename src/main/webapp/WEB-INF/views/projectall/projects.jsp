@@ -50,6 +50,9 @@
             </div>
           </div>
         </li>
+
+
+
         <li class="project-item cf" data-category="pending">
           <div class="project-details">
             <a href="/projectsdetail" class="project-link">초파리 프로젝트</a>
@@ -60,7 +63,6 @@
             </div>
           </div>
         </li>
-
       </ul>
       <div class="end-project-btn-container">
         <button class="end-project-btn">종료된 프로젝트</button>
