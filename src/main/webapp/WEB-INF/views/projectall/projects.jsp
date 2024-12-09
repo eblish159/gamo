@@ -27,7 +27,7 @@
             <a href="#" class="category-option" data-category="pending">준비중</a>
           </div>
         </div>
-        <button class="add-project-btn">추가</button> <!-- 추가 버튼 추가 -->
+        <button class="add-project-btn" onclick="location.href='/projectswrite'">추가</button> <!-- 추가 버튼 추가 -->
       </div>
       <ul class="project-list">
         <li class="project-item cf" data-category="in-progress">
