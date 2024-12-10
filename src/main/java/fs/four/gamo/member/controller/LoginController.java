@@ -21,18 +21,18 @@ public class LoginController {
     @Autowired
     private LoginVO loginVO;
 
-    @RequestMapping(value = "/member/login")
+    @RequestMapping(value = "/login")
     public String loginPage() {
         return "member/login";
     }
 
     @RequestMapping(value = "/member/login", method = RequestMethod.POST)
-    public ModelAndView login(@ModelAttribute("login") LoginVO login,
+    public ModelAndView login(@ModelAttribute("member") LoginVO member,
                               RedirectAttributes rAttr,
                               HttpServletRequest request,
                               HttpServletResponse response) throws Exception {
         ModelAndView mav = new ModelAndView();
-        loginVO = loginService.login(login);
+        loginVO = loginService.login(member);
 
         if (loginVO != null) {
             HttpSession session = request.getSession();
@@ -44,12 +44,14 @@ public class LoginController {
 
             if (action != null) {
                 mav.setViewName("redirect:" + action);
+//                session.removeAttribute("loginVO");
+//                session.removeAttribute("isLogOn");
             } else {
                 mav.setViewName("redirect:/");
             }
         } else {
-            rAttr.addAttribute("result", "loginFailed");
-            mav.setViewName("redirect:/member/login");
+            rAttr.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다!!");
+            mav.setViewName("redirect:/login");
         }
 
         return mav;
@@ -58,11 +60,11 @@ public class LoginController {
     @RequestMapping(value = "/member/logout", method = RequestMethod.GET)
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
-        session.removeAttribute("member");
+        session.removeAttribute("loginVO");
         session.setAttribute("isLogOn", false);
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("redirect:/member/login");
+        mav.setViewName("redirect:/login");
         return mav;
     }
 }
