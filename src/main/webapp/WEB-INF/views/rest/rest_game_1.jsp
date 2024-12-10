@@ -8,9 +8,10 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/rest/rest_game_1.css">
     </head>
     <body>
-        <select class="sel">
-            <option value="updown">업다운게임</option>
-            <option value="rps">가위바위보</option>
+        <select class="sel" onchange="location.href = this.value">
+            <option>게임선택</option>
+            <option value="/rest1">업다운게임</option>
+            <option value="/rest2">가위바위보</option>
             <option value="Slot">슬롯머신</option>
         </select>
         <div class="updown_form">

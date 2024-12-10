@@ -1,0 +1,30 @@
+<mapper namespace="fs.four.gamo.project.mapper.ProjectMapper">
+
+    <select id="selectAllProjects" resultType="fs.four.gamo.project.vo.ProjectVO">
+        SELECT * FROM Project
+    </select>
+
+    <select id="selectProjectById" parameterType="int" resultType="fs.four.gamo.project.vo.ProjectVO">
+        SELECT * FROM Project WHERE project_no = #{projectNo}
+    </select>
+
+    <insert id="insertProject" parameterType="fs.four.gamo.project.vo.ProjectVO">
+        INSERT INTO Project (project_title, project_content, project_category, project_progress, member_id, created_date)
+        VALUES (#{projectTitle}, #{projectContent}, #{projectCategory}, #{projectProgress}, #{memberId}, CURRENT_DATE)
+    </insert>
+
+    <update id="updateProject" parameterType="fs.four.gamo.project.vo.ProjectVO">
+        UPDATE Project
+        SET project_title = #{projectTitle},
+            project_content = #{projectContent},
+            project_category = #{projectCategory},
+            project_progress = #{projectProgress},
+            updated_date = CURRENT_DATE
+        WHERE project_no = #{projectNo}
+    </update>
+
+    <delete id="deleteProject" parameterType="int">
+        DELETE FROM Project WHERE project_no = #{projectNo}
+    </delete>
+
+</mapper>
