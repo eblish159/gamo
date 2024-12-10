@@ -19,7 +19,7 @@
                 <a href="/board" class="sidebar-menulink">게시판</a>
                 <a href="/mypage" class="sidebar-menulink">마이 페이지</a>
                 <a href="/rest1" class="sidebar-menulink">휴식 하기</a>
-                <a href="#" class="sidebar-menulink">회원 관리</a>
+                <a href="/admem" class="sidebar-menulink">회원 관리</a>
             </div>
         </div>
         <!-- Main Content -->
