@@ -17,17 +17,25 @@
             <input type="text" id="title" name="title" class="form-input" placeholder="제목을 입력하세요" required>
         </div>
 
-
+        <!-- 시작 날짜와 종료 날짜 -->
+        <div class="form-group date-group">
+            <div class="date-input">
+                <label for="start_date" class="form-label">시작 날짜</label>
+                <input type="date" id="start_date" name="start_date" class="form-input" required>
+            </div>
+            <div class="date-input">
+                <label for="end_date" class="form-label">종료 날짜</label>
+                <input type="date" id="end_date" name="end_date" class="form-input" required>
+            </div>
+        </div>
 
         <div class="form-group">
             <label for="content" class="form-label">내용</label>
             <textarea id="content" name="content" class="form-textarea" placeholder="내용을 입력하세요" required></textarea>
         </div>
 
-
-
         <div class="button-group">
-            <button type="submit" class="btn-submit" onclick="location.href='/project'">완료</button>
+            <button type="submit" class="btn-submit">완료</button>
             <button type="button" class="btn-cancel" onclick="history.back()">취소</button>
         </div>
     </form>

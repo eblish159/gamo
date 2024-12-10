@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <c:if test="${ !empty requestScope.message }">
+        <c:if test="${ !empty message }">
             <script>
-                alert("${requestScope.message}");
+                alert("${message}");
             </script>
         </c:if>
         <meta charset="UTF-8">
