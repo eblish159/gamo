@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>게시판</title>
     <link rel="stylesheet" href="<c:url value='/css/board/boardMain.css'/>">
 </head>
 <body>
