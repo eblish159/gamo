@@ -5,13 +5,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>로그인 게임 - 업다운</title>
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/rest/rest_game_1.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/rest/rest_game_2.css">
     </head>
     <body>
         <select class="sel" onchange="location.href = this.value">
             <option>게임선택</option>
             <option value="/rest1">업다운게임</option>
-            <option value="/test2">가위바위보</option>
+            <option value="/rest2">가위바위보</option>
             <option value="#">슬롯머신</option>
         </select>
         <div class="rps_form">
@@ -36,6 +36,6 @@
                 <button class="rps_run" onclick="start()">시작</button>
             </div>
         </div>
-        <script src="${pageContext.request.contextPath}/js/rest/rest_game_1.js"></script>
+        <script src="${pageContext.request.contextPath}/js/rest/rest_game_2.js"></script>
     </body>
 </html>

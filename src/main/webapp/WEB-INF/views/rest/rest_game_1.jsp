@@ -8,16 +8,32 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/rest/rest_game_1.css">
     </head>
     <body>
-        <select class="sel">
-            <option value="updown">업다운게임</option>
-            <option value="rps">가위바위보</option>
+        <select class="sel" onchange="location.href = this.value">
+            <option>게임선택</option>
+            <option value="/rest1">업다운게임</option>
+            <option value="/rest2">가위바위보</option>
             <option value="Slot">슬롯머신</option>
         </select>
         <div class="updown_form">
             <p class="updown_title">업다운</p>
-            <p class="updown_info">범위는 1~10입니다.</p>
-            <input class="updown_input" type="text" maxlength="2" />
-            <button type="button" class="updown_button" onclick="">확인</button>
+            <div class="updown_content">
+                <div class="info_div">
+                    <p class="updown_info">범위는 1~10입니다.</p>
+                </div>
+                <input class="updown_input" type="text" maxlength="2" />
+                <button type="button" class="updown_button" onclick="">
+                    확인
+                </button>
+            </div>
+            <div class="start_updown">
+                <button
+                    type="button"
+                    class="updown_run"
+                    onclick="updown_toggle()"
+                >
+                    시작
+                </button>
+            </div>
         </div>
         <script src="${pageContext.request.contextPath}/js/rest/rest_game_1.js"></script>
     </body>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fs.four.gamo.project.mapper.ProjectMapper">
+
+    <!-- 프로젝트 전체 조회 -->
+    <select id="selectAllProjects" resultType="fs.four.gamo.project.vo.ProjectVO">
+        SELECT
+        project_no AS projectNo,
+        project_title AS projectTitle,
+        project_content AS projectContent,
+        project_category AS projectCategory,
+        project_progress AS projectProgress,
+        member_id AS memberId,
+        created_date AS createdDate,
+        updated_date AS updatedDate
+        FROM Project
+    </select>
+
+    <!-- 프로젝트 상세 조회 -->
+    <select id="selectProjectById" parameterType="int" resultType="fs.four.gamo.project.vo.ProjectVO">
+        SELECT
+        project_no AS projectNo,
+        project_title AS projectTitle,
+        project_content AS projectContent,
+        project_category AS projectCategory,
+        project_progress AS projectProgress,
+        member_id AS memberId,
+        created_date AS createdDate,
+        updated_date AS updatedDate
+        FROM Project
+        WHERE project_no = #{projectNo}
+    </select>
+
+    <!-- 프로젝트 추가 -->
+    <insert id="insertProject" parameterType="fs.four.gamo.project.vo.ProjectVO">
+        INSERT INTO Project
+        (project_title, project_content, project_category, project_progress, member_id, created_date, updated_date)
+        VALUES
+        (#{projectTitle}, #{projectContent}, #{projectCategory}, #{projectProgress}, #{memberId}, SYSDATE, SYSDATE)
+    </insert>
+
+    <!-- 프로젝트 수정 -->
+    <update id="updateProject" parameterType="fs.four.gamo.project.vo.ProjectVO">
+        UPDATE Project
+        SET
+        project_title = #{projectTitle},
+        project_content = #{projectContent},
+        project_category = #{projectCategory},
+        project_progress = #{projectProgress},
+        updated_date = SYSDATE
+        WHERE project_no = #{projectNo}
+    </update>
+
+    <!-- 프로젝트 삭제 -->
+    <delete id="deleteProject" parameterType="int">
+        DELETE FROM Project
+        WHERE project_no = #{projectNo}
+    </delete>
+
+</mapper>
