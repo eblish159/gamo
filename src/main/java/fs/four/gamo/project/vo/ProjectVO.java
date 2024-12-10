@@ -3,20 +3,24 @@ package fs.four.gamo.project.vo;
 import java.sql.Date;
 
 public class ProjectVO {
-    private String projectNo;
+    private int projectNo;
     private String projectTitle;
     private String projectContent;
-    private int project_progress;
-    private String project_category;
-    private String member_id;
-    private Date created_date;
-    private Date updated_date;
+    private int projectProgress = 0;;     // camelCase로 변경
+    private String projectCategory;   // camelCase로 변경
+    private String memberId;          // camelCase로 변경
+    private Date startDate;           // 기존 추가된 필드
+    private Date endDate;             // 기존 추가된 필드
+    private Date createdDate;         // camelCase로 변경
+    private Date updatedDate;         // camelCase로 변경
 
-    public String getProjectNo() {
+    // Getters and Setters
+
+    public int getProjectNo() {
         return projectNo;
     }
 
-    public void setProjectNo(String projectNo) {
+    public void setProjectNo(int projectNo) {
         this.projectNo = projectNo;
     }
 
@@ -36,43 +40,59 @@ public class ProjectVO {
         this.projectContent = projectContent;
     }
 
-    public String getProject_category() {
-        return project_category;
+    public int getProjectProgress() {
+        return projectProgress;
     }
 
-    public void setProject_category(String project_category) {
-        this.project_category = project_category;
+    public void setProjectProgress(int projectProgress) {
+        this.projectProgress = projectProgress;
     }
 
-    public int getProject_progress() {
-        return project_progress;
+    public String getProjectCategory() {
+        return projectCategory;
     }
 
-    public void setProject_progress(int project_progress) {
-        this.project_progress = project_progress;
+    public void setProjectCategory(String projectCategory) {
+        this.projectCategory = projectCategory;
     }
 
-    public String getMember_id() {
-        return member_id;
+    public String getMemberId() {
+        return memberId;
     }
 
-    public void setMember_id(String member_id) {
-        this.member_id = member_id;
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 
-    public Date getCreated_date() {
-        return created_date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setCreated_date(Date created_date) {
-        this.created_date = created_date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Date getUpdated_date() {
-        return updated_date;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setUpdated_date(Date updated_date) {
-        this.updated_date = updated_date;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
     }
 }

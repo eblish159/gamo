@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Danjo-bold-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.todos table {
+    background-color:#fff;
+    width: 90%;
+    border-color: #000;
+    direction: inherit;
+    border-collapse: collapse;
+    margin-top: 30px; /* 상단 여백 추가 */
+    color:#000;
+    font-family: 'Danjo-bold-Regular';
+    z-index: 1;
+}
+
+.todos table, th, td {
+    background-color:#fff;
+    border: 3px solid #000;
+    text-align: center;
+    margin-top: 70px;
+    margin-left: 70px;
+    color:#000;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.todos th, td {
+    position: relative;
+    padding: 10px;
+}
+
+/* 페이지네이션 스타일 */
+.todos .pagination {
+    position: absolute;
+    top: 820px;
+    left: 63%;
+    right: 50%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.todos .pagination li {
+    margin: 0 1px;
+}
+
+.todos .pagination li a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    color: #f0e4e4;
+}
+
+.todos .pagination li a:hover {
+    background-color: #ddd;
+}
+
+/* 생성 버튼 스타일 */
+.todos .btn-create {
+    margin-bottom: 10px;
+}
+
+/* 검색창 스타일 */
+.todos .search-container {
+    display: flex;
+    margin-top: -26%;
+    width: 5%;
+    height: 5%;
+}
+
+/* 날짜 선택 스타일 */
+.todos .date {
+    display:flex;
+    position: absolute;
+    height: 40px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 13px;
+    color: #ffffff;
+    margin-top: -26.1%;
+    left: 75%;
+    cursor: pointer;
+    font-family: 'Danjo-bold-Regular';
+    transition: background-color 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.todos .date:hover {
+    background-color: #0056b3;
+}
+
+/* 할 일 버튼 스타일 */
+.todos .todo {
+    display:flex;
+    position: absolute;
+    margin-top: -26.2%;
+    left: 86%;
+    height: 40px;
+    width: 130px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Danjo-bold-Regular';
+    font-size:13px;
+    align-items: center;
+    justify-content: center;
+}
+
+.todos .todo:hover {
+    background-color: #0056b3;
+}
+
+/* 텍스트 입력 필드 스타일 */
+.todos .text {
+    position: absolute;
+    margin-left: 100px; /* absolute 대신 margin으로 위치 조정 */
+}
+
+.today {
+    background-color: #ffeb3b; /* 원하는 배경색 지정 */
+}
+.day{
+
+}
