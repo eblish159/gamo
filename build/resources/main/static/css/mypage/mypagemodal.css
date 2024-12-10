@@ -1,14 +1,8 @@
-@font-face {
-    font-family: 'Danjo-bold-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-size: cover;
-    color: #333;
+    color: #fff;
   }
 
   .container {
@@ -101,21 +95,21 @@ body {
   }
 
   .cancel-btn {
-    background: #FF5C5C;
+    background: #007BFF;
     color: #fff;
   }
 
   .cancel-btn:hover {
-    background: #E04E4E;
+    background: #0056b3;
   }
 
   .save-btn {
-    background: #28A745;
+    background: #007BFF;
     color: #fff;
   }
 
   .save-btn:hover {
-    background: #218838;
+    background: #0056b3;
   }
 
   .close-btn {
