@@ -1,10 +1,12 @@
 package fs.four.gamo.member.vo;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import java.sql.Date;
 
 @Data
+@Component("loginVO")
 public class LoginVO {
     private String member_id;
     private String member_pw;
