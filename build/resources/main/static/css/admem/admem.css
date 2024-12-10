@@ -23,7 +23,7 @@
 }
 
 .btn-new-post {
-    padding: 8px 16px;
+    padding: 8px 12px;
     background-color: #007bff;
     color: #ffffff;
     border: none;
@@ -100,11 +100,12 @@
 
 /* 검색 옵션 선택 */
 .search-select {
-    padding: 8px 12px;
-    font-size: 14px;
+    padding: 8px 10px;
+    font-size: 12px;
     border: 1px solid #252424;
     border-radius: 5px;
     color: #000000;
+    width: 120px; /* 선택 창 크기 축소 */
 }
 
 /* 검색 버튼 */
@@ -117,6 +118,11 @@
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    display: inline-flex; /* 플렉스박스 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 .btn-search:hover {
@@ -139,4 +145,72 @@
     align-items: center;
     margin-bottom: 20px;
     gap: 10px;
+}
+
+/* 모달 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: #1b1b1b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input,
+select
+{
+    width: calc(100% - 20px); /* 가로 크기 조정 */
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.btn-add-member {
+    padding: 8px 12px; /* 더 작은 버튼 크기 */
+    border-radius: 5px;
+    font-size: 14px; /* 글자 크기 */
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-add-member:hover {
+    background-color: #0056b3;
 }

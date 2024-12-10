@@ -45,12 +45,13 @@ public class ProjectDAO {
             throw new IllegalArgumentException("project_content 값이 비어 있습니다.");
         }
 
-        String sql = "INSERT INTO project (project_title, project_content, start_date, end_date, created_date, updated_date) " +
-                "VALUES (?, ?, ?, ?, SYSDATE, SYSDATE)";
+        String sql = "INSERT INTO project (project_title, project_content, start_date, end_date, project_progress, created_date, updated_date) " +
+                "VALUES (?, ?, ?, ?, ?, SYSDATE, SYSDATE)";
         jdbcTemplate.update(sql,
                 project.getProjectTitle(),
                 project.getProjectContent(),
                 project.getStartDate(),
-                project.getEndDate());
+                project.getEndDate(),
+                project.getProjectProgress());
     }
 }

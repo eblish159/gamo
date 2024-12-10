@@ -6,7 +6,7 @@ public class ProjectVO {
     private int projectNo;
     private String projectTitle;
     private String projectContent;
-    private int projectProgress;      // camelCase로 변경
+    private int projectProgress = 0;;     // camelCase로 변경
     private String projectCategory;   // camelCase로 변경
     private String memberId;          // camelCase로 변경
     private Date startDate;           // 기존 추가된 필드

@@ -66,6 +66,7 @@ public class ProjectController {
         project.setProjectContent(content);
         project.setStartDate(java.sql.Date.valueOf(startDate));
         project.setEndDate(java.sql.Date.valueOf(endDate));
+        project.setProjectProgress(0); // progress 값을 0으로 설정
 
         projectService.saveProjectWithDates(project); // 날짜 포함 저장 메서드 호출
 
