@@ -24,12 +24,12 @@
     margin-left: 70px;
     color:#000;
     font-weight:bold;
-    font-size:10px;
+    font-size:20px;
 }
 
 .todos th, td {
     position: relative;
-    padding: 35px;
+    padding: 10px;
 }
 
 /* 페이지네이션 스타일 */
@@ -67,8 +67,7 @@
 /* 검색창 스타일 */
 .todos .search-container {
     display: flex;
-    margin-top: -39%;
-    margin-left: 100px;
+    margin-top: -26%;
     width: 5%;
     height: 5%;
 }
@@ -84,7 +83,7 @@
     padding: 5px 13px;
     color: #ffffff;
     margin-top: -26.1%;
-    left: 72%;
+    left: 75%;
     cursor: pointer;
     font-family: 'Danjo-bold-Regular';
     transition: background-color 0.3s ease;
@@ -101,7 +100,7 @@
     display:flex;
     position: absolute;
     margin-top: -26.2%;
-    left: 83%;
+    left: 86%;
     height: 40px;
     width: 130px;
     background-color: #007bff;
