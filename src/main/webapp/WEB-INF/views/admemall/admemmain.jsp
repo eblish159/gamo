@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="./test2.css">
+    <link rel="stylesheet" href="<c:url value='/css/admem/admem.css'/>">
 </head>
 <body>
 <div class="board-container">
@@ -104,7 +104,7 @@
 
 </div>
 
-<script src="./test2.js"></script>
+<script src="<c:url value='/js/admem/admem.js'/>"></script>
 
 </body>
 </html>

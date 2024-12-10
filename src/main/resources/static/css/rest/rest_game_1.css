@@ -30,26 +30,44 @@ body {
     width: 400px;
     height: 500px;
 }
+.updown_form .updown_content.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.updown_form .updown_content {
+    display: none;
+}
 .updown_form .updown_title {
     font-size: 50px;
     font-weight: bold;
     margin: 0;
     margin-top: 70px;
-    margin-bottom: 20px;
 }
-.updown_form .updown_info {
+.updown_form .updown_content .info_div {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.updown_form .updown_content .info_div .updown_info {
     font-size: 30px;
     text-align: center;
 }
-.updown_form .updown_input {
+.updown_form .updown_content .updown_input {
+    display: block;
     font-size: 20px;
     padding: 5px;
     width: 65px;
     text-align: center;
-    margin-top: 30px;
     margin-bottom: 20px;
 }
-.updown_form .updown_button {
+.updown_form .updown_content .updown_input.hide {
+    display: none;
+}
+.updown_form .updown_content .updown_button {
     border: none;
     border-radius: 15px;
     padding: 10px;
@@ -59,6 +77,26 @@ body {
     color: white;
     cursor: pointer;
 }
-.updown_form .updown_button:hover {
+.updown_form .updown_content .updown_button:hover {
     background-color: #8c8c8c;
+}
+.updown_form .start_updown .updown_run {
+    display: block;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100px;
+    margin: 10px;
+    margin-bottom: 70px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #4ccb32;
+}
+.updown_form .start_updown .updown_run:hover {
+    background-color: #8c8c8c;
+}
+.updown_form .start_updown.hide {
+    display: none;
 }
