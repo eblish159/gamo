@@ -1,0 +1,142 @@
+/* 게시판 컨테이너 */
+.board-container {
+    margin-top: 70px;
+    background-color: #1b1b1b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+/* 게시판 헤더 */
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.board-header h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.btn-new-post {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-new-post:hover {
+    background-color: #0056b3;
+}
+
+/* 게시판 테이블 */
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.board-table th,
+.board-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #252424;
+}
+
+.board-table th {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.board-table td a {
+    color: #5c5c5c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.board-table td a:hover {
+    color: #ffffff;
+}
+
+/* 게시판 페이지네이션 */
+.board-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-link {
+    color: #5c5c5c;
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #000000;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.page-link:hover,
+.page-link.active {
+    color: #ffffff;
+    background-color: #007bff;
+}
+
+
+/* 검색 컨테이너 */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 검색 버튼과 입력창 사이의 간격 */
+}
+
+/* 검색 옵션 선택 */
+.search-select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #252424;
+    border-radius: 5px;
+    color: #000000;
+}
+
+/* 검색 버튼 */
+.btn-search {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-search:hover {
+    background-color: #0056b3;
+}
+
+/* 검색 입력창 */
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #252424;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #000000;
+}
+
+/* 버튼 컨테이너 */
+.board-header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
