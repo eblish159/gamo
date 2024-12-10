@@ -1,13 +1,7 @@
-@font-face {
-    font-family: 'Danjo-bold-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
 .mypage {
     margin: 0;
     background-size: cover;
-    color: #000;
+    color: #ffffff;
   }
 
   /* 컨테이너 */
@@ -27,7 +21,7 @@
     border: 2px solid #fff;
     padding: 10px;
     border-radius: 10px;
-    background: #fff;
+    background: #1b1b1b;
   }
 
   .mypage .profile-image {
@@ -39,17 +33,17 @@
 
   .mypage .profile-title {
     font-size: 24px;
-    color: #000;
+    color: #ffffff;
   }
 
   /* 프로젝트 섹션 */
   .mypage .projects-section {
-    border: 2px solid #3B1C32;
+    border: 2px solid #fff;
     padding: 10px;
     border-radius: 10px;
-    background: #fff;
+    background: #1b1b1b;
     margin-bottom: 10px;
-    color: #000;
+    color: #ffffff;
   }
 
   .mypage .filter-buttons {
@@ -59,7 +53,7 @@
   }
 
   .mypage .filter-btn, .add-btn {
-    background: #fff;
+    background: #1b1b1b;
     color: #000;
     border: 1px solid #fff;
     padding: 5px 10px;
@@ -82,28 +76,28 @@
   }
 
   .mypage .project-row.ongoing {
-    background: rgba(255, 0, 0, 0.2);
+    background: #1b1b1b;
   }
 
   .mypage .project-row.completed {
-    background: rgba(0, 255, 0, 0.2);
+    background: #1b1b1b;
   }
 
   .mypage .project-date, .project-status {
     flex: 1;
     text-align: center;
-    color: #000;
+    color: #ffffff;
   }
   .mypage .project-name{
-   color: #000;
+   color: #ffffff;
    }
   /* 글 리스트 섹션 */
   .mypage .posts-section {
     border: 2px solid #fff;
     padding: 10px;
     border-radius: 10px;
-    background: #fff;
-    color: #000;
+    background: #1b1b1b;
+    color: #ffffff;
   }
 
   .mypage .section-title {
@@ -111,14 +105,14 @@
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
-    color: #000;
+    color: #ffffff;
   }
 
   .mypage .posts-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 15px;
-    color: #000;
+    color: #ffffff;
   }
 
   .mypage .posts-table th,
@@ -126,7 +120,7 @@
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #fff;
-    color: #000;
+    color: #ffffff;
   }
 
   .mypage .posts-table tr:hover {
@@ -136,7 +130,7 @@
   .mypage .pagination {
     text-align: center;
     font-size: 16px;
-    color: black;
+    color: ffffff;
   }
 
   .mypage .pagination span {
