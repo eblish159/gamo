@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-size: cover;
-    color: #fff;
+    color: #333;
   }
 
   .container {
@@ -23,9 +23,9 @@ body {
   }
 
   .modal-content {
-    color: black;
+    color: #fff;
     font-family: 'Danjo-bold-Regular';
-    background: #fff;
+    background: #1b1b1b;
     border-radius: 10px;
     margin: 10% auto;
     padding: 20px;

@@ -24,7 +24,6 @@ updown_button.addEventListener("click", () => {
         updown_info.innerHTML = "<h1>DOWN!</h1>";
         final_chance();
     }
-    console.log(updown_input.value);
 });
 
 function final_chance() {
@@ -48,7 +47,6 @@ function updown_toggle() {
     start_updown.classList.toggle("hide");
     updown_input.classList.remove("hide");
     random = Math.floor(Math.random() * 10) + 1;
-    console.log(`랜덤숫자 ${random}`);
     cnt = 3;
     updown_info.textContent = "범위는 1~10입니다.";
 }
