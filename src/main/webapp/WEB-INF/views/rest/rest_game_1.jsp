@@ -16,9 +16,24 @@
         </select>
         <div class="updown_form">
             <p class="updown_title">업다운</p>
-            <p class="updown_info">범위는 1~10입니다.</p>
-            <input class="updown_input" type="text" maxlength="2" />
-            <button type="button" class="updown_button" onclick="">확인</button>
+            <div class="updown_content">
+                <div class="info_div">
+                    <p class="updown_info">범위는 1~10입니다.</p>
+                </div>
+                <input class="updown_input" type="text" maxlength="2" />
+                <button type="button" class="updown_button" onclick="">
+                    확인
+                </button>
+            </div>
+            <div class="start_updown">
+                <button
+                    type="button"
+                    class="updown_run"
+                    onclick="updown_toggle()"
+                >
+                    시작
+                </button>
+            </div>
         </div>
         <script src="${pageContext.request.contextPath}/js/rest/rest_game_1.js"></script>
     </body>

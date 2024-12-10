@@ -11,7 +11,7 @@
         <select class="sel" onchange="location.href = this.value">
             <option>게임선택</option>
             <option value="/rest1">업다운게임</option>
-            <option value="/test2">가위바위보</option>
+            <option value="/rest2">가위바위보</option>
             <option value="#">슬롯머신</option>
         </select>
         <div class="rps_form">
