@@ -9,8 +9,8 @@
     </head>
     <body>
         <select class="sel">
-            <option value="updown">업다운게임</option>
-            <option value="rps">가위바위보</option>
+            <option value="/test1">업다운게임</option>
+            <option value="/test2">가위바위보</option>
             <option value="Slot">슬롯머신</option>
         </select>
         <div class="updown_form">
