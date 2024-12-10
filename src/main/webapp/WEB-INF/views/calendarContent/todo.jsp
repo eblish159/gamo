@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/calendarcontent/todo.css">
     <title>ToDo</title>
-    <!-- FontAwesome 아이콘 -->
-    <script src="https://kit.fontawesome.com/c39c442009.js" crossorigin="anonymous"></script>
-    <!-- CSS 연결 -->
-    <link rel="stylesheet" href="/css/todo.css">
 </head>
 <body>
     <div class="todo-modal">
@@ -17,7 +14,6 @@
                 <option value="todo" selected>ToDo</option>
                 <option value="schedule">Schedule</option>
             </select>
-            <button class="close-btn" onclick="closeModal()">X</button>
         </div>
         <div class="modal-body">
             <label for="todo-title" class="labell">Title</label>
@@ -46,27 +42,6 @@
             <button class="action-btn delete-btn" onclick="deleteTodo()">삭제</button>
         </div>
     </div>
-    <script>
-        document.getElementById('header-dropdown').addEventListener('change', function () {
-            const selectedValue = this.value;
-            if (selectedValue === 'todo') {
-                console.log('ToDo 선택됨');
-            } else if (selectedValue === 'schedule') {
-                console.log('Schedule 선택됨');
-            }
-        });
-
-        function closeModal() {
-            console.log("모달 닫기");
-        }
-
-        function updateTodo() {
-            console.log("할 일 추가");
-        }
-
-        function deleteTodo() {
-            console.log("할 일 삭제");
-        }
-    </script>
+    <script src="${pageContext.request.contextPath}/js/calendarcontent/todo.js"></script>
 </body>
 </html>

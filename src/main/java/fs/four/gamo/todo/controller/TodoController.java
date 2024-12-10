@@ -12,7 +12,7 @@ public class TodoController {
     public String project(Model model) {
         model.addAttribute("pageTitle", "할일추가"); // 페이지 제목 설정
         model.addAttribute("message", "할일 추가 모달"); // 메시지 설정
-        model.addAttribute("contentPage", "todo"); // contentPage 값을 설정 (projectall/projects.jsp 파일을 포함)
+        model.addAttribute("contentPage", "calendarContent/todo"); // contentPage 값을 설정 (projectall/projects.jsp 파일을 포함)
         return "layout"; // layout.jsp를 반환 (layout.jsp에서 contentPage를 사용하여 동적 포함)
     }
 }

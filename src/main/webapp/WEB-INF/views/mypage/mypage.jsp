@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>내 정보 페이지</title>
-  <link rel="stylesheet" href="/css/mypage.css">
+   <link rel="stylesheet" href="/css/mypage/mypages.css">
 </head>
 <body>
 <div class="mypage">
@@ -13,7 +13,10 @@
     <!-- 프로필 섹션 -->
     <div class="profile-section">
       <img src="img/level6.jpg" alt="Profile Image" class="profile-image">
-      <div class="profile-title">내 정보</div>
+      <div class="profile-title">
+          <a href="/mypagemodal" class="mypagemodal-link">내 정보</a>
+         </a>
+       </div>
     </div>
 
     <!-- 프로젝트 섹션 -->

@@ -1,4 +1,4 @@
-package fs.four.gamo.schedule.controller;
+package fs.four.gamo.mypagemodal.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,7 @@ public class MypageModalController {
     public String project(Model model) {
         model.addAttribute("pageTitle", "마이페이지 모달"); // 페이지 제목 설정
         model.addAttribute("message", "마이페이지 모달항목"); // 메시지 설정
-        model.addAttribute("contentPage", "mypagemodal"); // contentPage 값을 설정 (projectall/projects.jsp 파일을 포함)
+        model.addAttribute("contentPage", "mypage/mypagemodal"); // contentPage 값을 설정 (projectall/projects.jsp 파일을 포함)
         return "layout"; // layout.jsp를 반환 (layout.jsp에서 contentPage를 사용하여 동적 포함)
     }
 }

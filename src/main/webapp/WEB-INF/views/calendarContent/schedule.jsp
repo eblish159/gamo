@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/calendarcontent/schedule.css">
     <title>ToDo</title>
-    <link rel="stylesheet" href="/css/schedule.css">
-    <script src="https://kit.fontawesome.com/c39c442009.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="schedule-modal">
-        <div class="modal-header">
+
             <h2>상세내용</h2>
             <!-- 모달 닫기 버튼 -->
             <button class="close-btn" onclick="closeModal()">X</button>
@@ -58,6 +56,6 @@
             </div>
         </div>
     </div>
-    <script src="/js/todo.js"></script>
+    <script src="${pageContext.request.contextPath}/js/calendarcontent/todo.js"></script>
 </body>
 </html>

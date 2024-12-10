@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level Up</title>
-    <link rel="stylesheet" href="/css/levelup.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/levelup/levelup.css">
 </head>
 <body>
 <div class="level">

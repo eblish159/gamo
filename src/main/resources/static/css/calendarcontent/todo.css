@@ -1,6 +1,7 @@
 /* 모달 스타일 */
 .todo-modal {
-    width: 400px;
+    width: 100%;
+    height: 500px;
     padding: 20px;
     margin: auto;
     background-color: #fff;
@@ -40,7 +41,7 @@
 .input-field,
 .textarea-field,
 .date-input {
-    width: 350px;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
