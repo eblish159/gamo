@@ -8,7 +8,7 @@ class GamoApplicationTests {
 
     @Test
     void contextLoads() {
-//        ㅎㅇㄴㅁㅇㅁㄴ1232433ㅇ
+//        ㅎㅇㄴㅁㅇㅁㄴ1232433ㅇ.
     }
 
 }
