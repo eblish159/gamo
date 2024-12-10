@@ -1,7 +1,6 @@
-// 날짜 클릭 이벤트 처리
 document.querySelectorAll('.day').forEach(day => {
     day.addEventListener('click', function () {
-        const selectedDate = this.dataset.day; // 클릭한 날짜 가져오기
+        const selectedDate = this.dataset.date; // 클릭한 날짜 가져오기
         const modal = document.querySelector('.schedule-modal');
         const scheduleItems = document.querySelectorAll('.schedule-item');
 
@@ -10,6 +9,9 @@ document.querySelectorAll('.day').forEach(day => {
             const itemDate = item.dataset.date;
             if (itemDate === selectedDate) {
                 item.style.display = 'block';
+                if (itemDate === '24') { // 24일의 스케줄 색상 변경
+                    item.style.color = 'red';
+                }
             } else {
                 item.style.display = 'none';
             }

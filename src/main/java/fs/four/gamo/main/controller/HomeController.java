@@ -16,7 +16,7 @@ public class HomeController {
         return "layout"; // layout.jsp를 반환
     }
 
-    @GetMapping("/calendar")
+    @GetMapping("/calendar2")
     public String calendar(Model model) {
         model.addAttribute("pageTitle", "캘린더");
         model.addAttribute("message", "캘린더 관리 페이지");
