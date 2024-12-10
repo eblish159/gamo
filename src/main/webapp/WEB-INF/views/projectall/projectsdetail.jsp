@@ -35,6 +35,7 @@
                                 </div>
                                 <div class="participants"></div>
                                 <div class="days-left" style="color: skyblue;"></div>
+
                             </div>
                         </div>
                     </div>
@@ -54,12 +55,16 @@
                             </div>
                             <div class="project-box-footer">
                                 <div class="participants">
-                                    <button class="add-participant" style="color: black">참여</button>
+                                    <button class="add-participant" style="color: black">참여하기</button>
                                 </div>
                                 <div class="days-left" style="color: #4f94d1;"></div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="save-delete-project">
+                        <button class="save-project">저장</button>
+                        <button class="delete-project">삭제</button>
                 </div>
             </div>
 
