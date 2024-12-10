@@ -9,9 +9,13 @@ import org.springframework.stereotype.Service;
 public class ProjectService {
 
     @Autowired
-    private ProjectDAO projectDAO; // DAO 의존성 주입
+    private ProjectDAO projectDAO;
 
     public ProjectVO getProjectDetails() {
-        return projectDAO.getProjectDetails(); // DAO에서 데이터 가져오기
+        return projectDAO.getProjectDetails();
+    }
+
+    public void saveProject(ProjectVO project) {
+        projectDAO.insertProject(project);
     }
 }
