@@ -11,7 +11,9 @@
 <div class="level">
     <div class="level-up-card">
         <h1>Level up !!</h1>
+        <a href="#" onclick="imageClicked()">
         <img src="img/level3.png" alt="Alien Image" class="alien-img">
+        </a>
         <button class="level-button">LV.29</button>
         <button class="confirm-button">확인</button>
     </div>

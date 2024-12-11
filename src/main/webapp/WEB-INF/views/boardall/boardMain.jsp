@@ -69,9 +69,7 @@
         <a href="#" class="page-link">3</a>
         <a href="#" class="page-link">다음</a>
     </div>
-
 </div>
-
 <script src="<c:url value='/js/board/boardMain.js'/>"></script>
 
 </body>

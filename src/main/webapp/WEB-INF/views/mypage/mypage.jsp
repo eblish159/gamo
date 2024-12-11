@@ -12,9 +12,9 @@
   <div class="container">
     <!-- 프로필 섹션 -->
     <div class="profile-section">
-      <img src="img/level6.jpg" alt="Profile Image" class="profile-image">
+      <img src="img/lv5.png" alt="Profile Image" class="profile-image">
       <div class="profile-title">
-          <a href="/mypagemodal" class="mypagemodal-link">내 정보</a>
+          <a href="#" class="mypagemodal-link" onclick="showInfoModal(event)">내 정보</a>
          </a>
        </div>
     </div>
@@ -44,7 +44,15 @@
           <span class="project-date">2024.12.01 ~ 2024.12.12</span>
           <span class="project-status">완료된 프로젝트</span>
         </div>
-        <div class="pagination">1 <span>2</span> 3</div>
+
+        <div class="board-pagination">
+                          <a href="#" class="page-link">이전</a>
+                          <a href="#" class="page-link active">1</a>
+                          <a href="#" class="page-link">2</a>
+                          <a href="#" class="page-link">3</a>
+                          <a href="#" class="page-link">다음</a>
+        </div>
+
       </div>
     </div>
 
@@ -87,9 +95,48 @@
           </tr>
         </tbody>
       </table>
-      <div class="pagination">1 <span>2</span> 3</div>
+          <div class="board-pagination">
+                  <a href="#" class="page-link">이전</a>
+                  <a href="#" class="page-link active">1</a>
+                  <a href="#" class="page-link">2</a>
+                  <a href="#" class="page-link">3</a>
+                  <a href="#" class="page-link">다음</a>
+          </div>
     </div>
   </div>
   </div>
+
+<!-- 내 정보 모달 -->
+<div id="infoModal" class="info-modal">
+    <div class="info-modal-content">
+        <span class="info-close-btn" onclick="closeInfoModal()">&times;</span>
+        <h2>내 정보</h2>
+        <div class="info-item">
+            <label>아이디:</label>
+            <input type="text" value="wlsqo09@naver.com" disabled>
+        </div>
+        <div class="info-item">
+            <label>이름:</label>
+            <input type="text" value="문진배" disabled>
+        </div>
+        <div class="info-item">
+            <label>비밀번호:</label>
+            <input type="password" value="********">
+        </div>
+        <div class="info-item">
+            <label>게임 상태:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gameStatus" value="on" checked> ON</label>
+                <label><input type="radio" name="gameStatus" value="off"> OFF</label>
+            </div>
+        </div>
+        <div class="info-modal-footer">
+            <button class="info-confirm-btn">확인</button>
+            <button onclick="closeInfoModal()" class="info-cancel-btn">닫기</button>
+        </div>
+    </div>
+</div>
+
+   <script src="${pageContext.request.contextPath}/js/mypage/mypage.js"></script>
 </body>
 </html>
