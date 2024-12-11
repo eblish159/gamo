@@ -58,7 +58,7 @@
             <a href="/projectsdetail" class="project-link">초파리 프로젝트</a>
             <span class="status">진행률</span>
             <div class="joined-details">
-              <span class="date">Joined 07/15/15</span>
+              <span class="date">Joined 07/15/115</span>
               <span class="category">준비중</span>
             </div>
           </div>
