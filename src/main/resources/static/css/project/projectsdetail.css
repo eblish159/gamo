@@ -98,27 +98,35 @@
   position: relative;
 }
 
-.projecttwo .save-project{
-    font-size:20px;
-    margin-left:90px;
-    margin-top:100px;
-    background-color:orange;
-    border-style: none;
-    border-radius:3px;
-    color:white;
-
+.projecttwo .save-delete-project {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
 }
 
-.projecttwo .delete-project{
-    font-size:20px;
-    margin-left:60px;
-    margin-top:100px;
-    background-color:orange;
-    border-style: none;
-    border-radius:3px;
-    color: white;
-
+.projecttwo .save-delete-project .btn-save,
+.projecttwo .save-delete-project .btn-delete {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
+
+.projecttwo .save-delete-project .btn-save:hover {
+  background-color: darkorange;
+}
+
+.projecttwo .save-delete-project .btn-delete {
+  background-color: darkorange;
+}
+
+.projecttwo .save-delete-project .btn-delete:hover {
+  background-color: darkred;
+}
+
 
 
 

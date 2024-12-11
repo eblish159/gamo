@@ -58,7 +58,7 @@ public class ProjectController {
         if (title == null || title.isEmpty() || content == null || content.isEmpty()) {
             model.addAttribute("error", "제목과 내용은 필수 항목입니다.");
             model.addAttribute("contentPage", "projectall/projectswrite");
-            return "layout"; // 작성 페이지로 리턴
+            return "layout"; // 작성 페이지로 리턴!
         }
 
         ProjectVO project = new ProjectVO();
