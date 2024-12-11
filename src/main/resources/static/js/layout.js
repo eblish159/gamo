@@ -23,3 +23,15 @@ menuItems.forEach((menuItem) => {
     }
   }
 
+// 레벨별 이미지 안내 모달 열기
+    function showModal() {
+        const modal = document.getElementById('levelModal');
+        modal.style.display = 'flex';
+    }
+
+    // 모달 닫기
+    function closeModal() {
+        const modal = document.getElementById('levelModal');
+        modal.style.display = 'none';
+    }
+
