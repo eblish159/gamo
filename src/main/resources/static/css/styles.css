@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  img:
 }
 
 .layout {
@@ -47,16 +48,18 @@
 }
 
 .layout .sidebar-menulink {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  margin-top: 45px;
-  transition: color 0.3s ease;
+   color: white;
+   text-decoration: none;
+   font-size: 18px; /* 폰트 크기 약간 조정 */
+   margin-top: 25px; /* 메뉴 간격 조정 */
+   padding: 10px 15px; /* 메뉴 패딩 추가 */
+   border-radius: 5px; /* 메뉴 라운드 추가 */
+   transition: background-color 0.3s ease, transform 0.3s ease; /* 부드러운 애니메이션 */
 }
 
 .layout .sidebar-menulink:hover  {
-  height: 37px;
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); /* 배경 강조 */
+  transform: scale(1.05); /* 살짝 확대 효과 */
 }
 
 
@@ -82,7 +85,31 @@
   flex-direction: column;
   padding: 20px;
   background-color: #0e0e0e;
+  background-image: url(../../img/stars.jpg);
   overflow-y: auto; /* 메인 콘텐츠 스크롤 */
+}
+
+/* 로그아웃 버튼 스타일 */
+.nav-logout {
+  position: absolute; /* 오른쪽 위로 위치 고정 */
+  top: 15px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px; /* 버튼 텍스트 크기 */
+  color: #fff; /* 기본 텍스트 색상 */
+  background-color: #000;
+  text-decoration: none; /* 밑줄 제거 */
+  border-radius: 5px; /* 버튼 둥글게 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 애니메이션 */
+}
+
+/* 로그아웃 버튼 호버 상태 */
+.nav-logout:hover {
+  background-color: #000; /* 호버 시 더 밝은 빨간색 */
+  transform: scale(1.05); /* 살짝 확대 효과 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 그림자 강조 */
+  color: #fff; /* 텍스트 색상 유지 */
 }
 
 
