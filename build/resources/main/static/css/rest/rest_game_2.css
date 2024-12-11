@@ -1,5 +1,5 @@
 body {
-    background-image: url(stars.jpg);
+    background-image: url(../../img/stars.jpg);
     background-size: cover;
     margin: 0;
     display: flex;
@@ -34,8 +34,7 @@ body {
 .rps_form .rps_title {
     font-size: 50px;
     font-weight: bold;
-    margin: 0;
-    margin-top: 70px;
+    margin-top: -70px;
     margin-bottom: 40px;
 }
 .rps_form .rps_content {
