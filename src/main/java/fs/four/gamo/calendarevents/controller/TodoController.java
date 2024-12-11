@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TodoController {
 
     @GetMapping("/todomodal")
-    //매핑 뭐로할지 주소입력이걸로
+    //매핑 뭐로할지 주소입력이걸로!
     public String project(Model model) {
         model.addAttribute("pageTitle", "할일추가"); // 페이지 제목 설정
         model.addAttribute("message", "할일 추가 모달"); // 메시지 설정
