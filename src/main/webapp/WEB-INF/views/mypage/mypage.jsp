@@ -12,7 +12,7 @@
   <div class="container">
     <!-- 프로필 섹션 -->
     <div class="profile-section">
-      <img src="img/level6.jpg" alt="Profile Image" class="profile-image">
+      <img src="img/lv5.png" alt="Profile Image" class="profile-image">
       <div class="profile-title">
           <a href="/mypagemodal" class="mypagemodal-link">내 정보</a>
          </a>

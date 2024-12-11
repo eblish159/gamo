@@ -55,7 +55,8 @@
 }
 
 .layout .sidebar-menulink:hover  {
-  color: orange;
+  height: 37px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 
@@ -83,3 +84,76 @@
   background-color: #0e0e0e;
   overflow-y: auto; /* 메인 콘텐츠 스크롤 */
 }
+
+
+/* ------------레벨,경험치 창 --------------*/
+/* 고정된 위치 설정 */
+    .floating-widget {
+      position: fixed;
+      bottom: 10px; /* 화면 아래에서 10px */
+      left: 10px; /* 화면 왼쪽에서 10px */
+      width: 250px; /* 창 너비를 키움 */
+      background-color: #000;
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      z-index: 1000;
+    }
+
+    /* 제목바 스타일 */
+    .widget-header {
+      padding: 12px; /* 패딩을 조금 더 추가 */
+      background-color: #1e1e1e;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .widget-header span {
+      font-size: 18px; /* 폰트 크기 증가 */
+      font-weight: bold;
+    }
+
+    .widget-header button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* 기본 상태: 펼쳐진 상태 */
+    .widget-content {
+      display: block; /* 기본 상태를 'block'으로 설정 */
+      padding: 15px; /* 패딩 증가 */
+    }
+
+    .widget-content img {
+      width: 135px; /* 이미지 크기 증가 */
+      height: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 15px auto; /* 여백 추가 */
+    }
+
+    .widget-content .level {
+      text-align: center;
+      margin-bottom: 10px; /* 여백 증가 */
+      font-size: 16px; /* 레벨 폰트 크기 증가 */
+    }
+
+    .widget-content .progress-bar {
+      height: 15px; /* 진행바 높이 증가 */
+      background-color: #444;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .widget-content .progress-bar div {
+      height: 100%;
+      width: 50%; /* 진행 상태 */
+      background-color: #007bff;
+    }
