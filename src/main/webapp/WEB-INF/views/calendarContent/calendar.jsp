@@ -27,8 +27,8 @@
             <div class="day-name">토</div>
 
             <!-- Calendar days -->
-            <div class="day empty"></div> <!-- For empty cells -->
-            <div class="day empty"></div>
+            <div class="empty"></div> <!-- For empty cells -->
+            <div class="empty"></div>
             <div class="day">1<div class="event red">삼일절</div></div>
             <div class="day">2</div>
             <div class="day">3</div>
