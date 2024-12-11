@@ -1,4 +1,4 @@
-package fs.four.gamo.todo.controller;
+package fs.four.gamo.calendarevents.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
