@@ -35,6 +35,21 @@
         </div>
     </div>
     </div>
+
+    <!-- 레벨 경험치 창 -->
+        <div class="floating-widget">
+          <div class="widget-header">
+            <span>문진배</span>
+            <button onclick="toggleWidget()">접기</button>
+          </div>
+          <div class="widget-content">
+            <img src="image.png" alt="Egg Icon">
+            <div class="level">LV - 1</div>
+            <div class="progress-bar">
+              <div></div>
+            </div>
+          </div>
+        </div>
     <script src="/js/layout.js"></script>
 </body>
 </html>
