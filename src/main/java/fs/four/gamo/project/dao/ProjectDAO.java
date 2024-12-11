@@ -31,7 +31,7 @@ public class ProjectDAO {
         }
     }
 
-    // 새로운 프로젝트를 삽입하는 메서드 (기본 데이터만 저장)
+    // 프로젝트 데이터를 기본 정보로 삽입하는 메서드
     public void insertProject(ProjectVO project) {
         if (project.getProjectContent() == null || project.getProjectContent().isEmpty()) {
             throw new IllegalArgumentException("project_content 값이 비어 있습니다.");
@@ -44,7 +44,7 @@ public class ProjectDAO {
                 project.getProjectContent());
     }
 
-    // 프로젝트 데이터를 저장하는 메서드 (시작 날짜와 종료 날짜 포함)
+    // 프로젝트 데이터를 시작 날짜와 종료 날짜를 포함해 저장하는 메서드
     public void saveProjectWithDates(ProjectVO project) {
         if (project.getProjectContent() == null || project.getProjectContent().isEmpty()) {
             throw new IllegalArgumentException("project_content 값이 비어 있습니다.");
@@ -60,9 +60,14 @@ public class ProjectDAO {
                 project.getProjectProgress());
     }
 
-    // 프로젝트 진행률 업데이트 메서드 (추가된 기능)
+    // 프로젝트 진행률 업데이트 메서드
     public void updateProgress(int projectNo, int progress) {
         String sql = "UPDATE project SET project_progress = ?, updated_date = SYSDATE WHERE project_no = ?";
         jdbcTemplate.update(sql, progress, projectNo);
+    }
+
+    // 프로젝트 상세 정보를 ID로 가져오는 메서드 (기존 데이터 보완)
+    public ProjectVO getProjectDetailsById(int projectNo) {
+        return getProjectDetails(projectNo);
     }
 }

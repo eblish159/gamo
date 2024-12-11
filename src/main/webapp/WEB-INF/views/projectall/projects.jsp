@@ -35,7 +35,7 @@
             <a href="/projectsdetail" class="project-link">${project.projectTitle}</a>
             <span class="status">진행률</span>
             <div class="joined-details">
-              <span class="date">${project</span>
+              <span class="date">기간</span>
               <span class="category">진행중</span>
             </div>
           </div>
@@ -45,7 +45,7 @@
             <a href="/projectsdetail" class="project-link">${project.projectTitle}</a>
             <span class="status">진행률</span>
             <div class="joined-details">
-              <span class="date">${project.projectStartDate}~${project.projectEndDate}</span>
+              <span class="date">${project.startDate}~${project.endDate}</span>
               <span class="category">진행중</span>
             </div>
           </div>

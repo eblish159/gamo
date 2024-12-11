@@ -28,8 +28,8 @@ public class ProjectController {
 
     // 프로젝트 상세 페이지
     @GetMapping("/projectsdetail")
-    public String projectsdetail(Model model) {
-        ProjectVO project = projectService.getProjectDetails();
+    public String projectsdetail(@RequestParam(value = "projectNo", required = false) Integer projectNo, Model model) {
+        ProjectVO project = (projectNo != null) ? projectService.getProjectDetailsById(projectNo) : projectService.getProjectDetails();
         model.addAttribute("pageTitle", "프로젝트 상세");
         model.addAttribute("message", "프로젝트 상세 페이지");
         model.addAttribute("contentPage", "projectall/projectsdetail");
@@ -58,7 +58,7 @@ public class ProjectController {
         if (title == null || title.isEmpty() || content == null || content.isEmpty()) {
             model.addAttribute("error", "제목과 내용은 필수 항목입니다.");
             model.addAttribute("contentPage", "projectall/projectswrite");
-            return "layout"; // 작성 페이지로 리턴!
+            return "layout"; // 작성 페이지로 리턴
         }
 
         ProjectVO project = new ProjectVO();
@@ -68,7 +68,7 @@ public class ProjectController {
         project.setEndDate(java.sql.Date.valueOf(endDate));
         project.setProjectProgress(0); // progress 값을 0으로 설정
 
-        projectService.saveProjectWithDates(project); // 날짜 포함 저장 메서드 호출!
+        projectService.saveProjectWithDates(project); // 날짜 포함 저장 메서드 호출
 
         model.addAttribute("message", "프로젝트가 성공적으로 저장되었습니다.");
         model.addAttribute("contentPage", "projectall/projects");
@@ -77,12 +77,20 @@ public class ProjectController {
 
     // 종료된 프로젝트 상세 페이지
     @GetMapping("/endprojects")
-    public String endprojects(Model model) {
-        ProjectVO project = projectService.getProjectDetails();
+    public String endprojects(@RequestParam(value = "projectNo", required = false) Integer projectNo, Model model) {
+        ProjectVO project = (projectNo != null) ? projectService.getProjectDetailsById(projectNo) : projectService.getProjectDetails();
         model.addAttribute("pageTitle", "프로젝트 종료");
         model.addAttribute("message", "종료된 프로젝트 상세 페이지");
         model.addAttribute("contentPage", "projectall/endprojects");
         model.addAttribute("project", project);
         return "layout";
+    }
+
+    // 프로젝트 진행률 저장
+    @PostMapping("/projects/saveProgress")
+    public String saveProjectProgress(@RequestParam("projectNo") int projectNo, @RequestParam("progress") int progress, Model model) {
+        projectService.updateProjectProgress(projectNo, progress);
+        model.addAttribute("message", "프로젝트 진행률이 성공적으로 저장되었습니다.");
+        return "redirect:/projectsdetail?projectNo=" + projectNo;
     }
 }
