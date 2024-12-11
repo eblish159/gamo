@@ -1,5 +1,6 @@
 // 할일 목록 저장 기능
-document.getElementById('saveTodo').addEventListener('click', function () {
+const saveTodoButton = document.getElementById('saveTodo');
+saveTodoButton.addEventListener('click', function () {
     const description = document.getElementById('todoDescription').value;
     const user = document.getElementById('todoUser').value;
     const projectNo = 1; // 프로젝트 ID는 실제 데이터에 맞게 설정
@@ -18,7 +19,8 @@ document.getElementById('saveTodo').addEventListener('click', function () {
             } else {
                 alert('저장 실패!');
             }
-        });
+        })
+        .catch(error => console.error('Error:', error));
 
         document.getElementById('todoDescription').value = ''; // 입력창 초기화
         document.getElementById('todoUser').value = ''; // 사용자명 초기화
@@ -62,7 +64,8 @@ function loadTodoList(projectNo) {
 }
 
 // 진행률 선택 기능
-document.querySelector('.todoprojects').addEventListener('click', function (e) {
+const todoProjects = document.querySelector('.todoprojects');
+todoProjects.addEventListener('click', function (e) {
     if (e.target.classList.contains('progress-btn')) {
         const progressValue = e.target.getAttribute('data-progress');
         const progressStatus = e.target.closest('.todoproject-box').querySelector('.progress-status');
@@ -73,7 +76,8 @@ document.querySelector('.todoprojects').addEventListener('click', function (e) {
 });
 
 // 할일 목록 삭제 기능
-document.querySelector('.remove-todo-btn').addEventListener('click', function () {
+const removeTodoButton = document.querySelector('.remove-todo-btn');
+removeTodoButton.addEventListener('click', function () {
     const checkedItems = document.querySelectorAll('.todoproject-box input[type="checkbox"]:checked');
 
     checkedItems.forEach(item => {
@@ -85,7 +89,8 @@ document.querySelector('.remove-todo-btn').addEventListener('click', function ()
 });
 
 // 할일 목록 추가 기능
-document.querySelector('.add-todo-btn').addEventListener('click', function () {
+const addTodoButton = document.querySelector('.add-todo-btn');
+addTodoButton.addEventListener('click', function () {
     const todoInput = document.querySelector('.todo-input');
     if (todoInput.style.display === 'none' || todoInput.style.display === '') {
         todoInput.style.display = 'flex';
