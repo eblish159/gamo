@@ -15,21 +15,38 @@ public class TodoDAO {
 
     // 할일 저장
     public void saveTodo(TodoVO todo) {
-        String sql = "INSERT INTO Todo (project_no, member_id, description, progress) VALUES (?, ?, ?, ?)";
-        jdbcTemplate.update(sql, todo.getProjectNo(), todo.getMemberId(), todo.getDescription(), todo.getProgress());
+        String sql = "INSERT INTO Todo (project_no, description, progress, todo_name) VALUES (?, ?, ?, ?)";
+        jdbcTemplate.update(sql,
+                todo.getProjectNo(),
+                todo.getDescription(),
+                todo.getProgress(),
+                todo.getTodoName()
+        );
     }
 
     // 특정 프로젝트의 할일 목록 조회
     public List<TodoVO> getTodoListByProject(int projectNo) {
-        String sql = "SELECT todo_id, project_no, member_id, description, progress FROM Todo WHERE project_no = ?";
+        String sql = "SELECT todo_id, project_no, description, progress, todo_name FROM Todo WHERE project_no = ?";
         return jdbcTemplate.query(sql, (rs, rowNum) -> {
             TodoVO todo = new TodoVO();
             todo.setTodoId(rs.getInt("todo_id"));
             todo.setProjectNo(rs.getInt("project_no"));
-            todo.setMemberId(rs.getString("member_id"));
             todo.setDescription(rs.getString("description"));
             todo.setProgress(rs.getInt("progress"));
+            todo.setTodoName(rs.getString("todo_name"));
             return todo;
         }, projectNo);
+    }
+
+    // 특정 할일 삭제
+    public void deleteTodoById(int todoId) {
+        String sql = "DELETE FROM Todo WHERE todo_id = ?";
+        jdbcTemplate.update(sql, todoId);
+    }
+
+    // 할일 진행률 업데이트
+    public void updateTodoProgress(int todoId, int progress) {
+        String sql = "UPDATE Todo SET progress = ? WHERE todo_id = ?";
+        jdbcTemplate.update(sql, progress, todoId);
     }
 }

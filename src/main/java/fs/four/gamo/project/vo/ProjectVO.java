@@ -6,13 +6,13 @@ public class ProjectVO {
     private int projectNo;
     private String projectTitle;
     private String projectContent;
-    private int projectProgress = 0;;     // camelCase로 변경
-    private String projectCategory;   // camelCase로 변경
-    private String memberId;          // camelCase로 변경
-    private Date startDate;           // 기존 추가된 필드
-    private Date endDate;             // 기존 추가된 필드
-    private Date createdDate;         // camelCase로 변경
-    private Date updatedDate;         // camelCase로 변경
+    private int projectProgress = 0; // 프로젝트 진행률
+    private String projectCategory; // 프로젝트 카테고리
+    private String memberId; // 멤버 ID
+    private Date startDate; // 시작 날짜
+    private Date endDate; // 종료 날짜
+    private Date createdDate; // 생성 날짜
+    private Date updatedDate; // 수정 날짜
 
     // Getters and Setters
 
