@@ -14,7 +14,7 @@
                 <a href="/" class="user-name">Gamo</a>
             </div>
             <div class="sidebar-menu">
-                <a href="/clen" class="sidebar-menulink active">Todo 스케줄</a>
+                <a href="/calendar" class="sidebar-menulink active">Todo 스케줄</a>
                 <a href="/project" class="sidebar-menulink">프로젝트</a>
                 <a href="/board" class="sidebar-menulink">게시판</a>
                 <a href="/mypage" class="sidebar-menulink">마이 페이지</a>
@@ -35,6 +35,21 @@
         </div>
     </div>
     </div>
+
+    <!-- 레벨 경험치 창 -->
+        <div class="floating-widget">
+          <div class="widget-header">
+            <span>문진배</span>
+            <button onclick="toggleWidget()">접기</button>
+          </div>
+          <div class="widget-content">
+            <img src="image.png" alt="Egg Icon">
+            <div class="level">LV - 1</div>
+            <div class="progress-bar">
+              <div></div>
+            </div>
+          </div>
+        </div>
     <script src="/js/layout.js"></script>
 </body>
 </html>
