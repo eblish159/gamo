@@ -46,7 +46,7 @@ public class ProjectController {
         return "layout";
     }
 
-    // 새로운 프로젝트 저장
+    // 프로젝트 저장 (새로운 프로젝트를 저장하는 메서드)
     @PostMapping("/projects/save")
     public String saveProject(
             @RequestParam("title") String title,
@@ -68,7 +68,7 @@ public class ProjectController {
         project.setEndDate(java.sql.Date.valueOf(endDate));
         project.setProjectProgress(0); // progress 값을 0으로 설정
 
-        projectService.saveProjectWithDates(project);
+        projectService.saveProjectWithDates(project); // 날짜 포함 저장 메서드 호출
 
         model.addAttribute("message", "프로젝트가 성공적으로 저장되었습니다.");
         model.addAttribute("contentPage", "projectall/projects");
@@ -83,21 +83,6 @@ public class ProjectController {
         model.addAttribute("message", "종료된 프로젝트 상세 페이지");
         model.addAttribute("contentPage", "projectall/endprojects");
         model.addAttribute("project", project);
-        return "layout";
-    }
-
-    // 프로젝트 진행률 저장
-    @PostMapping("/projects/saveProgress")
-    public String saveTotalProgress(@RequestParam("projectId") int projectId,
-                                    @RequestParam("progress") int progress,
-                                    Model model) {
-        try {
-            projectService.updateProjectProgress(projectId, progress);
-            model.addAttribute("message", "프로젝트 진행률이 성공적으로 저장되었습니다.");
-        } catch (Exception e) {
-            model.addAttribute("error", "진행률 저장 중 오류가 발생했습니다.");
-        }
-        model.addAttribute("contentPage", "projectall/projectsdetail");
         return "layout";
     }
 }
