@@ -6,8 +6,7 @@
     <select id="showList" resultType="fs.four.gamo.board.vo.BoardVO">
         <![CDATA[
             SELECT board_title, board_content, member_id, created_date
-            FROM BOARD
-            ORDER BY created_date DESC
+            FROM board
         ]]>
     </select>
 </mapper>
