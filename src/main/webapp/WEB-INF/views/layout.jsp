@@ -43,13 +43,28 @@
                 <button onclick="toggleWidget()">접기</button>
               </div>
               <div class="widget-content">
-                <img src="img/lv5.png" alt="Icon">
-                <div class="level">LV - 1</div>
+                <img src="img/lv5.png" alt="Icon" onclick="showModal()">
+                <div class="level">LV - 50</div>
                 <div class="progress-bar">
                   <div></div>
                 </div>
               </div>
             </div>
+
+    <!-- 레벨별 이미지 안내 모달 -->
+    <div class="modal" id="levelModal">
+        <div class="modal-content">
+            <h3>레벨별 이미지</h3>
+            <div>
+                <img src="img/lv1.png" alt="LV 1~9"><p>1~9</p>
+                <img src="img/lv2.png" alt="LV 10~19"><p>10~19</p>
+                <img src="img/lv3.png" alt="LV 20~29"><p>20~29</p>
+                <img src="img/lv4.png" alt="LV 30~39"><p>30~39</p>
+                <img src="img/lv5.png" alt="LV 40~50"><p>40~50</p>
+            </div>
+            <button class="modal-close" onclick="closeModal()">닫기</button>
+        </div>
+    </div>
 
     <script src="/js/layout.js"></script>
 </body>
