@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,12 +22,12 @@ public class LoginController {
     @Autowired
     private LoginVO loginVO;
 
-    @RequestMapping(value = "/login")
+    @GetMapping("/login")
     public String loginPage() {
         return "member/login";
     }
 
-    @RequestMapping(value = "/member/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView login(@ModelAttribute("member") LoginVO member,
                               RedirectAttributes rAttr,
                               HttpServletRequest request,
@@ -44,8 +45,6 @@ public class LoginController {
 
             if (action != null) {
                 mav.setViewName("redirect:" + action);
-//                session.removeAttribute("loginVO");
-//                session.removeAttribute("isLogOn");
             } else {
                 mav.setViewName("redirect:/");
             }
@@ -57,14 +56,14 @@ public class LoginController {
         return mav;
     }
 
-    @RequestMapping(value = "/member/logout", method = RequestMethod.GET)
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
         session.removeAttribute("loginVO");
         session.setAttribute("isLogOn", false);
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("redirect:/login");
+        mav.setViewName("/member/login");
         return mav;
     }
 }

@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="fs.four.gamo.board.dao.BoardDAO">
-    <select id="showList" resultType="fs.four.gamo.board.vo.BoardVO">
+    <select id="getList" resultType="fs.four.gamo.board.vo.BoardVO">
         <![CDATA[
             SELECT board_title, board_content, member_id, created_date
             FROM board

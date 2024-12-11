@@ -13,6 +13,8 @@ public class BoardService {
     private BoardDAO boardDAO;
 
     public List<BoardVO> listBoards() {
-        return boardDAO.showList();
+        List<BoardVO> boardList = null;
+        boardList = boardDAO.getList();
+        return boardList;
     }
 }

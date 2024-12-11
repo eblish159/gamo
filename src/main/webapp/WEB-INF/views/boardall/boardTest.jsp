@@ -17,7 +17,7 @@
       <td><b>작성자</b></td>
       <td><b>작성일</b></td>
    </tr>
-<c:if test="${empty boardList}">
+<c:if test="${empty boardList or boardList == null}">
     <tr>
         <td colspan="5" align="center">게시글이 없습니다.</td>
     </tr>

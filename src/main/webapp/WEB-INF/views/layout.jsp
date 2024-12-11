@@ -26,7 +26,7 @@
         <div class="main">
             <div class="main-header">
                 <div class="main-header-nav">
-                    <a href="/member/logout" class="nav-logout">로그아웃</a>
+                    <a href="/logout" class="nav-logout">로그아웃</a>
                 </div>
             </div>
             <div id="content">

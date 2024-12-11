@@ -15,9 +15,6 @@ public class BoardVO {
     private Date created_date;
     private Date updated_date;
 
-    public BoardVO() {
-    }
-
     public Long getBoard_no() {
         return board_no;
     }
