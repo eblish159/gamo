@@ -22,3 +22,4 @@ menuItems.forEach((menuItem) => {
       button.textContent = '접기';
     }
   }
+
