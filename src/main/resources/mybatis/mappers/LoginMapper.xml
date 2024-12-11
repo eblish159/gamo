@@ -5,9 +5,9 @@
 <mapper namespace="fs.four.gamo.member.dao.LoginDAO">
     <select id="loginById" parameterType="loginVO" resultType="loginVO">
         <![CDATA[
-        SELECT *
-        FROM member
-        WHERE member_id=#{member_id} and member_pw=#{member_pw}
+            SELECT *
+            FROM member
+            WHERE member_id=#{member_id} and member_pw=#{member_pw}
         ]]>
     </select>
 </mapper>
