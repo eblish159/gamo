@@ -67,7 +67,7 @@
       <div class="end-project-btn-container">
         <button class="end-project-btn" onclick="location.href='/endprojects'">종료된 프로젝트</button>
       </div>
-      <div class="pagination"></div> <!-- 페이지네이션 공간 -->
+      <div class="pagination"></div> <!-- 페이지네이션 공간!-->
     </div>
 
     </div>
