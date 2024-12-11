@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fs.four.gamo.board.dao.BoardDAO">
+    <select id="findAll" resultType="fs.four.gamo.board.vo.BoardVO">
+        SELECT * FROM BOARD ORDER BY created_date DESC
+    </select>
+
+    <select id="findById" parameterType="long" resultType="fs.four.gamo.board.vo.BoardVO">
+        SELECT * FROM BOARD WHERE board_no = #{board_no}
+    </select>
+
+    <insert id="insert" parameterType="fs.four.gamo.board.vo.BoardVO">
+        INSERT INTO BOARD (board_title, board_content, member_id, created_date)
+        VALUES (#{board_title}, #{board_content}, #{member_id}, SYSDATE)
+    </insert>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM BOARD WHERE board_no = #{board_no} AND member_id = #{member_id}
+    </delete>
+
+    <select id="search" parameterType="string" resultType="fs.four.gamo.board.vo.BoardVO">
+        SELECT * FROM BOARD WHERE title LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+</mapper>

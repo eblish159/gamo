@@ -12,7 +12,7 @@ public class LoginVO {
     private String member_pw;
     private String name;
     private String phone;
-    private int gameonoff;
+    private String gameonoff;
     private String img_name;
     private String img_path;
     private Date created_date;
