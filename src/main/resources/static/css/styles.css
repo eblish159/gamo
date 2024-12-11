@@ -83,74 +83,18 @@
   background-color: #0e0e0e;
   overflow-y: auto; /* 메인 콘텐츠 스크롤 */
 }
-
-
-/* ------ 레벨,경험치 창 css ------ */
-/* 고정된 위치 설정 */
-    .floating-widget {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 200px;
-      background-color: #000;
-      color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      z-index: 1000;
-    }
-
-    /* 제목바 스타일 */
-    .widget-header {
-      padding: 10px;
-      background-color: #1e1e1e;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .widget-header span {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .widget-header button {
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    /* 내용 숨김/펼침 처리 */
-    .widget-content {
-      display: block;
-      padding: 10px;
-    }
-
-    .widget-content img {
-      width: 50px;
-      height: 50px;
-      display: block;
-      margin: 0 auto 10px auto;
-    }
-
-    .widget-content .level {
-      text-align: center;
-      margin-bottom: 5px;
-    }
-
-    .widget-content .progress-bar {
-      height: 10px;
-      background-color: #444;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .widget-content .progress-bar div {
-      height: 100%;
-      width: 40%;
-      background-color: #4caf50;
-    }
+.app1 .main .main-header .main-header-nav {
+    float: right;
+}
+.app1 .main .main-header .main-header-nav .nav-logout {
+    background-color: #1b1b1b;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+}
+.app1 .main .main-header .main-header-nav .nav-logout:hover {
+    background-color: #2c2c2c;
+}
