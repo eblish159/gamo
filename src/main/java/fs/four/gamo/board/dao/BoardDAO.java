@@ -8,5 +8,5 @@ import java.util.List;
 
 @Mapper
 public interface BoardDAO {
-    List<BoardVO> showList() throws DataAccessException;
+    List<BoardVO> getList() throws DataAccessException;
 }

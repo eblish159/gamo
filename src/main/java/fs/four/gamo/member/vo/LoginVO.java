@@ -19,4 +19,6 @@ public class LoginVO {
     private String created_id;
     private Date updated_date;
     private String updated_id;
+
+
 }
