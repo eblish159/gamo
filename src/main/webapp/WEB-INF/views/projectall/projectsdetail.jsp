@@ -63,9 +63,11 @@
                     </div>
                 </div>
                 <div class="save-delete-project">
-                        <button class="save-project">저장</button>
-                        <button class="delete-project">삭제</button>
+                    <!-- 저장 및 삭제 버튼 -->
+                    <button id="saveProjectBtn" class="btn-save">저장</button>
+                    <button id="deleteProjectBtn" class="btn-delete">삭제</button>
                 </div>
+
             </div>
 
             <!-- 할일 목록 섹션 -->

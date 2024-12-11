@@ -35,17 +35,17 @@
             <a href="/projectsdetail" class="project-link">${project.projectTitle}</a>
             <span class="status">진행률</span>
             <div class="joined-details">
-              <span class="date">Joined 07/15/15</span>
+              <span class="date">${project</span>
               <span class="category">진행중</span>
             </div>
           </div>
         </li>
         <li class="project-item cf" data-category="completed">
           <div class="project-details">
-            <a href="/projectsdetail" class="project-link">천안시 프로젝트</a>
+            <a href="/projectsdetail" class="project-link">${project.projectTitle}</a>
             <span class="status">진행률</span>
             <div class="joined-details">
-              <span class="date">Joined 07/15/15</span>
+              <span class="date">${project.projectStartDate}~${project.projectEndDate}</span>
               <span class="category">진행중</span>
             </div>
           </div>
@@ -58,7 +58,7 @@
             <a href="/projectsdetail" class="project-link">초파리 프로젝트</a>
             <span class="status">진행률</span>
             <div class="joined-details">
-              <span class="date">Joined 07/15/15</span>
+              <span class="date">Joined 07/15/115</span>
               <span class="category">준비중</span>
             </div>
           </div>
@@ -67,7 +67,7 @@
       <div class="end-project-btn-container">
         <button class="end-project-btn" onclick="location.href='/endprojects'">종료된 프로젝트</button>
       </div>
-      <div class="pagination"></div> <!-- 페이지네이션 공간 -->
+      <div class="pagination"></div> <!-- 페이지네이션 공간!-->
     </div>
 
     </div>
