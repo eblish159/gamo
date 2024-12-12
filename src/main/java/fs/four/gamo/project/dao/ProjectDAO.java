@@ -31,7 +31,7 @@ public class ProjectDAO {
         }
     }
 
-    // 프로젝트 데이터를 기본 정보로 삽입하는 메서드
+    //. 프로젝트 데이터를 기본 정보로 삽입하는 메서드
     public void insertProject(ProjectVO project) {
         if (project.getProjectContent() == null || project.getProjectContent().isEmpty()) {
             throw new IllegalArgumentException("project_content 값이 비어 있습니다.");
