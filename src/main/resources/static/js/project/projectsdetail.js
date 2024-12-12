@@ -1,7 +1,9 @@
 // 할일 목록 저장 기능
-document.getElementById('saveTodo').addEventListener('click', function () {
-  const description = document.getElementById('todoDescription').value.trim();
-  const user = document.getElementById('todoUser').value.trim();
+const saveTodoButton = document.getElementById('saveTodo');
+saveTodoButton?.addEventListener('click', function () {
+  console.log('저장 버튼 클릭됨');
+  const description = document.getElementById('todoDescription')?.value.trim();
+  const user = document.getElementById('todoUser')?.value.trim();
 
   if (description && user) {
     // 서버에 데이터 전송
@@ -24,7 +26,10 @@ document.getElementById('saveTodo').addEventListener('click', function () {
     // 입력 필드 초기화 및 폼 숨김
     document.getElementById('todoDescription').value = '';
     document.getElementById('todoUser').value = '';
-    document.querySelector('.todo-input').style.display = 'none';
+    const todoInput = document.querySelector('.todo-input');
+    if (todoInput) {
+      todoInput.style.display = 'none'; // 요소가 존재할 경우만 실행
+    }
   } else {
     alert('할일 내용과 사용자 이름을 입력하세요.');
   }
@@ -36,16 +41,19 @@ function loadTodoList(projectNo) {
     .then((response) => response.json())
     .then((data) => {
       const todoContainer = document.querySelector('.todoprojects');
+      if (!todoContainer) return;
+
       todoContainer.innerHTML = ''; // 기존 목록 초기화
 
       data.forEach((todo) => {
         const todoBox = document.createElement('div');
         todoBox.classList.add('todoproject-box');
+        todoBox.setAttribute('data-todo-id', todo.todoId); // todoId 저장
         todoBox.innerHTML = `
           <div class="todoproject-content">
             <div class="todoproject-header">
-              <input type="checkbox" class="todo-checkbox">
-              <div class="name">${todo.todoName || '알 수 없음'}</div> <!-- todoName 사용 -->
+              <input type="checkbox" class="todo-checkbox" data-id="${todo.todoId}">
+              <div class="name">${todo.todoName || '알 수 없음'}</div>
             </div>
             <p class="todoproject-line">${todo.description}</p>
             <p class="todoproject-line status">진행률: <span class="progress-status">${todo.progress}%</span></p>
@@ -62,38 +70,58 @@ function loadTodoList(projectNo) {
       });
 
       updateTotalProgress(); // 총 진행률 업데이트
-    });
+    })
+    .catch((error) => console.error('Error loading todo list:', error));
 }
 
 // 진행률 선택 기능
-document.querySelector('.todoprojects').addEventListener('click', function (e) {
+document.querySelector('.todoprojects')?.addEventListener('click', function (e) {
   if (e.target.classList.contains('progress-btn')) {
     const progressValue = e.target.getAttribute('data-progress');
-    const progressStatus = e.target.closest('.todoproject-box').querySelector('.progress-status');
-    progressStatus.textContent = `${progressValue}%`;
+    const progressStatus = e.target.closest('.todoproject-box')?.querySelector('.progress-status');
+    if (progressStatus) {
+      progressStatus.textContent = `${progressValue}%`;
+    }
 
     updateTotalProgress(); // 진행률 업데이트
   }
 });
 
 // 할일 목록 삭제 기능
-document.querySelector('.remove-todo-btn').addEventListener('click', function () {
+document.querySelector('.remove-todo-btn')?.addEventListener('click', function () {
+  console.log('삭제 버튼 클릭됨');
   const checkedItems = document.querySelectorAll('.todoproject-box input[type="checkbox"]:checked');
+  const todoIds = Array.from(checkedItems).map(item => item.getAttribute('data-id'));
 
-  checkedItems.forEach((item) => {
-    const todoBox = item.closest('.todoproject-box');
-    if (todoBox) {
-      todoBox.remove();
-    }
-  });
+  if (todoIds.length === 0) {
+    alert('삭제할 할일을 선택하세요.');
+    return;
+  }
 
-  updateTotalProgress(); // 진행률 업데이트
+  fetch('/todo/delete', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ todoIds }) // ID 배열을 전송
+  })
+    .then(response => response.text())
+    .then(result => {
+      if (result === 'SUCCESS') {
+        alert('선택한 할일이 삭제되었습니다.');
+        loadTodoList(1); // 목록 갱신 (프로젝트 번호는 1로 가정)
+      } else {
+        alert('삭제에 실패했습니다.');
+      }
+    })
+    .catch(error => console.error('Error deleting todo:', error));
 });
 
 // 할일 추가 폼 표시/숨기기 기능
-document.querySelector('.add-todo-btn').addEventListener('click', function () {
+document.querySelector('.add-todo-btn')?.addEventListener('click', function () {
+  console.log('추가 버튼 클릭됨');
   const todoInput = document.querySelector('.todo-input');
-  todoInput.style.display = todoInput.style.display === 'flex' ? 'none' : 'flex';
+  if (todoInput) {
+    todoInput.style.display = todoInput.style.display === 'flex' ? 'none' : 'flex';
+  }
 });
 
 // 총 진행률 계산
@@ -109,18 +137,10 @@ function updateTotalProgress() {
   });
 
   const averageProgress = totalItems > 0 ? Math.round(totalProgress / totalItems) : 0;
-  const roundedProgress =
-    averageProgress <= 25
-      ? 0
-      : averageProgress <= 50
-      ? 25
-      : averageProgress <= 75
-      ? 50
-      : averageProgress < 100
-      ? 75
-      : 100;
-
-  document.getElementById('total-progress').textContent = `${roundedProgress}%`;
+  const totalProgressElement = document.getElementById('total-progress');
+  if (totalProgressElement) {
+    totalProgressElement.textContent = `${averageProgress}%`;
+  }
 }
 
 // 메뉴 활성화 기능

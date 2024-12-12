@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         appendPageLinks(Array.from(projectList.children)); // 새 항목이 추가된 후 페이지 링크 갱신
     });
 
-    // 드롭다운 토글
+    // 드롭다운 토글.
     categoryButton.addEventListener('click', () => {
         categoryDropdown.style.display = categoryDropdown.style.display === 'block' ? 'none' : 'block';
     });

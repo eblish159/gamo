@@ -78,10 +78,10 @@
                 <div class="todoprojects">
                     <!-- 이미 존재하는 할일 항목 -->
                     <c:forEach var="todo" items="${todoList}">
-                        <div class="todoproject-box">
+                        <div class="todoproject-box" data-todo-id="1">
                             <div class="todoproject-content">
                                 <div class="todoproject-header">
-                                    <input type="checkbox" class="todo-checkbox">
+                                    <input type="checkbox" class="todo-checkbox" data-id="${todo.todoId}">
                                     <div class="name">${todo.todoName}</div>
                                 </div>
                                 <p class="todoproject-line">${todo.description}</p>
@@ -103,7 +103,7 @@
                 </div>
                 <div class="todo-input" style="display:none;">
                     <textarea id="todoDescription" placeholder="할일 내용을 입력하세요"></textarea>
-                    <input type="text" id="todoUser" placeholder="할일 이름" />
+                    <input type="text" id="todoUser" placeholder="이름" />
                     <button class="save-todo-btn" id="saveTodo">저장</button>
                 </div>
             </div>
