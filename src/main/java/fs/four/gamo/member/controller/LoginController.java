@@ -7,10 +7,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -28,12 +26,12 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView login(@ModelAttribute("member") LoginVO member,
+    public ModelAndView login(@ModelAttribute("member_id") LoginVO member_id,
                               RedirectAttributes rAttr,
                               HttpServletRequest request,
                               HttpServletResponse response) throws Exception {
         ModelAndView mav = new ModelAndView();
-        loginVO = loginService.login(member);
+        loginVO = loginService.login(member_id);
 
         if (loginVO != null) {
             HttpSession session = request.getSession();
@@ -67,3 +65,4 @@ public class LoginController {
         return mav;
     }
 }
+

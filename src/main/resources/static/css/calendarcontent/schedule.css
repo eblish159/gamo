@@ -1,35 +1,39 @@
+/* Modal 스타일 */
 .schedule-modal {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 45%;
+    left: 50%; /* 가운데 정렬을 위한 기본 설정 */
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-    background-color: white;
+    width: 530px;
+    height: 600px;
+    background-color: #1b1b1b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     z-index: 1000;
-    overflow-y: auto;
+    color: #fff;
 }
 
 .modal-header {
-    margin-bottom:-20px;
+    margin-bottom: 0;
     padding: 16px;
-    background-color: #f5f5f5;
+    background-color: #1b1b1b;
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color:black;
+    color: #ffffff;
 }
 
-.close-btn {
-    background: none;
+.schedule-close-btn {
     border: none;
-    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
     cursor: pointer;
-     color:black;
+    color: #fff;
+    background-color: transparent; /* 배경색 제거 */
 }
 
 .modal-body {
@@ -37,28 +41,92 @@
 }
 
 .schedule-item {
-    color:black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
+
 }
 
 .date {
     font-weight: bold;
-    color:black;
+    flex: 1;
+    color: #ffffff;
 }
 
 .details {
     flex: 2;
     margin-left: 10px;
-    color:black;
+    color: #ffffff;
 }
 
 .checkbox {
-    height:50px;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid #000;
+}
+
+/* Calendar 스타일 */
+.schedule-calendar-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.calendar-scroll {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #1b1b1b;
+    color:#ffffff;
+
+}
+
+.schdule-calendar-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.calendar-item.completed {
+    background-color: #e0e0e0;
+    color: #aaa;
+    text-decoration: line-through;
+
+}
+
+.task-checkbox {
+    margin-right: 10px;
+
+}
+
+.progress-container {
+    position:absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 95%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s;
+}
+
+#progress-text {
+    font-size: 16px;
+    font-weight: bold;
 }

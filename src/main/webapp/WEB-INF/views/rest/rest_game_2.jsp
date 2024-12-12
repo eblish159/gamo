@@ -12,19 +12,19 @@
             <option>게임선택</option>
             <option value="/rest1">업다운게임</option>
             <option value="/rest2">가위바위보</option>
-            <option value="#">슬롯머신</option>
+            <option value="/rest3">슬롯머신</option>
         </select>
         <div class="rps_form">
             <p class="rps_title">가위바위보</p>
             <div class="rps_content">
                 <div class="rps_btns">
-                    <button type="button" class="rps_button" value="1">
+                    <button type="button" class="rps_button" value="0">
                         가위
                     </button>
-                    <button type="button" class="rps_button" value="2">
+                    <button type="button" class="rps_button" value="1">
                         바위
                     </button>
-                    <button type="button" class="rps_button" value="3">
+                    <button type="button" class="rps_button" value="2">
                         보
                     </button>
                 </div>

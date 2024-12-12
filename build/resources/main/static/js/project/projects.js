@@ -1,10 +1,8 @@
 // 종료된 프로젝트 버튼 클릭 시 동작
 document.querySelector('.end-project-btn').addEventListener('click', function() {
   // 종료된 프로젝트 페이지로 이동
-  window.location.href = '/path-to-ended-projects'; // 종료된 프로젝트 페이지로 리디렉션
+  window.location.href = '/endprojects'; // 종료된 프로젝트 페이지로 리디렉션
 });
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const projectList = document.querySelector('.project-list');
@@ -14,45 +12,58 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryOptions = document.querySelectorAll('.category-option');
   let selectedCategory = null;
 
-//   페이지 표시 함수
-  const showPage = (list, page) => {
-    const itemsPerPage = 10;
-    const startIndex = page * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+ // 페이지 표시 함수
+ const showPage = (list, page) => {
+   const itemsPerPage = 10;
+   const startIndex = page * itemsPerPage;
+   const endIndex = startIndex + itemsPerPage;
 
-    list.forEach((item, index) => {
-      item.style.display = index >= startIndex && index < endIndex ? 'block' : 'none';
-    });
-  };
+   // 배열로 변환 후 처리
+   const arrayList = Array.from(list);
 
-  // 페이지 링크 생성 함수
-  const appendPageLinks = (list) => {
-    const totalPages = Math.ceil(list.length / 10);
-    const paginationDiv = document.querySelector('.pagination');
-    paginationDiv.innerHTML = ''; // 기존 페이지 링크 삭제
-    const ul = document.createElement('ul');
-    paginationDiv.appendChild(ul);
+   arrayList.forEach((item, index) => {
+     item.style.display = index >= startIndex && index < endIndex ? 'block' : 'none';
+   });
+ };
 
-    for (let i = 0; i < totalPages; i++) {
-      const li = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = '#';
-      link.textContent = i + 1;
+ // 페이지 링크 생성 함수
+ const appendPageLinks = (list) => {
+   const arrayList = Array.from(list); // 배열로 변환
+   const totalPages = Math.ceil(arrayList.length / 10);
+   const paginationDiv = document.querySelector('.pagination');
+   paginationDiv.innerHTML = ''; // 기존 페이지 링크 삭제
+   const ul = document.createElement('ul');
+   paginationDiv.appendChild(ul);
 
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelectorAll('.pagination a').forEach((a) => a.classList.remove('active'));
-        e.target.classList.add('active');
-        showPage(list, i);
-      });
+   for (let i = 0; i < totalPages; i++) {
+     const li = document.createElement('li');
+     const link = document.createElement('a');
+     link.href = '#';
+     link.textContent = i + 1;
 
-      li.appendChild(link);
-      ul.appendChild(li);
-    }
+     link.addEventListener('click', (e) => {
+       e.preventDefault();
+       document.querySelectorAll('.pagination a').forEach((a) => a.classList.remove('active'));
+       e.target.classList.add('active');
+       showPage(arrayList, i); // 배열을 전달
+     });
 
-    ul.firstChild.firstChild.classList.add('active');
-    showPage(list, 0);
-  };
+     li.appendChild(link);
+     ul.appendChild(li);
+   }
+
+   ul.firstChild.firstChild.classList.add('active');
+   showPage(arrayList, 0); // 배열을 전달
+ };
+
+ // 초기 실행 시
+ document.addEventListener('DOMContentLoaded', () => {
+   const projectList = document.querySelector('.project-list');
+   const projects = projectList.children;
+
+   // 배열로 변환 후 전달
+   appendPageLinks(projects);
+ });
 
   // 카테고리 선택 함수
   const filterProjects = () => {
@@ -73,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     projects.forEach(project => {
       const projectTitle = project.querySelector('.project-link').textContent.toLowerCase();
-      const projectDescription = project.querySelector('.status').textContent.toLowerCase();
+      const projectDates = project.querySelector('.project-dates').textContent.toLowerCase();
 
-      if (projectTitle.includes(searchTerm) || projectDescription.includes(searchTerm)) {
+      if (projectTitle.includes(searchTerm) || projectDates.includes(searchTerm)) {
         project.style.display = 'block';
       } else {
         project.style.display = 'none';
@@ -105,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // "추가" 버튼 클릭 이벤트 처리
-  addButton.addEventListener('click', () => {
+  document.querySelector('.add-project-btn').addEventListener('click', () => {
     const newProjectItem = document.createElement('li');
     newProjectItem.classList.add('project-item', 'cf');
     newProjectItem.setAttribute('data-category', 'in-progress'); // 기본값은 "진행중"
@@ -118,21 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
     newProjectLink.classList.add('project-link');
     newProjectLink.textContent = '새로운 프로젝트';
 
-    const newstatus = document.createElement('span');
-    newstatus.classList.add('status');
-    newstatus.textContent = 'new.status@example.com';
+    const newProjectDates = document.createElement('span');
+    newProjectDates.classList.add('project-dates');
+    newProjectDates.textContent = '생성일: YYYY-MM-DD, 시작일: YYYY-MM-DD, 종료일: YYYY-MM-DD';
 
-    const newJoinedDetails = document.createElement('div');
-    newJoinedDetails.classList.add('joined-details');
-
-    const newDate = document.createElement('span');
-    newDate.classList.add('date');
-    newDate.textContent = 'Joined 12/07/24';
-
-    newJoinedDetails.appendChild(newDate);
     newProjectDetails.appendChild(newProjectLink);
-    newProjectDetails.appendChild(newstatus);
-    newProjectDetails.appendChild(newJoinedDetails);
+    newProjectDetails.appendChild(newProjectDates);
     newProjectItem.appendChild(newProjectDetails);
 
     projectList.appendChild(newProjectItem);
@@ -143,14 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   appendPageLinks(projectList.children); // 초기 페이지 링크 설정
-});
 
-const menuItems = document.querySelectorAll(".sidebar-menu__link");
-
-//메뉴활성화
-document.addEventListener('DOMContentLoaded', () => {
+  // 메뉴 활성화 기능
   const menuItems = document.querySelectorAll(".sidebar-menu__link");
-
   menuItems.forEach((menuItem) => {
     menuItem.addEventListener("click", (e) => {
       const activeItem = document.querySelector(".sidebar-menu__link.active");

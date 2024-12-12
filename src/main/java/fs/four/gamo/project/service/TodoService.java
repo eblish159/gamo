@@ -51,6 +51,19 @@ public class TodoService {
         }
     }
 
+    // 다수의 할일 삭제
+    public void deleteMultipleTodosByIds(List<Integer> todoIds) {
+        try {
+            for (int todoId : todoIds) {
+                todoDAO.deleteTodoById(todoId);
+                logger.info("할일 삭제 완료. ID: {}", todoId);
+            }
+        } catch (Exception e) {
+            logger.error("다수의 할일 삭제 실패. IDs: {}", todoIds, e);
+            throw e;
+        }
+    }
+
     // 특정 할일의 진행률 업데이트
     public void updateTodoProgress(int todoId, int progress) {
         try {
