@@ -9,7 +9,7 @@ public class ProjectVO {
     private int projectProgress = 0; // 프로젝트 진행률
     private String projectCategory; // 프로젝트 카테고리
     private String memberId; // 멤버 ID
-    private Date startDate; // 시작 날짜
+    private Date startDate; // 시작 날짜삭제할
     private Date endDate; // 종료 날짜
     private Date createdDate; // 생성 날짜
     private Date updatedDate; // 수정 날짜

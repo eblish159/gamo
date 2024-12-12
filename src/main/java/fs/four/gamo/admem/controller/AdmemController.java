@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class admemcontroller {
+public class AdmemController {
     @GetMapping("/admem")
     //매핑 뭐로할지 주소입력이걸로
     public String admem(Model model) {

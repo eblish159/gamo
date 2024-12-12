@@ -18,7 +18,6 @@
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
 }
 
 /* 페이지 헤더 */
@@ -125,11 +124,12 @@
   border-bottom: 1px solid #eaeaea;
 }
 
-/* 프로젝트 세부사항 (가로 정렬) */
+/* 프로젝트 세부사항 */
 .projectone .project-details {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 /* 프로젝트 링크 스타일 */
@@ -143,25 +143,61 @@
 
 .projectone .project-link:hover {
   color: #222;
+  text-decoration: underline;
 }
 
-/* 이메일 스타일 */
+/* 상태 표시 */
 .projectone .status {
   font-size: 14px;
   color: #888;
   white-space: nowrap;
 }
 
-/* 가입 날짜 스타일 */
+/* 날짜 스타일 */
 .projectone .date {
   font-size: 14px;
-  color: #999;
-  white-space: nowrap;
+  color: #666;
+  margin-left: 10px;
 }
 
-/* 마지막 프로젝트 항목 스타일 (마지막 줄 경계선 제거) */
+/* 날짜 범위 스타일 */
+.projectone .date-range {
+  font-size: 14px;
+  color: #333;
+  font-style: italic;
+}
+
+/* 카테고리 스타일 */
+.projectone .category {
+  font-size: 14px;
+  color: #4ba6c3;
+  font-weight: bold;
+}
+
+/* 마지막 프로젝트 항목 스타일 */
 .projectone .project-item:last-child {
   border-bottom: none;
+}
+
+/* 종료된 프로젝트 버튼 */
+.projectone .end-project-btn-container {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.projectone .end-project-btn {
+  padding: 10px 20px;
+  background-color: #4ba6c3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.projectone .end-project-btn:hover {
+  background-color: #357a8a;
 }
 
 /* 페이지네이션 */
