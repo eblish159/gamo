@@ -1,7 +1,8 @@
+const modal = document.querySelector('.schedule-modal');
+
 document.querySelectorAll('.day').forEach(day => {
     day.addEventListener('click', function () {
         const selectedDate = this.dataset.date; // 클릭한 날짜 가져오기
-        const modal = document.querySelector('.schedule-modal');
         const scheduleItems = document.querySelectorAll('.schedule-item');
 
         // 선택한 날짜의 스케줄만 표시
@@ -16,7 +17,6 @@ document.querySelectorAll('.day').forEach(day => {
                 item.style.display = 'none';
             }
         });
-
         openModal(modal); // 모달 열기
     });
 });
@@ -26,11 +26,11 @@ function openModal(modal) {
     modal.style.display = 'block';
 }
 
-// 모달 닫기 함수
-function closeModal() {
-    const modal = document.querySelector('.schedule-modal');
-    modal.style.display = 'none';
+//스케줄 모달 닫기
+function closescheduleModal() {
+    modal.style.display = 'none'; // 모달 숨기기
 }
+
 
 // 체크박스 상태 변경 이벤트 처리
 document.querySelectorAll('.checkbox input[type="checkbox"]').forEach(checkbox => {
@@ -53,3 +53,16 @@ document.querySelectorAll('.checkbox input[type="checkbox"]').forEach(checkbox =
         }, 2000);
     });
 });
+
+// '할 일 추가' 버튼 클릭 시 모달 표시
+document.getElementById('add-todo-btn').addEventListener('click', function () {
+    const modal = document.getElementById('todo-modal');
+    modal.style.display = 'block'; // 모달 표시
+});
+
+// '뒤로가기' 버튼 클릭 시 모달 닫기
+
+function closetodoModal() {
+    const modal = document.getElementById('todo-modal');
+    modal.style.display = 'none'; // 모달 숨기기
+}

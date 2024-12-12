@@ -1,5 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -30,35 +31,35 @@
     </div>
 
     <table class="board-table">
-
         <thead>
-        <tr>
-            <th><input type="checkbox" id="select-all" /></th>
-            <th class="col-no">번호</th>
-            <th class="col-title">제목</th>
-            <th class="col-author">작성자</th>
-            <th class="col-date">작성일</th>
-        </tr>
+            <tr>
+                <th><input type="checkbox" id="select-all" /></th>
+                <th class="col-no">번호</th>
+                <th class="col-title">제목</th>
+                <th class="col-author">작성자</th>
+                <th class="col-date">작성일</th>
+            </tr>
         </thead>
 
         <tbody>
-
-        <tr>
-            <td><input type="checkbox" class="row-checkbox" /></td>
-            <td>1</td>
-            <td><a href="/board/view?id=1">첫 번째 글 제목</a></td>
-            <td>관리자</td>
-            <td>2024-12-08</td>
-        </tr>
-
-        <tr>
-            <td><input type="checkbox" class="row-checkbox" /></td>
-            <td>2</td>
-            <td><a href="/board/view?id=2">두 번째 글 제목</a></td>
-            <td>회원</td>
-            <td>2024-12-07</td>
-        </tr>
-        <!-- 추가적인 글 데이터 -->
+            <c:if test="${empty boardList}">
+                <tr>
+                    <td colspan="5" align="center">게시글이 없습니다.</td>
+                </tr>
+            </c:if>
+            <c:forEach var="board" items="${boardList}" >
+                <tr>
+                    <td><input type="checkbox" id="select-all" /></td>
+                    <td>${board.board_no}</td>
+                    <td>
+                        <a href="/board/${board.board_no}">
+                            ${board.board_title}
+                        <a>
+                    </td>
+                    <td>${board.member_id}</td>
+                    <td><fmt:formatDate value="${board.created_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                </tr>
+            </c:forEach>
         </tbody>
     </table>
 

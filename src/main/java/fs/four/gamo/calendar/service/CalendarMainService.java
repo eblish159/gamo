@@ -11,6 +11,7 @@ public class CalendarMainService {
     private CalendarMainDAO calendarMainDAO;
 
     public CalendarMainVO calendar(CalendarMainVO calendarMainVO) throws Exception{
+        System.out.println(calendarMainVO.toString());
         return calendarMainDAO.CalendarEventsById(calendarMainVO);
     }
 }
