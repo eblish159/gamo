@@ -48,4 +48,24 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("회원이 성공적으로 추가되었습니다.");
         modal.classList.remove("show");
     });
+
+    document.querySelectorAll(".btn-delete-member").forEach(function(button) {
+        button.addEventListener("click", function() {
+            const member_id = button.getAttribute("data-id");
+            console.log("삭제 요청:", member_id);
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                fetch(`/admin/delMember?member_id=${member_id}`, {
+                    method: 'POST'
+                }).then((response) => {
+                    console.log("서버 응답 상태:", response.status);
+                    if (response.ok) {
+                        alert("삭제 성공!");
+                        location.reload();
+                    } else {
+                        alert("삭제 실패");
+                    }
+                });
+            }
+        });
+    });
 });

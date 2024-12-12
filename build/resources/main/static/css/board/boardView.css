@@ -1,0 +1,113 @@
+/* 게시글 작성 컨테이너 */
+.board-container {
+    margin-top: 70px;
+    background-color: #1b1b1b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+/* 작성 페이지 헤더 */
+.write-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.write-header h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* 폼 스타일 */
+.write-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 폼 그룹 */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 레이블 스타일 */
+.form-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* 입력 필드 스타일 */
+.form-input,
+.form-textarea,
+.form-file {
+    background-color: #252424;
+    color: #ffffff;
+    padding: 10px;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+/* 텍스트 영역 */
+.form-textarea {
+    height: 200px;
+}
+
+/* 버튼 그룹 */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* 버튼 스타일 */
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.btn-cancel {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}
+
+.btn-delete {
+    padding: 10px 20px;
+    background-color: #892642;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #7a0627;
+}

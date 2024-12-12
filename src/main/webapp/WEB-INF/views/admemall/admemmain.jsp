@@ -34,31 +34,27 @@
         <thead>
         <tr>
             <th><input type="checkbox" id="select-all" /></th>
-            <th class="col-no">번호</th>
             <th class="col-title">아이디</th>
             <th class="col-author">이름</th>
+            <th class="col-phone">전화번호</th>
             <th class="col-date">가입일</th>
+            <th class="col-del">퇴사처리</th>
         </tr>
         </thead>
 
         <tbody>
-
-        <tr>
-            <td><input type="checkbox" class="row-checkbox" /></td>
-            <td>1</td>
-            <td><a href="/board/view?id=1">wlsqo09</a></td>
-            <td>문진배</td>
-            <td>2024-12-08</td>
-        </tr>
-
-        <tr>
-            <td><input type="checkbox" class="row-checkbox" /></td>
-            <td>2</td>
-            <td><a href="/board/view?id=2">idealtype123</a></td>
-            <td>이상형</td>
-            <td>2024-12-07</td>
-        </tr>
-        <!-- 추가적인 글 데이터 -->
+            <c:forEach var="member" items="${members}">
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>${member.member_id}</td>
+                    <td>${member.name}</td>
+                    <td>${member.phone}</td>
+                    <td>${member.created_date}</td>
+                    <td>
+                        <button type="button" class="btn-delete-member" data-id="${member.member_id}">삭제</button>
+                    </td>
+                </tr>
+            </c:forEach>
         </tbody>
     </table>
 

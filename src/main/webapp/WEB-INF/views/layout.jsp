@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,9 @@
                 <a href="/board" class="sidebar-menulink"><i class="fa-solid fa-list"></i>   게시판</a>
                 <a href="/mypage" class="sidebar-menulink"><i class="fa-solid fa-user"></i>   마이 페이지</a>
                 <a href="/rest1" class="sidebar-menulink"><i class="fa-solid fa-gamepad"></i>   휴식 하기</a>
-                <a href="/admem" class="sidebar-menulink"><i class="fa-solid fa-address-book"></i>   회원 관리</a>
+                <c:if test="${loginVO.role == 0}">
+                    <a href="/admin" class="sidebar-menulink"><i class="fa-solid fa-address-book"></i>   회원 관리</a>
+                </c:if>
             </div>
         </div>
         <!-- Main Content -->

@@ -38,6 +38,8 @@ public class LoginController {
             session.setAttribute("loginVO", loginVO);
             session.setAttribute("isLogOn", true);
 
+            session.setAttribute("member_id", loginVO.getMember_id());
+
             String action = (String) session.getAttribute("action");
             session.removeAttribute("action");
 
@@ -57,8 +59,6 @@ public class LoginController {
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
-        session.removeAttribute("loginVO");
-        session.setAttribute("isLogOn", false);
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("/member/login");
