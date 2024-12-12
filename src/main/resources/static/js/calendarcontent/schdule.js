@@ -27,7 +27,7 @@ function openModal(modal) {
 }
 
 //스케줄 모달 닫기
-function closetodoModal() {
+function closescheduleModal() {
     modal.style.display = 'none'; // 모달 숨기기
 }
 
@@ -53,3 +53,16 @@ document.querySelectorAll('.checkbox input[type="checkbox"]').forEach(checkbox =
         }, 2000);
     });
 });
+
+// '할 일 추가' 버튼 클릭 시 모달 표시
+document.getElementById('add-todo-btn').addEventListener('click', function () {
+    const modal = document.getElementById('todo-modal');
+    modal.style.display = 'block'; // 모달 표시
+});
+
+// '뒤로가기' 버튼 클릭 시 모달 닫기
+
+function closetodoModal() {
+    const modal = document.getElementById('todo-modal');
+    modal.style.display = 'none'; // 모달 숨기기
+}

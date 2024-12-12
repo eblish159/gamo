@@ -1,4 +1,4 @@
-body {
+.calendar-container body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -13,6 +13,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     background-color:#1b1b1b;
+    margin-top: 90px;
 }
 
 .calendar-header {
