@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<c:url value='/css/project/projectsdetail.css'/>">
 </head>
 <body>
-<div class="projecttwo">
+<div class="projecttwo" data-project-id="${project.projectNo}">
     <div class="app-container">
         <div class="projects-and-todoprojects">
             <!-- 프로젝트 섹션 -->
@@ -78,7 +78,7 @@
                 <div class="todoprojects">
                     <!-- 이미 존재하는 할일 항목 -->
                     <c:forEach var="todo" items="${todoList}">
-                        <div class="todoproject-box" data-todo-id="1">
+                        <div class="todoproject-box" data-todo-id="${todo.todoId}">
                             <div class="todoproject-content">
                                 <div class="todoproject-header">
                                     <input type="checkbox" class="todo-checkbox" data-id="${todo.todoId}">
