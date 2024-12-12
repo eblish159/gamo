@@ -5,12 +5,13 @@ const rps_button = document.querySelectorAll(".rps_button");
 
 let com;
 let user;
+let setPic = ['scissors.png', 'rock.png', 'paper.png'];
 
 function start() {
     rps_start.classList.toggle("hide");
     rps_content.classList.toggle("show");
     rps_dec.classList.remove("show");
-    com = Math.floor(Math.random() * 3) + 1;
+    com = Math.floor(Math.random() * 3);
 }
 
 rps_button.forEach((btn) => {
@@ -19,37 +20,38 @@ rps_button.forEach((btn) => {
         rps_check();
     });
 });
-// 가위 1 바위 2 보 3
+// 가위 0 바위 1 보 2
 function rps_check() {
+    let arry = { 0: '가위', 1: '바위', 2: '보' };
     if (com == user) {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");
         rps_dec.innerHTML = `무승부!!<br>
-        컴퓨터:${com} vs 유저:${user}`;
-    } else if (com < user && user != 2) {
+        컴퓨터:${arry[com]} vs 유저:${arry[user]}`;
+    } else if (com < user && user != 1) {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");
         rps_dec.innerHTML = `컴퓨터 승!!<br>
-        컴퓨터:${com} vs 유저:${user}`;
-    } else if (com < user && user != 2) {
+        컴퓨터:${arry[com]} vs 유저:${arry[user]}`;
+    } else if (com < user && user != 1) {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");
         rps_dec.innerHTML = `컴퓨터 승!!<br>
-        컴퓨터:${com} vs 유저:${user}`;
-    } else if (com == 1 && user == 2) {
+        컴퓨터:${arry[com]} vs 유저:${arry[user]}`;
+    } else if (com == 1 && user == 1) {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");
         rps_dec.innerHTML = `유저 승!!<br>
-        컴퓨터:${com} vs 유저:${user}`;
+        컴퓨터:${arry[com]} vs 유저:${arry[user]}`;
     } else {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");
         rps_dec.innerHTML = `유저 승!!<br>
-        컴퓨터:${com} vs 유저:${user}`;
+        컴퓨터:${arry[com]} vs 유저:${arry[user]}`;
     }
 }

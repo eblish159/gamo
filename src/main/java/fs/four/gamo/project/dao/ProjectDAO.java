@@ -19,7 +19,7 @@ public class ProjectDAO {
             return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
                 ProjectVO project = new ProjectVO();
                 project.setProjectNo(rs.getInt("project_no"));
-                project.setProjectTitle(rs.getString("project_title"));
+                project.setProj*ectTitle(rs.getString("project_title"));
                 project.setProjectContent(rs.getString("project_content"));
                 project.setProjectProgress(rs.getInt("project_progress"));
                 project.setStartDate(rs.getDate("start_date"));
