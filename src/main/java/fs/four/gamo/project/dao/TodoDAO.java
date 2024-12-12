@@ -44,6 +44,16 @@ public class TodoDAO {
         jdbcTemplate.update(sql, todoId);
     }
 
+    // 여러 할일 삭제
+    public void deleteMultipleTodosByIds(List<Integer> todoIds) {
+        if (todoIds == null || todoIds.isEmpty()) {
+            throw new IllegalArgumentException("삭제할 todoId 리스트가 비어 있습니다.");
+        }
+        String placeholders = String.join(",", todoIds.stream().map(id -> "?").toArray(String[]::new));
+        String sql = "DELETE FROM Todo WHERE todo_id IN (" + placeholders + ")";
+        jdbcTemplate.update(sql, todoIds.toArray());
+    }
+
     // 할일 진행률 업데이트
     public void updateTodoProgress(int todoId, int progress) {
         String sql = "UPDATE Todo SET progress = ? WHERE todo_id = ?";

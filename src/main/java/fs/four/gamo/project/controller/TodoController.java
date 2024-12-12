@@ -68,6 +68,22 @@ public class TodoController {
         }
     }
 
+    // 여러 할일 삭제 (여러 ID를 한번에 처리)
+    @PostMapping("/deleteMultiple")
+    public String deleteMultipleTodos(@RequestBody List<Integer> todoIds) {
+        logger.info("deleteMultipleTodos 호출됨: todoIds={} ", todoIds);
+
+        try {
+            for (int todoId : todoIds) {
+                todoService.deleteTodoById(todoId);
+            }
+            return "SUCCESS";
+        } catch (Exception e) {
+            logger.error("여러 할일 삭제 중 오류 발생: ", e);
+            return "FAILURE";
+        }
+    }
+
     // 할일 진행률 업데이트
     @PostMapping("/updateProgress")
     public String updateTodoProgress(@RequestParam("todoId") int todoId,
