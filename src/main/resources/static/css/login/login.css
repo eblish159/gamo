@@ -1,5 +1,5 @@
 body {
-    background-image: url(../../img/stars.jpg);
+    background-image: url(/img/stars.jpg);
     background-size: cover;
     margin: 0;
     display: flex;

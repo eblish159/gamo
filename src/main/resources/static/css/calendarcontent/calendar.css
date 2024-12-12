@@ -23,7 +23,9 @@ body {
     background: #007bff;
     border-bottom: none;
 }
-
+.next-month, .prev-month{
+   cursor:pointer;
+}
 .calendar-header h2 {
     margin: 0;
 }
@@ -32,7 +34,7 @@ body {
     background: none;
     border: none;
     font-size: 18px;
-    cursor: pointer;
+
 }
 
 .calendar-grid {
@@ -56,9 +58,15 @@ body {
     text-align: center;
     border-radius: 4px;
     position: relative;
+
+}
+.day{
+    cursor:pointer;
+    background: none;
+    border: none;
 }
 
-.calendar-container .day.empty {
+.calendar-container .empty {
     background: none;
     border: none;
 }
@@ -102,8 +110,8 @@ body {
 .todo {
     display:flex;
     position: absolute;
-    margin-top: 2%;
-    left: 80%;
+    margin-top: 0%;
+    left: 30%;
     height: 40px;
     width: 130px;
     background-color: #007bff;

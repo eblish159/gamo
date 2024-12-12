@@ -11,18 +11,28 @@ public class ProjectService {
     @Autowired
     private ProjectDAO projectDAO;
 
-    // 기존 메서드: 프로젝트 상세 정보를 가져오는 메서드
+    // 프로젝트 상세 정보를 가져오는 메서드 (기본 프로젝트 ID 사용)
     public ProjectVO getProjectDetails() {
         return projectDAO.getProjectDetails(1); // 예제용 project_no 하드코딩 (필요 시 변경 가능)
     }
 
-    // 기존 메서드: 프로젝트를 저장하는 메서드
+    // 프로젝트 상세 정보를 프로젝트 번호로 가져오는 메서드 (추가된 메서드)
+    public ProjectVO getProjectDetailsById(int projectNo) {
+        return projectDAO.getProjectDetails(projectNo);
+    }
+
+    // 프로젝트를 기본 정보로 저장하는 메서드
     public void saveProject(ProjectVO project) {
         projectDAO.insertProject(project);
     }
 
-    // 추가된 메서드: 프로젝트를 날짜 포함 저장하는 메서드
+    // 프로젝트를 날짜 포함 저장하는 메서드
     public void saveProjectWithDates(ProjectVO project) {
         projectDAO.saveProjectWithDates(project);
+    }
+
+    // 프로젝트 진행률 업데이트 메서드 (추가된 메서드)
+    public void updateProjectProgress(int projectNo, int progress) {
+        projectDAO.updateProgress(projectNo, progress);
     }
 }

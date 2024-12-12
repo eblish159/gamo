@@ -63,9 +63,11 @@
                     </div>
                 </div>
                 <div class="save-delete-project">
-                        <button class="save-project">저장</button>
-                        <button class="delete-project">삭제</button>
+                    <!-- 저장 및 삭제 버튼 -->
+                    <button id="saveProjectBtn" class="btn-save">저장</button>
+                    <button id="deleteProjectBtn" class="btn-delete">삭제</button>
                 </div>
+
             </div>
 
             <!-- 할일 목록 섹션 -->
@@ -75,23 +77,25 @@
                 </div>
                 <div class="todoprojects">
                     <!-- 이미 존재하는 할일 항목 -->
-                    <div class="todoproject-box">
-                        <div class="todoproject-content">
-                            <div class="todoproject-header">
-                                <input type="checkbox" class="todo-checkbox">
-                                <div class="name">이상형</div>
-                            </div>
-                            <p class="todoproject-line">데이터베이스에 테이블을 추가하는 작업</p>
-                            <p class="todoproject-line status">진행률: <span class="progress-status">0%</span></p>
-                            <div class="progress-container">
-                                <button class="progress-btn" data-progress="0">0%</button>
-                                <button class="progress-btn" data-progress="25">25%</button>
-                                <button class="progress-btn" data-progress="50">50%</button>
-                                <button class="progress-btn" data-progress="75">75%</button>
-                                <button class="progress-btn" data-progress="100">100%</button>
+                    <c:forEach var="todo" items="${todoList}">
+                        <div class="todoproject-box">
+                            <div class="todoproject-content">
+                                <div class="todoproject-header">
+                                    <input type="checkbox" class="todo-checkbox">
+                                    <div class="name">${todo.todoName}</div>
+                                </div>
+                                <p class="todoproject-line">${todo.description}</p>
+                                <p class="todoproject-line status">진행률: <span class="progress-status">${todo.progress}%</span></p>
+                                <div class="progress-container">
+                                    <button class="progress-btn" data-progress="0">0%</button>
+                                    <button class="progress-btn" data-progress="25">25%</button>
+                                    <button class="progress-btn" data-progress="50">50%</button>
+                                    <button class="progress-btn" data-progress="75">75%</button>
+                                    <button class="progress-btn" data-progress="100">100%</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
                 </div>
                 <div class="todo-actions">
                     <button class="add-todo-btn">추가</button> <!-- 할일 추가 버튼 -->
@@ -99,7 +103,7 @@
                 </div>
                 <div class="todo-input" style="display:none;">
                     <textarea id="todoDescription" placeholder="할일 내용을 입력하세요"></textarea>
-                    <input type="text" id="todoUser" placeholder="사용자 이름" />
+                    <input type="text" id="todoUser" placeholder="할일 이름" />
                     <button class="save-todo-btn" id="saveTodo">저장</button>
                 </div>
             </div>
