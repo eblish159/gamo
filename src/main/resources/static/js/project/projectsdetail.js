@@ -4,7 +4,7 @@ document.getElementById('saveTodo').addEventListener('click', function () {
   const user = document.getElementById('todoUser').value.trim();
 
   if (description && user) {
-    // 서버에 데이터 전송
+    // 서버에 데이터 전송.
     fetch('/todo/save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

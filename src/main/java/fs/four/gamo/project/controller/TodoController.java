@@ -23,8 +23,7 @@ public class TodoController {
     public String saveTodo(@RequestParam("projectNo") int projectNo,
                            @RequestParam("description") String description,
                            @RequestParam("userName") String userName) {
-        logger.info("saveTodo 호출됨");
-        logger.info("받은 데이터: projectNo={}, description={}, userName={} ", projectNo, description, userName);
+        logger.info("saveTodo 호출됨: projectNo={}, description={}, userName={}", projectNo, description, userName);
 
         try {
             TodoVO todo = new TodoVO();
