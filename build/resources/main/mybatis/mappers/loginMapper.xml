@@ -3,11 +3,41 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="fs.four.gamo.member.dao.LoginDAO">
-    <select id="loginById" parameterType="loginVO" resultType="loginVO">
-        <![CDATA[
-            SELECT *
-            FROM member
-            WHERE member_id=#{member_id}
-        ]]>
+    <!-- Login Result Map -->
+    <resultMap id="LoginResultMap" type="fs.four.gamo.member.vo.LoginVO">
+        <result property="member_id" column="member_id" />
+        <result property="member_pw" column="member_pw" />
+        <result property="name" column="name" />
+        <result property="phone" column="phone" />
+        <result property="gameonoff" column="gameonoff" />
+        <result property="img_name" column="img_name" />
+        <result property="img_path" column="img_path" />
+        <result property="created_date" column="created_date" />
+        <result property="created_id" column="created_id" />
+        <result property="updated_date" column="updated_date" />
+        <result property="updated_id" column="updated_id" />
+        <result property="role" column="role" />
+    </resultMap>
+
+    <!-- 로그인 쿼리 -->
+    <select id="loginById" parameterType="fs.four.gamo.member.vo.LoginVO" resultMap="LoginResultMap">
+        SELECT
+        member_id AS member_id,
+        member_pw AS member_pw,
+        name AS name,
+        phone AS phone,
+        gameonoff AS gameonoff,
+        img_name AS img_name,
+        img_path AS img_path,
+        created_date AS created_date,
+        created_id AS created_id,
+        updated_date AS updated_date,
+        updated_id AS updated_id,
+        role AS role
+        FROM
+        member
+        WHERE
+        member_id = #{member_id}
+        AND member_pw = #{member_pw}
     </select>
 </mapper>
