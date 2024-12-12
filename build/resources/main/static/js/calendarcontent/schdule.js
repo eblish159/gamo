@@ -66,3 +66,87 @@ function closetodoModal() {
     const modal = document.getElementById('todo-modal');
     modal.style.display = 'none'; // 모달 숨기기
 }
+
+function updateTodo() {
+    const title = document.getElementById('todo-title').value; // Title 입력값
+    const details = document.getElementById('todo-details').value; // Details 입력값
+    const startDate = document.getElementById('start-date').value; // Start Date
+    const endDate = document.getElementById('end-date').value; // End Date
+
+    if (!title || !startDate) {
+        alert('Title과 Start Date를 입력해주세요.');
+        return;
+    }
+
+    // Start Date로 날짜 요소 찾기
+    const formattedDate = startDate.split('T')[0]; // "YYYY-MM-DD" 추출
+    const targetDay = document.getElementById(`day-${formattedDate}`);
+
+    if (targetDay) {
+        // 달력 날짜에 추가할 내용 생성
+        const todoItem = document.createElement('div');
+        todoItem.className = 'todo-item';
+        todoItem.innerHTML = `
+            <strong>${title}</strong>
+            <p>${details ? details : ''}</p>
+            <small>${startDate} ~ ${endDate ? endDate : ''}</small>
+        `;
+
+        targetDay.appendChild(todoItem); // 해당 날짜에 추가
+    } else {
+        alert('선택한 날짜가 달력에 없습니다.');
+    }
+
+    // 입력 값 초기화 및 모달 닫기
+    clearTodoModal();
+    closetodoModal();
+}
+
+function clearTodoModal() {
+    document.getElementById('todo-title').value = '';
+    document.getElementById('todo-details').value = '';
+    document.getElementById('start-date').value = '';
+    document.getElementById('end-date').value = '';
+    document.getElementById('private-option').checked = false;
+}
+
+function closetodoModal() {
+    document.getElementById('todo-modal').style.display = 'none';
+}
+
+function openTodoModal() {
+    document.getElementById('todo-modal').style.display = 'block';
+}
+
+
+
+
+
+
+
+ function updateProgress() {
+    const allTasks = document.querySelectorAll('.task-checkbox');
+    const completedTasks = document.querySelectorAll('.task-checkbox:checked');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+
+    // 계산된 진행률
+    const progressPercentage = Math.round((completedTasks.length / allTasks.length) * 100);
+
+    // 진행률 업데이트
+    progressFill.style.width = `${progressPercentage}%`;
+    progressText.textContent = `${progressPercentage}% 완료`;
+
+    // 완료된 항목 스타일 변경
+    allTasks.forEach((checkbox) => {
+        const item = checkbox.closest('.calendar-item');
+        if (checkbox.checked) {
+            item.classList.add('completed');
+        } else {
+            item.classList.remove('completed');
+        }
+    });
+}
+
+// 초기화
+updateProgress();
