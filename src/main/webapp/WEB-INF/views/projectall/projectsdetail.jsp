@@ -15,13 +15,13 @@
             <!-- 프로젝트 섹션 -->
             <div class="projects-section">
                 <div class="projects-section-header">
-                    <p>Projects</p>
+                    <p style="color: black;">프로젝트</p>
                     <p class="status">프로젝트 진행률: <span id="total-progress">0%</span></p>
                 </div>
 
                 <div class="project-boxes">
                     <div class="project-box-wrapper">
-                        <div class="project-box" style="background-color: skyblue;">
+                        <div class="project-box" style="background-color: rgba(231, 224, 218, 0.89);">
                             <div class="project-box-header">
                                 <span>프로젝트 제목: ${project.projectTitle}</span>
                             </div>
@@ -35,6 +35,7 @@
                                 </div>
                                 <div class="participants"></div>
                                 <div class="days-left" style="color: skyblue;"></div>
+
                             </div>
                         </div>
                     </div>
@@ -54,19 +55,23 @@
                             </div>
                             <div class="project-box-footer">
                                 <div class="participants">
-                                    <button class="add-participant" style="color: #4f94d1;">+</button>
+                                    <button class="add-participant" style="color: black">참여하기</button>
                                 </div>
                                 <div class="days-left" style="color: #4f94d1;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="save-delete-project">
+                        <button class="save-project">저장</button>
+                        <button class="delete-project">삭제</button>
+                </div>
             </div>
 
             <!-- 할일 목록 섹션 -->
             <div class="todoprojects-section">
                 <div class="projects-section-header">
-                    <p>할일 목록</p>
+                    <p style="color: black;">할일 목록</p>
                 </div>
                 <div class="todoprojects">
                     <!-- 이미 존재하는 할일 항목 -->

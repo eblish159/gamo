@@ -1,0 +1,88 @@
+/* 모달 스타일 */
+.todo-modal {
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    margin: auto;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10%;
+}
+
+/* 헤더 스타일 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: Sans-seri;
+}
+
+.dropdown-menu {
+    font-size: 18px;
+    color:black;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* 모달 내부 요소 간 간격 */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* 요소 간격 */
+}
+
+/* 입력 필드 */
+.input-field,
+.textarea-field,
+.date-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: Sans-seri;
+}
+
+.textarea-field {
+    height: 80px;
+    resize: none; /* 크기 조정 비활성화 */
+}
+
+/* 버튼 스타일 */
+.action-btn {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-family: Sans-seri;
+}
+
+.add-btn {
+    margin-top: 20px;
+    background-color: #4CAF50; /* 녹색 */
+}
+
+.delete-btn {
+    background-color: #f44336; /* 빨간색 */
+}
+
+/* 옵션 스타일 */
+.options-input {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.labell{
+    color:black;
+    font-family: Sans-seri;
+}
