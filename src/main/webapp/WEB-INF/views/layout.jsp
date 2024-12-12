@@ -4,6 +4,7 @@
 <head>
     <title>${pageTitle}</title>
     <link rel="stylesheet" href="/css/styles.css">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="layout">
@@ -11,15 +12,15 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="user">
-                <a href="/" class="user-name">Gamo</a>
+                <a href="/" class="user-name">GAMO</a>
             </div>
             <div class="sidebar-menu">
-                <a href="/calendar" class="sidebar-menulink">Todo 스케줄</a>
-                <a href="/project" class="sidebar-menulink">프로젝트</a>
-                <a href="/board" class="sidebar-menulink">게시판</a>
-                <a href="/mypage" class="sidebar-menulink">마이 페이지</a>
-                <a href="/rest1" class="sidebar-menulink">휴식 하기</a>
-                <a href="/admem" class="sidebar-menulink">회원 관리</a>
+                <a href="/calendar" class="sidebar-menulink"><i class="fa-regular fa-calendar-days"></i>   Todo 스케줄</a>
+                <a href="/project" class="sidebar-menulink"><i class="fa-solid fa-pen"></i>   프로젝트</a>
+                <a href="/board" class="sidebar-menulink"><i class="fa-solid fa-list"></i>   게시판</a>
+                <a href="/mypage" class="sidebar-menulink"><i class="fa-solid fa-user"></i>   마이 페이지</a>
+                <a href="/rest1" class="sidebar-menulink"><i class="fa-solid fa-gamepad"></i>   휴식 하기</a>
+                <a href="/admem" class="sidebar-menulink"><i class="fa-solid fa-address-book"></i>   회원 관리</a>
             </div>
         </div>
         <!-- Main Content -->
