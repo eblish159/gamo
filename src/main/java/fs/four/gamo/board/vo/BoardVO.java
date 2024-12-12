@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Data
-@Component("boardVO")
 public class BoardVO {
     private Long board_no;
     private String board_title;
