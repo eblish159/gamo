@@ -14,7 +14,7 @@
                 <a href="/" class="user-name">Gamo</a>
             </div>
             <div class="sidebar-menu">
-                <a href="/calendar" class="sidebar-menulink active">Todo 스케줄</a>
+                <a href="/calendar" class="sidebar-menulink">Todo 스케줄</a>
                 <a href="/project" class="sidebar-menulink">프로젝트</a>
                 <a href="/board" class="sidebar-menulink">게시판</a>
                 <a href="/mypage" class="sidebar-menulink">마이 페이지</a>

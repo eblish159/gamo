@@ -8,6 +8,7 @@
     <title>Calendar</title>
     <link rel="stylesheet" href="/css/calendarcontent/calendar.css">
     <link rel="stylesheet" href="/css/calendarcontent/schedule.css">
+    <link rel="stylesheet" href="/css/calendarcontent/todo.css">
 </head>
 <body>
     <div class="calendar-container">
@@ -63,17 +64,51 @@
             <div class="day">30</div>
             <div class="day">31</div>
         </div>
-        <div class="search-container">
-            <a href="/todomodal" class="todo">할 일 추가</a>
-        </div>
+      <div class="search-container">
+          <a href="javascript:void(0);" id="add-todo-btn" class="todo">할 일 추가</a>
+      </div>
     </div>
+     <div class="todo-modal" id="todo-modal" style="display: none;">
+         <div class="modal-header">
+             <select id="header-dropdown" class="dropdown-menu">
+                 <option value="todo" selected>ToDo</option>
+                 <option value="schedule">Schedule</option>
+             </select>
+          <button class="schedule-close-btn" onclick="closetodoModal()">X</button>
+         </div>
+         <div class="modal-body">
+             <label for="todo-title" class="labell">Title</label>
+             <input type="text" id="todo-title" class="input-field" placeholder="내가 할 일">
 
+             <label for="todo-details" class="labell">Details</label>
+             <textarea id="todo-details" class="textarea-field" placeholder="내가 할 일 상세 글"></textarea>
+
+             <label for="start-date" class="labell">Start Date</label>
+             <div class="date-range">
+                 <input type="datetime-local" id="start-date" class="date-input">
+             </div>
+
+             <label for="end-date" class="labell">End Date</label>
+             <div class="date-range">
+                 <input type="datetime-local" id="end-date" class="date-input">
+             </div>
+
+             <div class="options-input">
+                 <input type="checkbox" id="private-option">
+                 <label for="private-option" class="labell">비공개 옵션</label>
+             </div>
+            <div class="modal-footer">
+                <button class="action-btn add-btn" onclick="updateTodo()">추가</button>
+                <button class="action-btn delete-btn" onclick="deleteTodo()">삭제</button>
+            </div>
+         </div>
+     </div>
 
     <div class="schedule-modal">
             <div class="modal-header">
                 <h2>상세내용</h2>
                 <!-- 모달 닫기 버튼 -->
-                <button class="close-btn" onclick="closeModal()">X</button>
+                <button class="schedule-close-btn" onclick="closescheduleModal()">X</button>
             </div>
             <div class="modal-body">
                 <c:forEach var="day" items="${days}" varStatus="status">
@@ -84,71 +119,71 @@
                         <p>${day.time}</p>
                     </div>
                     <div class="checkbox">
-                        <input type="checkbox" <c:if test="${day.checked}"</c:if>>
-                         <span class="date">2024.12.1 월요일</span>
+                        <input type="checkbox"> <c:if test="${day.checked}"</c:if>
+                         <span class="date" 2024.12.1 월요일</span>
                         <div class="details">
                             <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                         </div>
                     </div>
                      <div class="checkbox">
-                        <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                         <span class="date">2024.12.2 화요일</span>
+                        <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                         <span class="date" 2024.12.2 화요일</span>
                         <div class="details">
                            <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                         </div>
                      </div>
                       <div class="checkbox">
-                        <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                            <span class="date">2024.12.3 수요일</span>
+                        <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                            <span class="date" 2024.12.3 수요일</span>
                             <div class="details">
                             <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                         </div>
                         </div>
                        <div class="checkbox">
-                          <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                              <span class="date">2024.12.4 목요일</span>
+                          <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                              <span class="date" 2024.12.4 목요일</span>
                               <div class="details">
                              <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                           </div>
                       </div>
                         <div class="checkbox">
-                        <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                            <span class="date">2024.12.5 금요일</span>
+                        <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                            <span class="date" 2024.12.5 금요일</span>
                             <div class="details">
                            <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                         </div>
                         </div>
                           <div class="checkbox">
-                          <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                              <span class="date">2024.12.6 토요일</span>
+                          <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                              <span class="date" 2024.12.6 토요일</span>
                               <div class="details">
                              <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                           </div>
                       </div>
                         <div class="checkbox">
-                        <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                            <span class="date">2024.12.7 일요일</span>
+                        <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                            <span class="date" 2024.12.7 일요일</span>
                             <div class="details">
                            <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                         </div>
                     </div>
                         <div class="checkbox">
-                            <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                                <span class="date">2024.12.8 월요일</span>
+                            <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                                <span class="date" 2024.12.8 월요일</span>
                                 <div class="details">
                                <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                             </div>
                         </div>
                             <div class="checkbox">
-                                <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                                    <span class="date">2024.12.9 화요일</span>
+                                <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                                    <span class="date" 2024.12.9 화요일</span>
                                     <div class="details">
                                    <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                                 </div>
                             </div>
                                 <div class="checkbox">
-                                <input type="checkbox" <c:if test="${day.checked}"></c:if>>
-                                    <span class="date">2024.12.10 수요일</span>
+                                <input type="checkbox"> <c:if test="${day.checked}"></c:if>
+                                    <span class="date" 2024.12.10 수요일</span>
                                     <div class="details">
                                    <p>회사 중요 스케줄 입니다. 10:30 ~ 11:30 내가 할 일</p>
                                 </div>
