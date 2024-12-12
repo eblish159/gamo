@@ -169,6 +169,13 @@
     pointer-events: auto;
 }
 
+.modal-content h2 {
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    font-size: 20px; /* 제목 글자 크기 */
+    margin-bottom: 20px; /* 제목과 폼 사이 여백 */
+    color: #ffffff; /* 텍스트 색상 */
+}
+
 .modal-content {
     background-color: #1b1b1b;
     padding: 20px;
@@ -176,7 +183,7 @@
     width: 400px;
     position: relative;
     color: #ffffff;
-    text-align: center;
+    text-align: left;
 }
 
 .close-btn {
@@ -209,6 +216,8 @@ select
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    display: inline-block;
 }
 
 .btn-add-member:hover {
