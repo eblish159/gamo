@@ -17,4 +17,20 @@ public class BoardService {
         boardList = boardDAO.getList();
         return boardList;
     }
+
+    public BoardVO boardPage(Long Board_No) {
+        return boardDAO.getByBoardNo(Board_No);
+    }
+
+    public void boardWrite(BoardVO boardVO) {
+        boardDAO.boardInsert(boardVO);
+    }
+
+    public void boardUpdate(BoardVO boardVO) {
+        boardDAO.boardUpdate(boardVO);
+    }
+
+    public void boardDelete(Long Board_No) {
+        boardDAO.boardDelete(Board_No);
+    }
 }

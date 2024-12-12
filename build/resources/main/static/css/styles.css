@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  img:
 }
 
 .layout {
@@ -86,6 +85,9 @@
   padding: 20px;
   background-color: #0e0e0e;
   background-image: url(../../img/stars.jpg);
+  background-size: cover; /* 이미지를 화면 크기에 맞게 확대 */
+  background-repeat: no-repeat; /* 반복 방지 */
+  background-position: center; /* 이미지를 중앙 정렬 */
   overflow-y: auto; /* 메인 콘텐츠 스크롤 */
 }
 
