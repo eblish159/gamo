@@ -16,7 +16,7 @@
             <div class="projects-section">
                 <div class="projects-section-header">
                     <p style="color: black;">프로젝트</p>
-                    <p class="status">프로젝트 진행률: <span id="total-progress">0%</span></p>
+                    <p class="status">프로젝트 진행률: <span id="total-progress">${project.projectProgress}%</span></p>
                 </div>
 
                 <div class="project-boxes">
@@ -26,16 +26,15 @@
                                 <span>프로젝트 제목: ${project.projectTitle}</span>
                             </div>
                             <div class="project-box-content-header">
-                                <p class="box-content-header">프로젝트 기간</p>
+                                <p class="box-content-header">프로젝트 기간: </p>
                                 <p class="box-content-subheader">프로젝트 내용: ${project.projectContent}</p>
                             </div>
                             <div class="box-progress-wrapper">
                                 <div class="box-progress-bar">
-                                    <span class="box-progress" style="width: 60%; background-color: rgb(192, 197, 241);"></span>
+                                    <span class="box-progress" style="width: ${project.projectProgress}%; background-color: rgb(192, 197, 241);"></span>
                                 </div>
                                 <div class="participants"></div>
                                 <div class="days-left" style="color: skyblue;"></div>
-
                             </div>
                         </div>
                     </div>
@@ -55,7 +54,13 @@
                             </div>
                             <div class="project-box-footer">
                                 <div class="participants">
-                                    <button class="add-participant" style="color: black">참여하기</button>
+                                    <!-- 참여하기 버튼 -->
+                                    <button class="add-participant" id="addParticipantBtn">참여하기</button>
+                                    <!-- 사용자 정보를 표시할 영역 -->
+                                    <div id="participant-info" class="participant-container">
+                                        <p id="participant-id" class="participant-detail" style="color: black; margin-top: 10px;"></p>
+                                        <p id="participant-name" class="participant-detail" style="color: black;"></p>
+                                    </div>
                                 </div>
                                 <div class="days-left" style="color: #4f94d1;"></div>
                             </div>
@@ -67,7 +72,6 @@
                     <button id="saveProjectBtn" class="btn-save">저장</button>
                     <button id="deleteProjectBtn" class="btn-delete">삭제</button>
                 </div>
-
             </div>
 
             <!-- 할일 목록 섹션 -->
@@ -109,7 +113,7 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
 
 <script src="<c:url value='/js/project/projectsdetail.js'/>"></script>
 </body>

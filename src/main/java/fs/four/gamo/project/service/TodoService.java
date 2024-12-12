@@ -74,4 +74,23 @@ public class TodoService {
             throw e;
         }
     }
+
+    // 프로젝트 진행률 계산
+    public int calculateProjectProgress(int projectNo) {
+        try {
+            List<TodoVO> todos = todoDAO.getTodoListByProject(projectNo);
+            if (todos.isEmpty()) {
+                return 0; // 할일이 없으면 진행률 0%
+            }
+
+            int totalProgress = todos.stream().mapToInt(TodoVO::getProgress).sum();
+            int averageProgress = totalProgress / todos.size();
+
+            logger.info("프로젝트 {}의 평균 진행률 계산 완료: {}%", projectNo, averageProgress);
+            return averageProgress;
+        } catch (Exception e) {
+            logger.error("프로젝트 {} 진행률 계산 중 오류 발생", projectNo, e);
+            throw new RuntimeException("프로젝트 진행률 계산 중 오류 발생", e);
+        }
+    }
 }

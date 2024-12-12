@@ -34,6 +34,7 @@ public class ProjectController {
         model.addAttribute("message", "프로젝트 상세 페이지");
         model.addAttribute("contentPage", "projectall/projectsdetail");
         model.addAttribute("project", project);
+        model.addAttribute("progress", project.getProjectProgress()); // 진행률 추가
         return "layout";
     }
 
@@ -55,20 +56,28 @@ public class ProjectController {
             @RequestParam("end_date") String endDate,
             Model model) {
 
+        // 제목과 내용 유효성 검사
         if (title.isEmpty() || content.isEmpty()) {
             model.addAttribute("error", "제목과 내용은 필수 항목입니다.");
             model.addAttribute("contentPage", "projectall/projectswrite");
             return "layout";
         }
 
-        ProjectVO project = new ProjectVO();
-        project.setProjectTitle(title);
-        project.setProjectContent(content);
-        project.setStartDate(java.sql.Date.valueOf(startDate));
-        project.setEndDate(java.sql.Date.valueOf(endDate));
-        project.setProjectProgress(0);
+        try {
+            ProjectVO project = new ProjectVO();
+            project.setProjectTitle(title);
+            project.setProjectContent(content);
+            project.setStartDate(java.sql.Date.valueOf(startDate));
+            project.setEndDate(java.sql.Date.valueOf(endDate));
+            project.setProjectProgress(0); // 초기 진행률 설정
 
-        projectService.saveProjectWithDates(project);
+            projectService.saveProjectWithDates(project);
+        } catch (Exception e) {
+            model.addAttribute("error", "프로젝트 저장 중 오류가 발생했습니다: " + e.getMessage());
+            model.addAttribute("contentPage", "projectall/projectswrite");
+            return "layout";
+        }
+
         return "redirect:/project";
     }
 
@@ -84,9 +93,15 @@ public class ProjectController {
 
     // 프로젝트 진행률 저장
     @PostMapping("/projects/saveProgress")
+    @ResponseBody
     public String saveProjectProgress(@RequestParam("projectNo") int projectNo, @RequestParam("progress") int progress) {
-        projectService.updateProjectProgress(projectNo, progress);
-        return "redirect:/projectsdetail?projectNo=" + projectNo;
+        try {
+            projectService.updateProjectProgress(projectNo, progress);
+            return "SUCCESS";
+        } catch (Exception e) {
+            System.err.println("프로젝트 진행률 저장 중 오류: " + e.getMessage());
+            return "FAILURE";
+        }
     }
 
     // 프로젝트 삭제
@@ -98,15 +113,15 @@ public class ProjectController {
 
             if (isDeleted) {
                 System.out.println("프로젝트 삭제 성공: " + projectNo);
-                return "SUCCESS"; // 성공 시 텍스트 응답
+                return "SUCCESS";
             } else {
                 System.out.println("프로젝트 삭제 실패: " + projectNo);
-                return "FAILURE"; // 실패 시 텍스트 응답
+                return "FAILURE";
             }
         } catch (Exception e) {
             System.err.println("프로젝트 삭제 중 오류 발생: " + projectNo);
             e.printStackTrace();
-            return "ERROR"; // 예외 발생 시 텍스트 응답
+            return "ERROR";
         }
     }
 }

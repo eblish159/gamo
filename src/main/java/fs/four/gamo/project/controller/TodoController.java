@@ -23,7 +23,7 @@ public class TodoController {
     public String saveTodo(@RequestParam("projectNo") int projectNo,
                            @RequestParam("description") String description,
                            @RequestParam("userName") String userName) {
-        logger.info("saveTodo 호출됨: projectNo={}, description={}, userName={}", projectNo, description, userName);
+        logger.info("saveTodo 호출됨: projectNo={}, description={}, userName={} ", projectNo, description, userName);
 
         try {
             TodoVO todo = new TodoVO();
@@ -71,9 +71,7 @@ public class TodoController {
         logger.info("deleteMultipleTodos 호출됨: todoIds={}", todoIds);
 
         try {
-            for (int todoId : todoIds) {
-                todoService.deleteTodoById(todoId);
-            }
+            todoService.deleteMultipleTodosByIds(todoIds);
             return "SUCCESS";
         } catch (Exception e) {
             logger.error("여러 할일 삭제 중 오류 발생: ", e);
@@ -85,7 +83,7 @@ public class TodoController {
     @PostMapping("/updateProgress")
     public String updateTodoProgress(@RequestParam("todoId") int todoId,
                                      @RequestParam("progress") int progress) {
-        logger.info("updateTodoProgress 호출됨: todoId={}, progress={}", todoId, progress);
+        logger.info("updateTodoProgress 호출됨: todoId={}, progress={} ", todoId, progress);
 
         try {
             todoService.updateTodoProgress(todoId, progress);
@@ -93,6 +91,19 @@ public class TodoController {
         } catch (Exception e) {
             logger.error("할일 진행률 업데이트 중 오류 발생", e);
             return "FAILURE";
+        }
+    }
+
+    // 특정 프로젝트의 전체 할일 진행률 조회
+    @GetMapping("/projectProgress")
+    public int getProjectProgress(@RequestParam("projectNo") int projectNo) {
+        logger.info("getProjectProgress 호출됨: projectNo={}", projectNo);
+
+        try {
+            return todoService.calculateProjectProgress(projectNo);
+        } catch (Exception e) {
+            logger.error("프로젝트 진행률 조회 중 오류 발생", e);
+            return 0;
         }
     }
 }
