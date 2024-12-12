@@ -11,7 +11,7 @@
     <div class="write-header">
         <h1>${board == null ? '새 글 작성' : '게시글 수정'}</h1>
     </div>
-    <form action="${board == null ? '/board/create' : '/board/edit'}" method="post" enctype="multipart/form-data" class="write-form">
+    <form action="${board == null ? '/board/boardWrite' : '/update/{board_no}'}" method="post" enctype="multipart/form-data" class="write-form">
         <c:if test="${board != null}">
             <input type="hidden" name="member_id" value="${board.member_id}">
         </c:if>
@@ -19,7 +19,7 @@
             <label for="title" class="form-label">제목</label>
             <input type="text" id="title" name="board_title" class="form-input" placeholder="제목을 입력하세요" required>
         </div>
-
+         
         <div class="form-group">
             <label for="content" class="form-label">내용</label>
             <textarea id="content" name="board_content" class="form-textarea" placeholder="내용을 입력하세요" required></textarea>

@@ -26,7 +26,7 @@
 
     <insert id="boardInsert" parameterType="fs.four.gamo.board.vo.BoardVO">
         INSERT INTO board (board_title, board_content, member_id, created_date, updated_date)
-        VALUES (#{board_title}, #{board_content}, #{member_id}, SYSDATE, SYSDATE)
+        VALUES (#{board_title}, #{board_content}, 'hong', SYSDATE, SYSDATE)
     </insert>
 
     <update id="boardUpdate" parameterType="fs.four.gamo.board.vo.BoardVO">
