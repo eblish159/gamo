@@ -29,10 +29,10 @@ public class BoardController {
     @GetMapping("/board/{id}")
     public String boardPage(@PathVariable Long board_no, Model model, HttpSession session) {
         BoardVO boardVO = boardService.boardPage(board_no);
-        LoginVO memberId = (LoginVO) session.getAttribute("member_id");
+        LoginVO member = (LoginVO) session.getAttribute("member_id");
 
-        boolean isOwner = memberId != null && boardVO.getMember_id().equals(memberId.getMember_id());
-        boolean isAdmin = memberId != null && 0 == memberId.getRole();
+        boolean isOwner = member != null && boardVO.getMember_id().equals(member.getMember_id());
+        boolean isAdmin = member != null && 0 == member.getRole();
 
         model.addAttribute("boardVO", boardVO);
         model.addAttribute("contentPage", "/boardall/boardPage");
@@ -64,24 +64,24 @@ public class BoardController {
         return "redirect:/board";
     }
 
-    @GetMapping("/{id}/edit")
-    public String showEditForm(@PathVariable Long board_no, Model model, HttpSession session) {
+    @GetMapping("/update/{id}")
+    public String updateForm(@PathVariable Long board_no, Model model, HttpSession session) {
         BoardVO boardVO = boardService.boardPage(board_no);
-        LoginVO memberId = (LoginVO) session.getAttribute("memberId");
+        LoginVO member = (LoginVO) session.getAttribute("member_id");
 
-        if (!boardVO.getMember_id().equals(memberId.getMember_id()) && 0 != memberId.getRole()) {
+        if (!boardVO.getMember_id().equals(member.getMember_id()) && 0 != member.getRole()) {
             return "redirect:/board";
         }
-
+        model.addAttribute("contentPage", "boardall/boardWrite");
         model.addAttribute("boardVO", boardVO);
         return "layout";
     }
 
-    @PostMapping("/{id}/edit")
-    public String updatePost(@PathVariable Long board_no, BoardVO boardVO, HttpSession session) {
-        LoginVO memberId = (LoginVO) session.getAttribute("memberId");
+    @PostMapping("/update/{id}")
+    public String updateBoard(@PathVariable Long board_no, @ModelAttribute BoardVO boardVO, HttpSession session) {
+        LoginVO member = (LoginVO) session.getAttribute("member_id");
 
-        if (!boardVO.getMember_id().equals(memberId.getMember_id()) && 0 !=memberId.getRole()) {
+        if (!boardVO.getMember_id().equals(member.getMember_id()) && 0 !=member.getRole()) {
             return "redirect:/board";
         }
 
@@ -90,12 +90,12 @@ public class BoardController {
         return "redirect:/board";
     }
 
-    @PostMapping("/{id}/delete")
+    @PostMapping("/delete/{id}")
     public String deletePost(@PathVariable Long board_id, HttpSession session) {
-        LoginVO memberId = (LoginVO) session.getAttribute("memberId");
+        LoginVO member = (LoginVO) session.getAttribute("member_id");
         BoardVO boardVO = boardService.boardPage(board_id);
 
-        if (!boardVO.getMember_id().equals(memberId.getMember_id()) && 0 != (memberId.getRole())) {
+        if (!boardVO.getMember_id().equals(member.getMember_id()) && 0 != (member.getRole())) {
             return "redirect:/board";
         }
 

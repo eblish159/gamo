@@ -9,10 +9,10 @@
         <h1>${board.board_title}</h1>
         <p>${board.board_content}</p>
         <p>작성자: ${board.member_id}</p>
-        <c:if test="${isEditable}">
-            <a href="/board/${board.board_no}/edit">수정</a>
-            <form action="/board/${board.board_no}/delete" method="post" style="display:inline;">
-                <button type="submit">삭제</button>
+        <c:if test="${board.member_id == loginVO.member_id || loginVO.role == 0}">
+            <a href="/board/update/${board.board_no}">수정</a>
+            <form action="/board/delete/${board.board_no}/delete" method="post" style="display:inline;">
+                <button type="submit" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</button>
             </form>
         </c:if>
         <a href="/board">목록으로</a>
