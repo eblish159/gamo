@@ -46,11 +46,11 @@
         </div>
 
         <div class="board-pagination">
-                          <a href="#" class="page-link">이전</a>
-                          <a href="#" class="page-link active">1</a>
-                          <a href="#" class="page-link">2</a>
-                          <a href="#" class="page-link">3</a>
-                          <a href="#" class="page-link">다음</a>
+              <a href="#" class="page-link">이전</a>
+              <a href="#" class="page-link active">1</a>
+              <a href="#" class="page-link">2</a>
+              <a href="#" class="page-link">3</a>
+              <a href="#" class="page-link">다음</a>
         </div>
 
       </div>
@@ -96,11 +96,11 @@
         </tbody>
       </table>
           <div class="board-pagination">
-                  <a href="#" class="page-link">이전</a>
-                  <a href="#" class="page-link active">1</a>
-                  <a href="#" class="page-link">2</a>
-                  <a href="#" class="page-link">3</a>
-                  <a href="#" class="page-link">다음</a>
+              <a href="#" class="page-link">이전</a>
+              <a href="#" class="page-link active">1</a>
+              <a href="#" class="page-link">2</a>
+              <a href="#" class="page-link">3</a>
+              <a href="#" class="page-link">다음</a>
           </div>
     </div>
   </div>

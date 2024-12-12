@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="fs.four.gamo.calendarevents.dao.CalendarEventsDAO">
+<mapper namespace="fs.four.gamo.calendar.dao.CalendarMainDAO">
 
     <!-- 특정 이벤트 조회 -->
-    <select id="CalendarEventsById" parameterType="int" resultType="fs.four.gamo.calendarevents.vo.CalendarEventsVO">
+    <select id="CalendarEventsById" parameterType="int" resultType="fs.four.gamo.calendar.vo.CalendarMainVO">
         SELECT EVENT_ID, EVENT_DATE, EVENT_NAME, EVENT_COLOR, EVENT_DESCRIPTION
-        FROM CALENDAREVENTS
+        FROM CALENDAR_MAIN
         WHERE EVENT_ID = #{eventId}
     </select>
 </mapper>

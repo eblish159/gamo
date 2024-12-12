@@ -14,6 +14,9 @@
                 <option value="todo" selected>ToDo</option>
                 <option value="schedule">Schedule</option>
             </select>
+            <button type="button" class="p-back-page" onclick="location.href='/calendar'">
+                뒤로가기
+            </button>
         </div>
         <div class="modal-body">
             <label for="todo-title" class="labell">Title</label>
@@ -22,9 +25,9 @@
             <label for="todo-details" class="labell">Details</label>
             <textarea id="todo-details" class="textarea-field" placeholder="내가 할 일 상세 글"></textarea>
 
-            <label for="start-date" class="labell">Start Date</label>
+             <label for="start-date" class="labell">Start Date</label>
             <div class="date-range">
-                <input type="datetime-local" id="start-date" class="date-input">
+                <input type="datetime-local" id="end-date" class="date-input">
             </div>
 
             <label for="end-date" class="labell">End Date</label>
