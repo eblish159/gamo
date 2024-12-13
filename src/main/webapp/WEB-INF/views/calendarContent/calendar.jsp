@@ -84,12 +84,12 @@
          </div>
 
          <div class="modal-body">
-            <form action="addEvent" method="post">
+            <form action="/addEvent" method="post">
              <label for="todo-title" class="labell">Title</label>
              <input type="text" id="todo-title" name="cal_title" class="input-field" placeholder="내가 할 일">
 
              <label for="todo-details" class="labell">Details</label>
-             <textarea id="todo-details" name="cal_detalls" class="textarea-field" placeholder="내가 할 일 상세 글"></textarea>
+             <textarea id="todo-details" name="cal_details" class="textarea-field" placeholder="내가 할 일 상세 글"></textarea>
 
              <label for="start-date" class="labell">Start Date</label>
              <div class="date-range">
