@@ -124,153 +124,153 @@
                                <!-- 1일부터 31일까지 날짜 반복 -->
                                <div class="schdule-calendar-item" id="day-1">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.1</span>
+                                   <span class="date">2024.3.1</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-2">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.2</span>
+                                   <span class="date">2024.3.2</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-3">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.3</span>
+                                   <span class="date">2024.3.3</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-4">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.4</span>
+                                   <span class="date">2024.3.4</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-5">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.5</span>
+                                   <span class="date">2024.3.5</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-6">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.6</span>
+                                   <span class="date">2024.3.6</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-7">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.7</span>
+                                   <span class="date">2024.3.7</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-8">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.8</span>
+                                   <span class="date">2024.3.8</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-9">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.9</span>
+                                   <span class="date">2024.3.9</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-10">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.10</span>
+                                   <span class="date">2024.3.10</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-11">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.11</span>
+                                   <span class="date">2024.3.11</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                 <div class="schdule-calendar-item" id="day-12">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.12</span>
+                                   <span class="date">2024.3.12</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                 <div class="schdule-calendar-item" id="day-13">
                                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                  <span class="date">2024.12.13</span>
+                                  <span class="date">2024.3.13</span>
                                   <div class="task-details">회사 중요 스케줄 입니다.</div>
                               </div>
                                <div class="schdule-calendar-item" id="day-14">
                                  <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                 <span class="date">2024.12.14</span>
+                                 <span class="date">2024.3.14</span>
                                  <div class="task-details">회사 중요 스케줄 입니다.</div>
                              </div>
                               <div class="schdule-calendar-item" id="day-15">
                                     <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                    <span class="date">2024.12.15</span>
+                                    <span class="date">2024.3.15</span>
                                     <div class="task-details">회사 중요 스케줄 입니다.</div>
                                 </div>
                                  <div class="schdule-calendar-item" id="day-16">
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <span class="date">2024.12.16</span>
+                                   <span class="date">2024.3.16</span>
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                 <div class="schdule-calendar-item" id="day-17">
                                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                  <span class="date">2024.12.17</span>
+                                  <span class="date">2024.3.17</span>
                                   <div class="task-details">회사 중요 스케줄 입니다.</div>
                               </div>
                                <div class="schdule-calendar-item" id="day-18">
                                  <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                 <span class="date">2024.12.18</span>
+                                 <span class="date">2024.3.18</span>
                                  <div class="task-details">회사 중요 스케줄 입니다.</div>
                              </div>
                             <div class="schdule-calendar-item" id="day-19">
                                 <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                <span class="date">2024.12.19</span>
+                                <span class="date">2024.3.19</span>
                                 <div class="task-details">회사 중요 스케줄 입니다.</div>
                             </div>
                               <div class="schdule-calendar-item" id="day-20">
                                  <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                 <span class="date">2024.12.20</span>
+                                 <span class="date">2024.3.20</span>
                                  <div class="task-details">회사 중요 스케줄 입니다.</div>
                              </div>
                                <div class="schdule-calendar-item" id="day-21">
                            <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                           <span class="date">2024.12.21</span>
+                           <span class="date">2024.3.21</span>
                            <div class="task-details">회사 중요 스케줄 입니다.</div>
                        </div>
                          <div class="schdule-calendar-item" id="day-22">
                             <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                            <span class="date">2024.12.22</span>
+                            <span class="date">2024.3.22</span>
                             <div class="task-details">회사 중요 스케줄 입니다.</div>
                         </div>
                           <div class="schdule-calendar-item" id="day-23">
                          <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                             <span class="date">2024.12.23</span>
+                             <span class="date">2024.3.23</span>
                              <div class="task-details">회사 중요 스케줄 입니다.</div>
                          </div>
                            <div class="schdule-calendar-item" id="day-24">
                           <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                              <span class="date">2024.12.24</span>
+                              <span class="date">2024.3.24</span>
                               <div class="task-details">회사 중요 스케줄 입니다.</div>
                           </div>  <div class="schdule-calendar-item" id="day-25">
                              <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                             <span class="date">2024.12.25</span>
+                             <span class="date">2024.3.25</span>
                              <div class="task-details">회사 중요 스케줄 입니다.</div>
                              </div>
                                <div class="schdule-calendar-item" id="day-26">
                           <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                          <span class="date">2024.12.26</span>
+                          <span class="date">2024.3.26</span>
                               <div class="task-details">회사 중요 스케줄 입니다.</div>
                           </div>
                             <div class="schdule-calendar-item" id="day-27">
                                <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                               <span class="date">2024.12.27</span>
+                               <span class="date">2024.3.27</span>
                                <div class="task-details">회사 중요 스케줄 입니다.</div>
                            </div>  <div class="schdule-calendar-item" id="day-28">
                             <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                            <span class="date">2024.12.28</span>
+                            <span class="date">2024.3.28</span>
                             <div class="task-details">회사 중요 스케줄 입니다.</div>
                             </div>  <div class="schdule-calendar-item" id="day-29">
                             <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                            <span class="date">2024.12.29</span>
+                            <span class="date">2024.3.29</span>
                             <div class="task-details">회사 중요 스케줄 입니다.</div>
                             </div>  <div class="schdule-calendar-item" id="day-30">
                             <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                            <span class="date">2024.12.30</span>
+                            <span class="date">2024.3.30</span>
                             <div class="task-details">회사 중요 스케줄 입니다.</div>
                             </div>
                             <div class="schdule-calendar-item" id="day-31">
                             <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                            <span class="date">2024.12.31</span>
+                            <span class="date">2024.3.31</span>
                             <div class="task-details">회사 중요 스케줄 입니다.</div>
                             </div>
                        <!-- 더 많은 날짜 반복 -->
