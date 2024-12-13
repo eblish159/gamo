@@ -13,6 +13,6 @@ public class CalendarMainVO {
     private int gubun;
     private String calTitle;
     private String calDetails;
-    private String startDate;
-    private String endDate;
+    private Date startDate;
+    private Date endDate;
 }
