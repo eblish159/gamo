@@ -15,34 +15,44 @@ public class CalendarController {
     @Autowired
     private CalendarMainService calendarMainService; // 서비스 주입
 
+    // 공통 데이터 설정 메서드
+    private void setCommonAttributes(Model model, String pageTitle, String message, String contentPage) {
+        model.addAttribute("pageTitle", pageTitle);
+        model.addAttribute("message", message);
+        model.addAttribute("contentPage", contentPage);
+    }
+
+    // 캘린더 메인 페이지
     @GetMapping("/calendar")
     public String calendar(Model model) {
-        model.addAttribute("pageTitle", "캘린더스");
-        model.addAttribute("message", "캘린더 메뉴리스트");
-        model.addAttribute("contentPage", "calendarContent/calendar");
+        setCommonAttributes(model, "캘린더스", "캘린더 메뉴리스트", "calendarContent/calendar");
         return "layout";
     }
 
+    // To-Do 모달
     @GetMapping("/todomodal")
-    public String todomodal(Model model) {
-        model.addAttribute("pageTitle", "캘린더스");
-        model.addAttribute("message", "캘린더 메뉴리스트");
-        model.addAttribute("contentPage", "calendarContent/todo");
+    public String todoModal(Model model) {
+        setCommonAttributes(model, "캘린더스", "To-Do 모달", "calendarContent/todo");
         return "layout";
     }
 
+    // 스케줄 모달
     @GetMapping("/schedulemodal")
-    public String project(Model model) {
-        model.addAttribute("pageTitle", "스케줄"); // 페이지 제목 설정
-        model.addAttribute("message", "스케줄 모달"); // 메시지 설정
-        model.addAttribute("contentPage", "calendarContent/schedule"); // contentPage 값을 설정
-        return "layout"; // layout.jsp 반환
+    public String scheduleModal(Model model) {
+        setCommonAttributes(model, "스케줄", "스케줄 모달", "calendarContent/schedule");
+        return "layout";
     }
 
+    // 이벤트 추가
     @PostMapping("/addEvent")
     public String addEvent(@ModelAttribute CalendarMainVO calendarMainVO, Model model) {
-        calendarMainService.insertCalendarEvent(calendarMainVO); // 이벤트 저장
-        model.addAttribute("message", "이벤트가 저장되었습니다!");
+        try {
+            calendarMainService.insertCalendarEvent(calendarMainVO); // 이벤트 저장
+            model.addAttribute("message", "이벤트가 저장되었습니다!");
+        } catch (Exception e) {
+            model.addAttribute("message", "이벤트 저장 중 오류가 발생했습니다.");
+            e.printStackTrace();
+        }
         return "redirect:/calendar"; // 캘린더 페이지로 리다이렉트
     }
 }

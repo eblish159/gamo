@@ -15,9 +15,12 @@ public class CalendarMainService {
      * 특정 이벤트 조회
      * @param eventId 이벤트 ID
      * @return 조회된 CalendarMainVO 객체
-     * @throws Exception 예외 처리
+     * @throws Exception 데이터 접근 오류 시 예외 처리
      */
     public CalendarMainVO getEventById(int eventId) throws Exception {
+        if (eventId <= 0) {
+            throw new IllegalArgumentException("Invalid event ID");
+        }
         return calendarMainDAO.CalendarEventsById(eventId);
     }
 
