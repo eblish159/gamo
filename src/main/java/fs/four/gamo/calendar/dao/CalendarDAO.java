@@ -9,6 +9,6 @@ import java.util.List;
 public interface CalendarDAO {
     List<CalendarMainVO> getCalendarEvents();
     public void calendarEvents(CalendarMainVO calendarMainVO);
-    public int delete_cal(int cal_no);
+    public void delete_cal(Long cal_no);
 }
 
