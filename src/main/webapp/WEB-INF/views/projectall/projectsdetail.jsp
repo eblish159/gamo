@@ -42,10 +42,10 @@
                     <div class="project-box-wrapper">
                         <div class="project-box" style="background-color: rgb(192, 197, 241);">
                             <div class="project-box-header">
-                                <span>참여자</span>
+                                <span></span>
                             </div>
                             <div class="project-box-content-header">
-                                <p class="box-content-header">참여자들</p>
+                                <p class="box-content-header">프로젝트 참여자</p>
                             </div>
                             <div class="box-progress-wrapper">
                                 <div class="box-progress-bar">
@@ -56,10 +56,13 @@
                                 <div class="participants">
                                     <!-- 참여하기 버튼 -->
                                     <button class="add-participant" id="addParticipantBtn">참여하기</button>
+
                                     <!-- 사용자 정보를 표시할 영역 -->
                                     <div id="participant-info" class="participant-container">
+                                    <div class="participants">
                                         <p id="participant-id" class="participant-detail" style="color: black; margin-top: 10px;"></p>
                                         <p id="participant-name" class="participant-detail" style="color: black;"></p>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="days-left" style="color: #4f94d1;"></div>
