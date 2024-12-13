@@ -54,11 +54,7 @@
     font-family: Sans-seri;
     color:#ffffff
 }
-input[type="date"]::-webkit-inner-spin-button{
-    color: #ffffff; /* 텍스트 색 */
-    padding: 5px;
-    font-size: 16px;
-}
+
 
 .textarea-field {
     height: 80px;

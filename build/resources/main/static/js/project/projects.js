@@ -1,10 +1,8 @@
 // 종료된 프로젝트 버튼 클릭 시 동작
-document.querySelector('.end-project-btn').addEventListener('click', function() {
+document.querySelector('.end-project-btn')?.addEventListener('click', function () {
   // 종료된 프로젝트 페이지로 이동
-  window.location.href = '/path-to-ended-projects'; // 종료된 프로젝트 페이지로 리디렉션
+  window.location.href = '/endprojects'; // 종료된 프로젝트 페이지로 리디렉션
 });
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const projectList = document.querySelector('.project-list');
@@ -14,20 +12,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryOptions = document.querySelectorAll('.category-option');
   let selectedCategory = null;
 
-//   페이지 표시 함수
+  // 페이지 표시 함수
   const showPage = (list, page) => {
     const itemsPerPage = 10;
     const startIndex = page * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
-    list.forEach((item, index) => {
+    // 배열로 변환 후 처리
+    const arrayList = Array.from(list);
+
+    arrayList.forEach((item, index) => {
       item.style.display = index >= startIndex && index < endIndex ? 'block' : 'none';
     });
   };
 
   // 페이지 링크 생성 함수
   const appendPageLinks = (list) => {
-    const totalPages = Math.ceil(list.length / 10);
+    const arrayList = Array.from(list); // 배열로 변환
+    const totalPages = Math.ceil(arrayList.length / 10);
     const paginationDiv = document.querySelector('.pagination');
     paginationDiv.innerHTML = ''; // 기존 페이지 링크 삭제
     const ul = document.createElement('ul');
@@ -43,22 +45,39 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         document.querySelectorAll('.pagination a').forEach((a) => a.classList.remove('active'));
         e.target.classList.add('active');
-        showPage(list, i);
+        showPage(arrayList, i); // 배열을 전달
       });
 
       li.appendChild(link);
       ul.appendChild(li);
     }
 
-    ul.firstChild.firstChild.classList.add('active');
-    showPage(list, 0);
+    if (ul.firstChild?.firstChild) {
+      ul.firstChild.firstChild.classList.add('active');
+    } else {
+      console.warn('ul 또는 ul.firstChild.firstChild가 존재하지 않아 active 클래스를 추가하지 못했습니다.');
+    }
+
+    showPage(arrayList, 0); // 배열을 전달
   };
+
+  // 초기 실행 시
+  if (projectList && projectList.children.length > 0) {
+    const projects = projectList.children;
+    appendPageLinks(projects); // 초기 페이지 링크 설정
+  } else {
+    console.warn('projectList가 비어 있거나 존재하지 않습니다.');
+  }
 
   // 카테고리 선택 함수
   const filterProjects = () => {
     const projects = document.querySelectorAll('.project-item');
-    projects.forEach(project => {
-      if (selectedCategory === null || selectedCategory === 'all' || project.getAttribute('data-category') === selectedCategory) {
+    projects.forEach((project) => {
+      if (
+        selectedCategory === null ||
+        selectedCategory === 'all' ||
+        project.getAttribute('data-category') === selectedCategory
+      ) {
         project.style.display = 'block';
       } else {
         project.style.display = 'none';
@@ -68,14 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 검색 기능
   const searchProjects = () => {
-    const searchTerm = searchInput.value.toLowerCase();
+    const searchTerm = searchInput?.value.toLowerCase();
     const projects = document.querySelectorAll('.project-item');
 
-    projects.forEach(project => {
-      const projectTitle = project.querySelector('.project-link').textContent.toLowerCase();
-      const projectDescription = project.querySelector('.status').textContent.toLowerCase();
+    projects.forEach((project) => {
+      const projectTitle = project.querySelector('.project-link')?.textContent.toLowerCase() || '';
+      const projectDates = project.querySelector('.project-dates')?.textContent.toLowerCase() || '';
 
-      if (projectTitle.includes(searchTerm) || projectDescription.includes(searchTerm)) {
+      if (projectTitle.includes(searchTerm) || projectDates.includes(searchTerm)) {
         project.style.display = 'block';
       } else {
         project.style.display = 'none';
@@ -83,29 +102,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 필터링된 프로젝트에 맞게 페이지 링크 갱신
-    appendPageLinks(Array.from(projects).filter(project => project.style.display === 'block'));
+    appendPageLinks(Array.from(projects).filter((project) => project.style.display === 'block'));
   };
 
   // 검색 이벤트 처리
-  searchInput.addEventListener('input', searchProjects);
+  searchInput?.addEventListener('input', searchProjects);
 
   // 카테고리 버튼 클릭 이벤트 처리
-  categoryButton.addEventListener('click', () => {
+  categoryButton?.addEventListener('click', () => {
     // 드롭다운 토글
-    categoryDropdown.style.display = categoryDropdown.style.display === 'block' ? 'none' : 'block';
+    if (categoryDropdown) {
+      categoryDropdown.style.display = categoryDropdown.style.display === 'block' ? 'none' : 'block';
+    }
   });
 
   // 카테고리 선택 후 필터링
-  categoryOptions.forEach(option => {
+  categoryOptions.forEach((option) => {
     option.addEventListener('click', (e) => {
       selectedCategory = e.target.getAttribute('data-category'); // 선택된 카테고리
       filterProjects(); // 필터링
-      categoryDropdown.style.display = 'none'; // 드롭다운 닫기
+      if (categoryDropdown) {
+        categoryDropdown.style.display = 'none'; // 드롭다운 닫기
+      }
     });
   });
 
   // "추가" 버튼 클릭 이벤트 처리
-  addButton.addEventListener('click', () => {
+  document.querySelector('.add-project-btn')?.addEventListener('click', () => {
     const newProjectItem = document.createElement('li');
     newProjectItem.classList.add('project-item', 'cf');
     newProjectItem.setAttribute('data-category', 'in-progress'); // 기본값은 "진행중"
@@ -118,44 +141,30 @@ document.addEventListener('DOMContentLoaded', () => {
     newProjectLink.classList.add('project-link');
     newProjectLink.textContent = '새로운 프로젝트';
 
-    const newstatus = document.createElement('span');
-    newstatus.classList.add('status');
-    newstatus.textContent = 'new.status@example.com';
+    const newProjectDates = document.createElement('span');
+    newProjectDates.classList.add('project-dates');
+    newProjectDates.textContent = '생성일: YYYY-MM-DD, 시작일: YYYY-MM-DD, 종료일: YYYY-MM-DD';
 
-    const newJoinedDetails = document.createElement('div');
-    newJoinedDetails.classList.add('joined-details');
-
-    const newDate = document.createElement('span');
-    newDate.classList.add('date');
-    newDate.textContent = 'Joined 12/07/24';
-
-    newJoinedDetails.appendChild(newDate);
     newProjectDetails.appendChild(newProjectLink);
-    newProjectDetails.appendChild(newstatus);
-    newProjectDetails.appendChild(newJoinedDetails);
+    newProjectDetails.appendChild(newProjectDates);
     newProjectItem.appendChild(newProjectDetails);
 
-    projectList.appendChild(newProjectItem);
-    appendPageLinks(projectList.children); // 새 항목이 추가된 후 페이지 링크 갱신
+    if (projectList) {
+      projectList.appendChild(newProjectItem);
+      appendPageLinks(projectList.children); // 새 항목이 추가된 후 페이지 링크 갱신
 
-    // 필터링과 페이지 업데이트
-    filterProjects();
+      // 필터링과 페이지 업데이트
+      filterProjects();
+    }
   });
 
-  appendPageLinks(projectList.children); // 초기 페이지 링크 설정
-});
-
-const menuItems = document.querySelectorAll(".sidebar-menu__link");
-
-//메뉴활성화
-document.addEventListener('DOMContentLoaded', () => {
-  const menuItems = document.querySelectorAll(".sidebar-menu__link");
-
+  // 메뉴 활성화 기능
+  const menuItems = document.querySelectorAll('.sidebar-menu__link');
   menuItems.forEach((menuItem) => {
-    menuItem.addEventListener("click", (e) => {
-      const activeItem = document.querySelector(".sidebar-menu__link.active");
-      if (activeItem) activeItem.classList.remove("active");
-      e.target.classList.add("active");
+    menuItem.addEventListener('click', (e) => {
+      const activeItem = document.querySelector('.sidebar-menu__link.active');
+      if (activeItem) activeItem.classList.remove('active');
+      e.target.classList.add('active');
     });
   });
 });

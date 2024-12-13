@@ -33,6 +33,9 @@ public class TodoVO {
     }
 
     public void setDescription(String description) {
+        if (description == null || description.trim().isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be null or empty.");
+        }
         this.description = description;
     }
 
@@ -41,6 +44,9 @@ public class TodoVO {
     }
 
     public void setProgress(int progress) {
+        if (progress < 0 || progress > 100) {
+            throw new IllegalArgumentException("Progress must be between 0 and 100.");
+        }
         this.progress = progress;
     }
 
@@ -49,6 +55,9 @@ public class TodoVO {
     }
 
     public void setTodoName(String todoName) {
+        if (todoName == null || todoName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Todo name cannot be null or empty.");
+        }
         this.todoName = todoName;
     }
 
@@ -66,5 +75,19 @@ public class TodoVO {
 
     public void setUpdatedDate(Date updatedDate) {
         this.updatedDate = updatedDate;
+    }
+
+    // toString Method for debugging
+    @Override
+    public String toString() {
+        return "TodoVO{" +
+                "todoId=" + todoId +
+                ", projectNo=" + projectNo +
+                ", description='" + description + '\'' +
+                ", progress=" + progress +
+                ", todoName='" + todoName + '\'' +
+                ", createdDate=" + createdDate +
+                ", updatedDate=" + updatedDate +
+                '}';
     }
 }

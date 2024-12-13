@@ -6,5 +6,7 @@ import org.springframework.dao.DataAccessException;
 
 @Mapper
 public interface CalendarMainDAO {
-    public CalendarMainVO CalendarEventsById(CalendarMainVO calendarMainVO) throws DataAccessException;
+    public CalendarMainVO CalendarEventsById(int calendarMainVO) throws DataAccessException;
+
+    void insertCalendarEvent(CalendarMainVO calendarMainVO);
 }

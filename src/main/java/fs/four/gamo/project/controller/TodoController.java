@@ -23,8 +23,7 @@ public class TodoController {
     public String saveTodo(@RequestParam("projectNo") int projectNo,
                            @RequestParam("description") String description,
                            @RequestParam("userName") String userName) {
-        logger.info("saveTodo 호출됨");
-        logger.info("받은 데이터: projectNo={}, description={}, userName={} ", projectNo, description, userName);
+        logger.info("saveTodo 호출됨: projectNo={}, description={}, userName={} ", projectNo, description, userName);
 
         try {
             TodoVO todo = new TodoVO();
@@ -36,7 +35,7 @@ public class TodoController {
             todoService.saveTodo(todo);
             return "SUCCESS";
         } catch (Exception e) {
-            logger.error("할일 저장 중 오류 발생: ", e);
+            logger.error("할일 저장 중 오류 발생", e);
             return "FAILURE";
         }
     }
@@ -44,12 +43,12 @@ public class TodoController {
     // 특정 프로젝트의 할일 목록 조회
     @GetMapping("/list")
     public List<TodoVO> getTodoList(@RequestParam("projectNo") int projectNo) {
-        logger.info("getTodoList 호출됨: projectNo={} ", projectNo);
+        logger.info("getTodoList 호출됨: projectNo={}", projectNo);
 
         try {
             return todoService.getTodoListByProject(projectNo);
         } catch (Exception e) {
-            logger.error("할일 목록 조회 중 오류 발생: ", e);
+            logger.error("할일 목록 조회 중 오류 발생", e);
             return null;
         }
     }
@@ -57,8 +56,6 @@ public class TodoController {
     // 특정 할일 삭제
     @PostMapping("/delete")
     public String deleteTodo(@RequestParam("todoId") int todoId) {
-        logger.info("deleteTodo 호출됨: todoId={} ", todoId);
-
         try {
             todoService.deleteTodoById(todoId);
             return "SUCCESS";
@@ -71,12 +68,10 @@ public class TodoController {
     // 여러 할일 삭제 (여러 ID를 한번에 처리)
     @PostMapping("/deleteMultiple")
     public String deleteMultipleTodos(@RequestBody List<Integer> todoIds) {
-        logger.info("deleteMultipleTodos 호출됨: todoIds={} ", todoIds);
+        logger.info("deleteMultipleTodos 호출됨: todoIds={}", todoIds);
 
         try {
-            for (int todoId : todoIds) {
-                todoService.deleteTodoById(todoId);
-            }
+            todoService.deleteMultipleTodosByIds(todoIds);
             return "SUCCESS";
         } catch (Exception e) {
             logger.error("여러 할일 삭제 중 오류 발생: ", e);
@@ -94,8 +89,21 @@ public class TodoController {
             todoService.updateTodoProgress(todoId, progress);
             return "SUCCESS";
         } catch (Exception e) {
-            logger.error("할일 진행률 업데이트 중 오류 발생: ", e);
+            logger.error("할일 진행률 업데이트 중 오류 발생", e);
             return "FAILURE";
+        }
+    }
+
+    // 특정 프로젝트의 전체 할일 진행률 조회
+    @GetMapping("/projectProgress")
+    public int getProjectProgress(@RequestParam("projectNo") int projectNo) {
+        logger.info("getProjectProgress 호출됨: projectNo={}", projectNo);
+
+        try {
+            return todoService.calculateProjectProgress(projectNo);
+        } catch (Exception e) {
+            logger.error("프로젝트 진행률 조회 중 오류 발생", e);
+            return 0;
         }
     }
 }

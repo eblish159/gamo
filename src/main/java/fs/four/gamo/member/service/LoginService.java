@@ -2,6 +2,7 @@ package fs.four.gamo.member.service;
 
 import fs.four.gamo.member.dao.LoginDAO;
 import fs.four.gamo.member.vo.LoginVO;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,4 +14,5 @@ public class LoginService {
     public LoginVO login(LoginVO loginVO) throws Exception{
         return loginDAO.loginById(loginVO);
     }
+
 }

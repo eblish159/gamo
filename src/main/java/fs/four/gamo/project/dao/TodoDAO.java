@@ -16,12 +16,7 @@ public class TodoDAO {
     // 할일 저장
     public void saveTodo(TodoVO todo) {
         String sql = "INSERT INTO Todo (project_no, description, progress, todo_name) VALUES (?, ?, ?, ?)";
-        jdbcTemplate.update(sql,
-                todo.getProjectNo(),
-                todo.getDescription(),
-                todo.getProgress(),
-                todo.getTodoName()
-        );
+        jdbcTemplate.update(sql, todo.getProjectNo(), todo.getDescription(), todo.getProgress(), todo.getTodoName());
     }
 
     // 특정 프로젝트의 할일 목록 조회
@@ -44,7 +39,7 @@ public class TodoDAO {
         jdbcTemplate.update(sql, todoId);
     }
 
-    // 여러 할일 삭제
+    // 다수의 할일 삭제
     public void deleteMultipleTodosByIds(List<Integer> todoIds) {
         if (todoIds == null || todoIds.isEmpty()) {
             throw new IllegalArgumentException("삭제할 todoId 리스트가 비어 있습니다.");
@@ -58,5 +53,11 @@ public class TodoDAO {
     public void updateTodoProgress(int todoId, int progress) {
         String sql = "UPDATE Todo SET progress = ? WHERE todo_id = ?";
         jdbcTemplate.update(sql, progress, todoId);
+    }
+
+    // 특정 프로젝트의 진행률 계산
+    public int calculateProjectProgress(int projectNo) {
+        String sql = "SELECT COALESCE(AVG(progress), 0) FROM Todo WHERE project_no = ?";
+        return jdbcTemplate.queryForObject(sql, Integer.class, projectNo);
     }
 }

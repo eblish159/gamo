@@ -9,4 +9,9 @@
         FROM CALENDAR_MAIN
         WHERE EVENT_ID = #{eventId}
     </select>
+
+    <insert id="insertCalendarEvent" parameterType="fs.four.gamo.calendar.vo.CalendarMainVO">
+        INSERT INTO CALENDAR_MAIN (EVENT_ID, EVENT_DATE, EVENT_NAME, EVENT_COLOR, EVENT_DESCRIPTION)
+        VALUES (#{eventId}, #{event_Date}, #{event_Name}, #{event_Color}, #{event_Description})
+    </insert>
 </mapper>
