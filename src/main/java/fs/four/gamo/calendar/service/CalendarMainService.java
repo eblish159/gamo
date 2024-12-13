@@ -1,34 +1,30 @@
 package fs.four.gamo.calendar.service;
 
-import fs.four.gamo.calendar.dao.CalendarMainDAO;
+import fs.four.gamo.calendar.dao.CalendarDAO;
 import fs.four.gamo.calendar.vo.CalendarMainVO;
+import fs.four.gamo.member.vo.LoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CalendarMainService {
-
     @Autowired
-    private CalendarMainDAO calendarMainDAO;
+    private CalendarDAO calendarDAO;
 
-    /**
-     * 특정 이벤트 조회
-     * @param eventId 이벤트 ID
-     * @return 조회된 CalendarMainVO 객체
-     * @throws Exception 데이터 접근 오류 시 예외 처리
-     */
-    public CalendarMainVO getEventById(int eventId) throws Exception {
-        if (eventId <= 0) {
-            throw new IllegalArgumentException("Invalid event ID");
-        }
-        return calendarMainDAO.CalendarEventsById(eventId);
+    public List<CalendarMainVO> list_cal() {
+        System.out.println(calendarDAO.toString());
+        return calendarDAO.getCalendarEvents();
     }
 
-    /**
-     * 새로운 이벤트 저장
-     * @param calendarMainVO 저장할 이벤트 정보
-     */
-    public void insertCalendarEvent(CalendarMainVO calendarMainVO) {
-        calendarMainDAO.insertCalendarEvent(calendarMainVO); // 저장 SQL 호출
+    public void addEvent(CalendarMainVO calendarMainVO) {
+        calendarDAO.calendarEvents(calendarMainVO);
+        System.out.println(calendarMainVO.toString());
+    }
+
+    public void delEvent(int cal_no) {
+        calendarDAO.delete_cal(cal_no);
+        System.out.println(cal_no);
     }
 }

@@ -3,16 +3,20 @@
 
 <mapper namespace="fs.four.gamo.calendar.dao.CalendarMainDAO">
 
-    <!-- 특정 이벤트 조회 -->
+    <!-- 특정 이벤트 조회 리스트 -->
     <select id="getCalendarEvents" parameterType="int" resultType="fs.four.gamo.calendar.vo.CalendarMainVO">
         SELECT *
         FROM CALENDAR_MAIN
-        WHERE EVENT_ID = #{eventId}
     </select>
 
     <!-- 새로운 이벤트 추가 -->
-    <insert id="insertCalendarEvent" parameterType="fs.four.gamo.calendar.vo.CalendarMainVO">
-        INSERT INTO CALENDAR_MAIN (GUBUN, CAL_TITLE, CAL_DETAILS, START_DATE, END_DATE, SECRET)
-        VALUES (#{gubun}, #{calTitle}, #{calDetails}, #{startDate}, #{endDate}, #{secret})
+    <insert id="calendarEvents" parameterType="fs.four.gamo.calendar.vo.CalendarMainVO">
+        INSERT INTO CALENDAR_MAIN (GUBUN, CAL_TITLE, CAL_DETAILS, START_DATE, END_DATE)
+        VALUES (#{gubun}, #{cal_title}, #{cal_detalls}, #{start_date}, #{end_date})
     </insert>
+
+    <delete id="delete_cal">
+        DELETE FROM CALENDAR_MAIN
+        WHERE cal_no = #{cal_no}
+    </delete>
 </mapper>

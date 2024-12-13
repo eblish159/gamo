@@ -1,13 +1,18 @@
 package fs.four.gamo.calendar.controller;
 
+import fs.four.gamo.calendar.dao.CalendarDAO;
 import fs.four.gamo.calendar.service.CalendarMainService;
 import fs.four.gamo.calendar.vo.CalendarMainVO;
+import fs.four.gamo.member.vo.LoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class CalendarController {
@@ -43,16 +48,24 @@ public class CalendarController {
         return "layout";
     }
 
-    // 이벤트 추가
+    @GetMapping("/callist")
+    public String list_cal(Model model) {
+        List<CalendarMainVO> eventcal = calendarMainService.list_cal();
+        model.addAttribute("eventcal", eventcal);
+        model.addAttribute("contentPage", "calendarContent/calendar");
+        return "layout";
+    }
+
     @PostMapping("/addEvent")
-    public String addEvent(@ModelAttribute CalendarMainVO calendarMainVO, Model model) {
-        try {
-            calendarMainService.insertCalendarEvent(calendarMainVO); // 이벤트 저장
-            model.addAttribute("message", "이벤트가 저장되었습니다!");
-        } catch (Exception e) {
-            model.addAttribute("message", "이벤트 저장 중 오류가 발생했습니다.");
-            e.printStackTrace();
-        }
-        return "redirect:/calendar"; // 캘린더 페이지로 리다이렉트
+    public String addEvent(@ModelAttribute CalendarMainVO calendarMainVO) {
+        calendarMainService.addEvent(calendarMainVO);
+        return "redirect:/calendar";
+    }
+
+    @GetMapping("/delEvent")
+    public String delEvent(@RequestParam("id") int cal_no) {
+        calendarMainService.delEvent(cal_no);
+        System.out.println(cal_no);
+        return "redirect:/calendar";
     }
 }
