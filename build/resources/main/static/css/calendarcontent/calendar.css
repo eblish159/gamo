@@ -16,26 +16,19 @@
     margin-top: 90px;
 }
 
-.calendar-header {
+.calendar-header{
+    width:100%;
+    color:#ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background: #007bff;
     border-bottom: none;
-}
-.next-month, .prev-month{
-   cursor:pointer;
-}
-.calendar-header h2 {
-    margin: 0;
-}
-
-.calendar-header button {
-    background: none;
-    border: none;
-    font-size: 18px;
-
+    cursor: pointer;
+    font-size:20px;
+    font-family: Sans-series;
+    font-weight:bold;
 }
 
 .calendar-grid {
@@ -50,6 +43,7 @@
     text-align: center;
     font-weight: bold;
     color: #ffffff;
+    height: -20px;
 }
 
 .calendar-container .day {
@@ -59,12 +53,16 @@
     text-align: center;
     border-radius: 4px;
     position: relative;
-
+    max-height: 400px;
 }
 .day{
     cursor:pointer;
     background: none;
     border: none;
+}
+
+.day:hover{
+    background: #007bff;
 }
 
 .calendar-container .empty {

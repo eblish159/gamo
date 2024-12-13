@@ -46,6 +46,7 @@ body {
     font-weight: bold;
     color: white;
     background-color: #4ccb32;
+    cursor: pointer;
 }
 .login_form .btn_login:hover {
     background-color: #8c8c8c;
