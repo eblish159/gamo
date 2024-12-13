@@ -53,4 +53,6 @@ public class ProjectService {
         int rowsAffected = projectDAO.deleteProjectById(projectNo);
         return rowsAffected > 0; // 삭제된 행이 1개 이상이면 true 반환, 아니면 false 반환
     }
+
+
 }

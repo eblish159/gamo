@@ -70,6 +70,55 @@ function loadTodoList(projectNo) {
     .catch((error) => console.error('Error loading todo list:', error));
 }
 
+//삭제 버튼 구현
+document.querySelector('.remove-todo-btn')?.addEventListener('click', function () {
+    const projectNo = document.querySelector('.projecttwo')?.getAttribute('data-project-id');
+    if (!projectNo) {
+        alert("프로젝트 ID가 유효하지 않습니다.");
+        return;
+    }
+
+    // 선택된 체크박스에서 todoId 추출
+    const selectedTodos = Array.from(document.querySelectorAll('.todo-checkbox:checked'))
+        .map(checkbox => checkbox.getAttribute('data-id'));
+
+    if (selectedTodos.length === 0) {
+        alert("삭제할 할일을 선택하세요.");
+        return;
+    }
+
+    // 서버로 삭제 요청
+    fetch('/todo/deleteMultiple', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(selectedTodos),
+    })
+        .then(response => response.text())
+        .then(result => {
+            if (result === 'SUCCESS') {
+                alert("선택된 할일이 삭제되었습니다.");
+                loadTodoList(projectNo); // 목록 새로고침
+            } else {
+                alert("할일 삭제에 실패했습니다.");
+            }
+        })
+        .catch(error => console.error('Error deleting todos:', error));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 진행률 선택 기능
 
 document.querySelector('.todoprojects')?.addEventListener('click', function (e) {
@@ -194,7 +243,7 @@ function loadParticipants(projectNo) {
                 const participantItem = document.createElement('p');
                 participantItem.classList.add('participant-detail');
                 participantItem.style.color = 'black';
-                participantItem.textContent = `사용자 ID: ${participant.memberId}, 사용자 이름: ${participant.name}`;
+                participantItem.textContent = `ID: ${participant.memberId},  이름: ${participant.name}`;
                 participantListContainer.appendChild(participantItem);
             });
         })

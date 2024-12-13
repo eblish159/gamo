@@ -42,10 +42,10 @@
                     <div class="project-box-wrapper">
                         <div class="project-box" style="background-color: rgb(192, 197, 241);">
                             <div class="project-box-header">
-                                <span>참여자</span>
+                                <span></span>
                             </div>
                             <div class="project-box-content-header">
-                                <p class="box-content-header">참여자들</p>
+                                <p class="box-content-header">프로젝트 참여자</p>
                             </div>
                             <div class="box-progress-wrapper">
                                 <div class="box-progress-bar">
