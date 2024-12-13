@@ -11,8 +11,8 @@ import java.sql.Timestamp;
 public class CalendarMainVO {
     private Long cal_no;
     private int gubun;
-    private String calTitle;
-    private String calDetails;
-    private Date startDate;
-    private Date endDate;
+    private String cal_Title;
+    private String cal_Details;
+    private Date start_Date;
+    private Date end_Date;
 }
