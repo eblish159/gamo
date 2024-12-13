@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
      pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +43,13 @@
             <div class="day">10</div>
             <div class="day">11<div></div></div>
             <div id="day-2024-12-12" class="day">12</div>
-            <div id="day-2024-12-13" class="day">13</div>
+            <div id="day-2024-12-13" class="day">13
+                <c:forEach var="day" items="${eventcal}">
+                <div class="todo-item">
+                <strong>${day.calTitle}</strong>
+                </div>
+                </c:forEach>
+            </div>
             <div id="day-2024-12-14" class="day">14</div>
             <div class="day">15<div></div></div>
             <div class="day">16</div>
@@ -69,28 +76,29 @@
 
      <div class="todo-modal" id="todo-modal" style="display: none;">
          <div class="modal-header">
-             <select id="header-dropdown" class="dropdown-menu">
-                 <option value="todo" selected>ToDo</option>
-                 <option value="schedule">Schedule</option>
+             <select id="header-dropdown" class="dropdown-menu" name="gubun">
+                 <option value=1 selected>ToDo</option>
+                 <option value=0>Schedule</option>
              </select>
           <button class="schedule-close-btn" onclick="closetodoModal()">X</button>
          </div>
 
          <div class="modal-body">
+            <form action="addEvent" method="post">
              <label for="todo-title" class="labell">Title</label>
-             <input type="text" id="todo-title" class="input-field" placeholder="내가 할 일">
+             <input type="text" id="todo-title" name="cal_title" class="input-field" placeholder="내가 할 일">
 
              <label for="todo-details" class="labell">Details</label>
-             <textarea id="todo-details" class="textarea-field" placeholder="내가 할 일 상세 글"></textarea>
+             <textarea id="todo-details" name="cal_detalls" class="textarea-field" placeholder="내가 할 일 상세 글"></textarea>
 
              <label for="start-date" class="labell">Start Date</label>
              <div class="date-range">
-                 <input type="datetime-local" id="start-date" class="date-input">
+                 <input type="datetime-local" name="start_date" id="start-date" class="date-input">
              </div>
 
              <label for="end-date" class="labell">End Date</label>
              <div class="date-range">
-                 <input type="datetime-local" id="end-date" class="date-input">
+                 <input type="datetime-local" name="end_date" id="end-date" class="date-input">
              </div>
 
              <div class="options-input">
@@ -98,11 +106,15 @@
                  <label for="private-option" class="labell">비공개</label>
              </div>
             <div class="modal-footer">
-                <button class="action-btn add-btn" id="addTodoButton" onclick="updateTodo()">추가</button>
+                <button type="submit" class="action-btn add-btn" id="addTodoButton" onclick="updateTodo()">추가</button>
                 <button class="action-btn delete-btn" onclick="deleteTodo()">삭제</button>
             </div>
+            </form>
          </div>
      </div>
+
+
+
 
     <div class="schedule-modal">
             <div class="modal-header">
@@ -111,7 +123,7 @@
                 <button class="schedule-close-btn" onclick="closescheduleModal()">X</button>
             </div>
             <div class="modal-body">
-                <c:forEach var="day" items="${days}" varStatus="status">
+                <c:forEach var="day" items="${eventcal}" varStatus="status">
                 <c:if test="${status.index == 0}">
                     <span class="date">${day.date} ${day.dayOfWeek}</span>
                     <div class="details">
