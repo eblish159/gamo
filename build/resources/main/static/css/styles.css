@@ -243,3 +243,127 @@
          .app1 .main .main-header .main-header-nav .nav-logout:hover {
              background-color: #2c2c2c;
          }
+
+
+         /* 랭킹 컨테이너 스타일 */
+         .ranking-container {
+             position: absolute;
+             top: 100px; /* 상단에서 20px */
+             right: 20px; /* 오른쪽에서 20px */
+             width: 300px; /* 고정 너비 */
+             background-color: #1b1b1b; /* 배경색 */
+             color: #fff; /* 텍스트 색상 */
+             border-radius: 8px; /* 둥근 모서리 */
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+             padding: 15px; /* 내부 여백 */
+             font-family: "Poppins", sans-serif;
+         }
+
+         /* 랭킹 헤더 스타일 */
+         .ranking-header {
+             text-align: center;
+             font-size: 20px; /* 글씨 크기 */
+             font-weight: bold;
+             margin-bottom: 15px; /* 하단 여백 */
+         }
+
+         /* 랭킹 리스트 */
+         .ranking-list {
+             margin-bottom: 20px; /* 리스트와 나의 순위 간격 */
+         }
+
+         .ranking-item {
+             display: flex;
+             align-items: center;
+             padding: 10px 0; /* 아이템 간격 */
+             border-bottom: 1px solid #333; /* 구분선 */
+         }
+
+         .ranking-item:last-child {
+             border-bottom: none; /* 마지막 아이템 구분선 제거 */
+         }
+
+         .rank {
+             width: 30px; /* 순위 번호 */
+             text-align: center;
+             font-weight: bold;
+         }
+
+         .rank-image {
+             width: 40px; /* 이미지 크기 */
+             height: 40px;
+             border-radius: 50%; /* 원형 이미지 */
+             margin-right: 10px; /* 이미지와 이름 간격 */
+         }
+
+         .rank-name {
+             flex: 1; /* 이름은 나머지 공간 차지 */
+         }
+
+         .rank-level {
+             font-weight: bold; /* 레벨 강조 */
+         }
+
+         /* 나의 순위 스타일 */
+         .my-ranking h3 {
+             text-align: center;
+             margin-bottom: 10px;
+             font-size: 18px;
+             font-weight: bold;
+         }
+
+         .my-ranking .ranking-item {
+             background-color: #2c2c2c; /* 나의 순위 배경 강조 */
+             border-radius: 8px;
+             padding: 10px;
+         }
+
+
+        /* 공지사항 컨테이너 */
+        .notice-container {
+            position: absolute; /* 공지사항을 하단에 고정 */
+            bottom: 40px; /* 하단에 배치 */
+            left: 310px; /* 메뉴 너비만큼 띄우기 (예: 300px) */
+            width: 950px; /* 메뉴를 제외한 나머지 영역 */
+            background-color: #1b1b1b; /* 배경색 */
+            color: #ffffff; /* 텍스트 색상 */
+            border-radius: 8px 8px 0 0; /* 상단 모서리 둥글게 */
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* 상단 그림자 효과 */
+            padding: 15px; /* 내부 여백 */
+            box-sizing: border-box; /* 패딩 포함 너비 계산 */
+        }
+
+        /* 공지사항 헤더 */
+        .notice-header {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        /* 공지사항 리스트 */
+        .notice-list {
+            list-style: none; /* 기본 리스트 스타일 제거 */
+            padding: 0;
+            margin: 0;
+            max-height: 150px; /* 최대 높이 설정 */
+            overflow-y: auto; /* 스크롤 활성화 */
+        }
+
+        .notice-item {
+            font-size: 14px;
+            padding: 8px 0; /* 항목 간격 */
+            border-bottom: 1px solid #333; /* 항목 구분선 */
+        }
+
+        .notice-item:last-child {
+            border-bottom: none; /* 마지막 항목 구분선 제거 */
+        }
+
+        .notice-item:hover {
+            color: #007bff; /* 호버 시 강조 색상 */
+            cursor: pointer;
+        }
+
+
+
