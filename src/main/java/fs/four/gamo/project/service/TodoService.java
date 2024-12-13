@@ -59,7 +59,6 @@ public class TodoService {
                 logger.info("할일 삭제 완료. ID: {}", todoId);
             }
         } catch (Exception e) {
-            logger.error("다수의 할일 삭제 실패. IDs: {}", todoIds, e);
             throw e;
         }
     }
@@ -68,9 +67,7 @@ public class TodoService {
     public void updateTodoProgress(int todoId, int progress) {
         try {
             todoDAO.updateTodoProgress(todoId, progress);
-            logger.info("할일 진행률 업데이트 완료. ID: {}, 진행률: {}%", todoId, progress);
         } catch (Exception e) {
-            logger.error("할일 진행률 업데이트 실패. ID: {}, 진행률: {}%", todoId, progress, e);
             throw e;
         }
     }
@@ -89,7 +86,6 @@ public class TodoService {
             logger.info("프로젝트 {}의 평균 진행률 계산 완료: {}%", projectNo, averageProgress);
             return averageProgress;
         } catch (Exception e) {
-            logger.error("프로젝트 {} 진행률 계산 중 오류 발생", projectNo, e);
             throw new RuntimeException("프로젝트 진행률 계산 중 오류 발생", e);
         }
     }

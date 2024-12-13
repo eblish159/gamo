@@ -107,27 +107,44 @@ document.querySelector('.todoprojects')?.addEventListener('click', function (e) 
 
 // 참여하기 버튼 클릭 시 로그인 세션에서 정보 가져오기
     document.getElementById('addParticipantBtn')?.addEventListener('click', function () {
+        const projectNo = document.querySelector('.projecttwo')?.getAttribute('data-project-id');
+        if (!projectNo) {
+            alert("프로젝트 ID를 찾을 수 없습니다.");
+            return;
+        }
+
         fetch('/member/session')
             .then(response => response.json())
             .then(data => {
-                console.log('API 응답 데이터:', data);
                 if (data.error) {
                     alert("세션 정보가 없습니다. 로그인 페이지로 이동합니다.");
                     window.location.href = "/login";
                 } else {
-                    console.log("사용자 ID:", data.member_id);
-                    console.log("사용자 이름:", data.name);
-                    alert(`참여 성공: ID: ${data.member_id}, 이름: ${data.name}`);
+                    const participant = {
+                        projectNo: projectNo,
+                        memberId: data.member_id,
+                    };
 
-                    // 사용자 정보를 한 줄로 출력
-                    const participantInfoElement = document.getElementById('participant-info');
-                    if (participantInfoElement) {
-                        participantInfoElement.textContent = `사용자 ID: ${data.member_id}  사용자 이름: ${data.name}`;
-                    }
+                    fetch('/api/participants/add', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(participant),
+                    })
+                        .then(response => response.json())
+                        .then(result => {
+                            if (result.status === 'SUCCESS') {
+                                alert(`참여 성공: ID: ${data.member_id}, 이름: ${data.name}`);
+                                loadParticipants(projectNo); // 목록 갱신
+                            } else {
+                                alert("참여자 추가 실패.");
+                            }
+                        })
+                        .catch(error => console.error('Error adding participant:', error));
                 }
             })
-            .catch(error => console.error("API 호출 중 오류:", error));
+            .catch(error => console.error('Error fetching session data:', error));
     });
+
 
 
 
@@ -163,8 +180,55 @@ function updateTotalProgress(projectNo) {
     }
 }
 
+// loadParticipants 함수 정의 참여자 목록 로드 함수
+function loadParticipants(projectNo) {
+    fetch(`/api/participants/${projectNo}`)
+        .then(response => response.json())
+        .then(data => {
+            const participantListContainer = document.querySelector('#participant-info');
+            if (!participantListContainer) return;
+
+            participantListContainer.innerHTML = ''; // 기존 참여자 목록 초기화
+
+            data.forEach(participant => {
+                const participantItem = document.createElement('p');
+                participantItem.classList.add('participant-detail');
+                participantItem.style.color = 'black';
+                participantItem.textContent = `사용자 ID: ${participant.memberId}, 사용자 이름: ${participant.name}`;
+                participantListContainer.appendChild(participantItem);
+            });
+        })
+        .catch(error => console.error('Error loading participants:', error));
+}
+
+
+
+
+
+
+
+
+
+
 // 메뉴 활성화 및 초기 데이터 로드
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+    const projectNo = document.querySelector('.projecttwo')?.getAttribute('data-project-id');
+
+    if (projectNo) {
+        loadParticipants(projectNo); // 참여자 목록 로드
+        loadTodoList(projectNo); // 할일 목록 로드
+        fetch(`/todo/projectProgress?projectNo=${projectNo}`)
+            .then(response => response.json())
+            .then(progress => {
+                const totalProgressElement = document.getElementById('total-progress');
+                if (totalProgressElement) {
+                    totalProgressElement.textContent = `${progress}%`;
+                }
+            })
+            .catch(error => console.error('Error fetching project progress:', error));
+    }
+
+    // 메뉴 활성화 코드
     const menuItems = document.querySelectorAll('.sidebar-menu__link');
 
     menuItems.forEach((menuItem) => {
@@ -174,21 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.classList.add('active');
         });
     });
-
-    const projectNo = document.querySelector('.projecttwo')?.getAttribute('data-project-id');
-    if (projectNo) {
-        loadTodoList(projectNo);
-        fetch(`/todo/projectProgress?projectNo=${projectNo}`)
-            .then((response) => response.json())
-            .then((progress) => {
-                const totalProgressElement = document.getElementById('total-progress');
-                if (totalProgressElement) {
-                    totalProgressElement.textContent = `${progress}%`;
-                }
-            })
-            .catch((error) => console.error('Error fetching project progress:', error));
-    }
 });
+
+
 
 
 // 프로젝트 삭제 기능

@@ -56,10 +56,13 @@
                                 <div class="participants">
                                     <!-- 참여하기 버튼 -->
                                     <button class="add-participant" id="addParticipantBtn">참여하기</button>
+
                                     <!-- 사용자 정보를 표시할 영역 -->
                                     <div id="participant-info" class="participant-container">
+                                    <div class="participants">
                                         <p id="participant-id" class="participant-detail" style="color: black; margin-top: 10px;"></p>
                                         <p id="participant-name" class="participant-detail" style="color: black;"></p>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="days-left" style="color: #4f94d1;"></div>
