@@ -13,6 +13,7 @@
         <div class="page-header cf">
             <h2>진행중인 프로젝트</h2>
 
+        <div class="project-header-buttons">
             <div class="project-search">
                 <input type="text" id="search-input" placeholder="Search projects...">
                 <button id="search-button">Search</button>
@@ -29,6 +30,7 @@
                 </div>
             </div>
             <button class="add-project-btn" onclick="location.href='/projectswrite'">추가</button> <!-- 추가 버튼 추가 -->
+        </div>
         </div>
 
         <ul class="project-list">
