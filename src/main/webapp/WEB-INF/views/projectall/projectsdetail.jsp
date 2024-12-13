@@ -54,7 +54,7 @@
                             </div>
                             <div class="project-box-footer">
                                 <div class="participants">
-                                    <!-- 참여하기 버튼 -->
+                                    <!-- 참여하기 버튼.. -->
                                     <button class="add-participant" id="addParticipantBtn">참여하기</button>
 
                                     <!-- 사용자 정보를 표시할 영역 -->

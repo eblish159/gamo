@@ -15,7 +15,7 @@ public class CalendarMainService {
 
     public List<CalendarMainVO> list_cal() {
         System.out.println(calendarDAO.toString());
-        return calendarDAO.getCalendarEvents();
+        return calendarDAO.CalendarEvents();
     }
 
     public void addEvent(CalendarMainVO calendarMainVO) {
@@ -23,7 +23,7 @@ public class CalendarMainService {
         System.out.println(calendarMainVO.toString());
     }
 
-    public void delEvent(int cal_no) {
+    public void delEvent(Long cal_no) {
         calendarDAO.delete_cal(cal_no);
         System.out.println(cal_no);
     }

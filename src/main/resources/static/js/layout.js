@@ -9,7 +9,7 @@ menuItems.forEach((menuItem) => {
 });
 
 
-//레벨,경험치 창
+//레벨,경험치 창.
 // 위젯 열기/닫기 토글
   function toggleWidget() {
     const content = document.querySelector('.widget-content');
