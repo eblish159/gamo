@@ -1,5 +1,58 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div>
+
+    <div class="small-calendar-container">
+        <div>
+            <input type="month" class="small-calendar-header" id="small-calendar-date">
+        </div>
+        <div class="small-calendar-grid">
+            <!-- Days of the week -->
+            <div class="small-day-name">일</div>
+            <div class="small-day-name">월</div>
+            <div class="small-day-name">화</div>
+            <div class="small-day-name">수</div>
+            <div class="small-day-name">목</div>
+            <div class="small-day-name">금</div>
+            <div class="small-day-name">토</div>
+
+            <!-- Calendar days -->
+            <div class="small-empty"></div> <!-- For empty cells -->
+            <div class="small-empty"></div>
+            <div class="small-day">1</div>
+            <div class="small-day">2</div>
+            <div class="small-day">3</div>
+            <div class="small-day">4</div>
+            <div class="small-day">5</div>
+            <div class="small-day">6</div>
+            <div class="small-day">7</div>
+            <div class="small-day">8</div>
+            <div class="small-day">9</div>
+            <div class="small-day">10</div>
+            <div class="small-day">11</div>
+            <div class="small-day">12</div>
+            <div class="small-day">13</div>
+            <div class="small-day">14</div>
+            <div class="small-day">15</div>
+            <div class="small-day">16</div>
+            <div class="small-day">17</div>
+            <div class="small-day">18</div>
+            <div class="small-day">19</div>
+            <div class="small-day">20</div>
+            <div class="small-day">21</div>
+            <div class="small-day">22</div>
+            <div class="small-day">23</div>
+            <div class="small-day">24</div>
+            <div class="small-day">25</div>
+            <div class="small-day">26</div>
+            <div class="small-day">27</div>
+            <div class="small-day">28</div>
+            <div class="small-day">29</div>
+            <div class="small-day">30</div>
+            <div class="small-day">31</div>
+        </div>
+    </div>
+
+
     <!-- 랭킹 창 -->
     <div class="ranking-container">
             <div class="ranking-header">
