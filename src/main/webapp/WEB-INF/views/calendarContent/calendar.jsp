@@ -13,7 +13,7 @@
 <body>
     <div class="calendar-container">
         <div>
-        <input type="month" class="calendar-header" id="calendar-date" value="2024-03">
+        <input type="month" class="calendar-header" id="calendar-date">
         </div>
         <div class="calendar-grid">
             <!-- Days of the week -->
@@ -106,7 +106,7 @@
 
     <div class="schedule-modal">
             <div class="modal-header">
-                <h2>상세내용</h2>
+                <h2>상세목록</h2>
                 <!-- 모달 닫기 버튼 -->
                 <button class="schedule-close-btn" onclick="closescheduleModal()">X</button>
             </div>

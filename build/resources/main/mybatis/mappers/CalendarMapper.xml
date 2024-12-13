@@ -4,14 +4,15 @@
 <mapper namespace="fs.four.gamo.calendar.dao.CalendarMainDAO">
 
     <!-- 특정 이벤트 조회 -->
-    <select id="CalendarEventsById" parameterType="int" resultType="fs.four.gamo.calendar.vo.CalendarMainVO">
-        SELECT EVENT_ID, EVENT_DATE, EVENT_NAME, EVENT_COLOR, EVENT_DESCRIPTION
+    <select id="getCalendarEvents" parameterType="int" resultType="fs.four.gamo.calendar.vo.CalendarMainVO">
+        SELECT *
         FROM CALENDAR_MAIN
         WHERE EVENT_ID = #{eventId}
     </select>
 
+    <!-- 새로운 이벤트 추가 -->
     <insert id="insertCalendarEvent" parameterType="fs.four.gamo.calendar.vo.CalendarMainVO">
-        INSERT INTO CALENDAR_MAIN (EVENT_ID, EVENT_DATE, EVENT_NAME, EVENT_COLOR, EVENT_DESCRIPTION)
-        VALUES (#{eventId}, #{event_Date}, #{event_Name}, #{event_Color}, #{event_Description})
+        INSERT INTO CALENDAR_MAIN (GUBUN, CAL_TITLE, CAL_DETAILS, START_DATE, END_DATE, SECRET)
+        VALUES (#{gubun}, #{calTitle}, #{calDetails}, #{startDate}, #{endDate}, #{secret})
     </insert>
 </mapper>
