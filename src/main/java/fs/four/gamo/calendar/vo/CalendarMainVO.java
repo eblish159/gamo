@@ -9,10 +9,11 @@ import java.sql.Timestamp;
 @Data
 @Component("calendarMainVO")
 public class CalendarMainVO {
-    private int GUBUN;
-    private String CAL_TITLE;
-    private String CAL_DETAILS;
-    private Date START_DATE;
-    private Date  END_DATE;
-    private int  SECRET;
+    private int eventId;
+    private int gubun;
+    private String calTitle;
+    private String calDetails;
+    private String startDate;
+    private String endDate;
+    private int secret;
 }

@@ -122,22 +122,22 @@
                            <div class="calendar-scroll">
                                <!-- 1일부터 31일까지 날짜 반복 -->
                                <div class="schdule-calendar-item" id="day-8">
-                                   <span class="date">2024.3.8</span>
+                                   <span class="date">2024.3.8(todo)</span>
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-9">
-                                   <span class="date">2024.3.9</span>
+                                   <span class="date">2024.3.9(schedule)</span>
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-10">
-                                   <span class="date">2024.3.10</span>
+                                   <span class="date">2024.3.10(todo)</span>
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
                                <div class="schdule-calendar-item" id="day-11">
-                                   <span class="date">2024.3.11</span>
+                                   <span class="date">2024.3.11(schedule)</span>
                                    <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
                                    <div class="task-details">회사 중요 스케줄 입니다.</div>
                                </div>
