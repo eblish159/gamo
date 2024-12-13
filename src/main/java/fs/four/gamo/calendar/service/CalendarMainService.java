@@ -7,11 +7,28 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalendarMainService {
+
     @Autowired
     private CalendarMainDAO calendarMainDAO;
 
-    public CalendarMainVO calendar(CalendarMainVO calendarMainVO) throws Exception{
-        System.out.println(calendarMainVO.toString());
-        return calendarMainDAO.CalendarEventsById(calendarMainVO);
+    /**
+     * 특정 이벤트 조회
+     * @param eventId 이벤트 ID
+     * @return 조회된 CalendarMainVO 객체
+     * @throws Exception 데이터 접근 오류 시 예외 처리
+     */
+    public CalendarMainVO getEventById(int eventId) throws Exception {
+        if (eventId <= 0) {
+            throw new IllegalArgumentException("Invalid event ID");
+        }
+        return calendarMainDAO.CalendarEventsById(eventId);
+    }
+
+    /**
+     * 새로운 이벤트 저장
+     * @param calendarMainVO 저장할 이벤트 정보
+     */
+    public void insertCalendarEvent(CalendarMainVO calendarMainVO) {
+        calendarMainDAO.insertCalendarEvent(calendarMainVO); // 저장 SQL 호출
     }
 }
