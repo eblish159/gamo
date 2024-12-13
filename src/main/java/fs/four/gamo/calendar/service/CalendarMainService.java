@@ -15,7 +15,7 @@ public class CalendarMainService {
 
     public List<CalendarMainVO> list_cal() {
         System.out.println(calendarDAO.toString());
-        return calendarDAO.CalendarEvents();
+        return calendarDAO.listCalendar();
     }
 
     public void addEvent(CalendarMainVO calendarMainVO) {

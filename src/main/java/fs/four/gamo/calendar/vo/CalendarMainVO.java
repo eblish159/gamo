@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 @Data
 @Component("calendarMainVO")
 public class CalendarMainVO {
-    private Long cal_no;
+    private int cal_no;
     private int gubun;
     private String cal_Title;
     private String cal_Details;
