@@ -10,5 +10,6 @@ public interface CalendarDAO {
     List<CalendarMainVO> CalendarEvents();
     public void calendarEvents(CalendarMainVO calendarMainVO);
     public void delete_cal(int cal_no);
+    public void delete_cal(Long cal_no);
 }
 

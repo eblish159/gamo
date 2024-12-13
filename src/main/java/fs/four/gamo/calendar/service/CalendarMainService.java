@@ -23,7 +23,7 @@ public class CalendarMainService {
         System.out.println(calendarMainVO.toString());
     }
 
-    public void delEvent(int cal_no) {
+    public void delEvent(Long cal_no) {
         calendarDAO.delete_cal(cal_no);
         System.out.println(cal_no);
     }

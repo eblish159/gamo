@@ -63,7 +63,7 @@ public class CalendarController {
     }
 
     @GetMapping("/delEvent")
-    public String delEvent(@RequestParam("id") int cal_no) {
+    public String delEvent(@RequestParam("id") Long cal_no) {
         calendarMainService.delEvent(cal_no);
         System.out.println(cal_no);
         return "redirect:/calendar";
