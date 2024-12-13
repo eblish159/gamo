@@ -20,22 +20,31 @@ public class AdminController {
     private AdminService adminService;
 
     @GetMapping("/admin")
-    public String listMembers(Model model) {
-        List<LoginVO> members = adminService.listMembers();
+    public String listMembers(@RequestParam(value = "searchKeyword", required = false) String searchKeyword,
+                              @RequestParam(value = "searchCondition", required = false) String searchCondition,
+                              Model model) {
+
+        List<LoginVO> members;
+
+        if (searchKeyword != null && !searchKeyword.isEmpty() && searchCondition != null) {
+            members = adminService.searchMembers(searchKeyword, searchCondition);
+        } else {
+            members = adminService.listMembers();
+        }
+
         model.addAttribute("members", members);
         model.addAttribute("contentPage", "admemall/admemmain");
         return "layout";
     }
 
-    @PostMapping("/addMember")
+    @PostMapping("/admin/addMember")
     public String addMember(@ModelAttribute LoginVO loginVO) {
         adminService.addMember(loginVO);
         return "redirect:/admin";
     }
 
-    @PostMapping("/delMember")
-    public String deleteMember(@RequestParam("member_id") String member_id) {
-        System.out.println("삭제 요청 받은 ID: " + member_id);
+    @GetMapping("/admin/delMember")
+    public String deleteMember(@RequestParam("id") String member_id, Model model) {
         adminService.delMember(member_id);
         return "redirect:/admin";
     }

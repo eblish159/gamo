@@ -23,13 +23,29 @@
         FROM member
     </select>
 
+    <select id="searchMembers" resultType="LoginVO">
+        SELECT *
+        FROM member
+        WHERE
+        <choose>
+            <when test="searchCondition == 'member_id'">
+                member_id LIKE CONCAT('%', #{searchKeyword}, '%')
+            </when>
+            <when test="searchCondition == 'name'">
+                name LIKE CONCAT('%', #{searchKeyword}, '%')
+            </when>
+        </choose>
+    </select>
+
     <insert id="addMember" parameterType="fs.four.gamo.member.vo.LoginVO">
-        INSERT INTO member (member_id, member_pw, name, phone, gameonoff)
-        VALUES (#{member_id}, #{member_pw}, #{name}, #{phone}, #{gameonoff})
+        INSERT INTO member (member_id, member_pw, name, phone, created_date, gameonoff)
+        VALUES (#{member_id}, #{member_pw}, #{name}, #{phone}, #{created_date}, #{gameonoff})
     </insert>
 
     <delete id="delMember">
         DELETE FROM member
         WHERE member_id = #{member_id}
     </delete>
+
+
 </mapper>
