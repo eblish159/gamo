@@ -15,13 +15,13 @@
             <!-- 프로젝트 섹션 -->
             <div class="projects-section">
                 <div class="projects-section-header">
-                    <p style="color: black;">프로젝트</p>
+                    <p style="color: white;">프로젝트</p>
                     <p class="status">프로젝트 진행률: <span id="total-progress">${project.projectProgress}%</span></p>
                 </div>
 
                 <div class="project-boxes">
                     <div class="project-box-wrapper">
-                        <div class="project-box" style="background-color: rgba(231, 224, 218, 0.89);">
+                        <div class="project-box" style="background-color: ##1b1b1b;">
                             <div class="project-box-header">
                                 <span>프로젝트 제목: ${project.projectTitle}</span>
                             </div>
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="project-box-wrapper">
-                        <div class="project-box" style="background-color: rgb(192, 197, 241);">
+                        <div class="project-box" style="background-color: ##1b1b1b;">
                             <div class="project-box-header">
                                 <span></span>
                             </div>
@@ -60,8 +60,8 @@
                                     <!-- 사용자 정보를 표시할 영역 -->
                                     <div id="participant-info" class="participant-container">
                                     <div class="participants">
-                                        <p id="participant-id" class="participant-detail" style="color: black; margin-top: 10px;"></p>
-                                        <p id="participant-name" class="participant-detail" style="color: black;"></p>
+                                        <p id="participant-id" class="participant-detail" style="color: white; margin-top: 10px;"></p>
+                                        <p id="participant-name" class="participant-detail" style="color: white;"></p>
                                     </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
             <!-- 할일 목록 섹션 -->
             <div class="todoprojects-section">
                 <div class="projects-section-header">
-                    <p style="color: black;">할일 목록</p>
+                    <p style="color: white;">할일 목록</p>
                 </div>
                 <div class="todoprojects">
                     <!-- 이미 존재하는 할일 항목 -->
