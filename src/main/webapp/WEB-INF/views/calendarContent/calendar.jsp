@@ -106,7 +106,7 @@
 
     <div class="schedule-modal">
             <div class="modal-header">
-                <h2>상세목록</h2>
+                <h2>상세내용</h2>
                 <!-- 모달 닫기 버튼 -->
                 <button class="schedule-close-btn" onclick="closescheduleModal()">X</button>
             </div>
@@ -118,6 +118,11 @@
                         <p>${day.description}</p>
                         <p>${day.time}</p>
                     </div>
+                    <h2>2024.12.01(todo)</h2>
+                    <div class="select-day">
+                       프로젝트 칸반내용 추가해야함
+                    </div>
+                    <h2>할일목록</h2>
                     <div class="schdule-calendar-container">
                            <div class="calendar-scroll">
                                <!-- 1일부터 31일까지 날짜 반복 -->
