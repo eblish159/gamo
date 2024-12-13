@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="fs.four.gamo.calendar.dao.CalendarMainDAO">
+<mapper namespace="fs.four.gamo.calendar.dao.CalendarDAO">
+    <resultMap id="CalenderResultMap" type="fs.four.gamo.calendar.vo.CalendarMainVO">
+        <result property="board_no" column="board_no" />
+        <result property="board_title" column="board_title" />
+        <result property="board_content" column="board_content" />
+        <result property="member_id" column="member_id" />
+        <result property="created_date" column="created_date" />
+        <result property="updated_date" column="updated_date" />
+    </resultMap>
 
     <!-- 특정 이벤트 조회 리스트 -->
     <select id="getCalendarEvents" parameterType="int" resultType="fs.four.gamo.calendar.vo.CalendarMainVO">
         SELECT *
-        FROM CALENDAR_MAIN
+        FROM calendar_main
     </select>
 
     <!-- 새로운 이벤트 추가 -->
     <insert id="calendarEvents" parameterType="fs.four.gamo.calendar.vo.CalendarMainVO">
-        INSERT INTO CALENDAR_MAIN (GUBUN, CAL_TITLE, CAL_DETAILS, START_DATE, END_DATE)
-        VALUES (#{gubun}, #{cal_title}, #{cal_detalls}, #{start_date}, #{end_date})
+        INSERT INTO calendar_main (gubun, cal_title, cal_details, start_date, end_date)
+        VALUES (#{gubun}, #{cal_title}, #{cal_details}, #{start_date}, #{end_date})
     </insert>
 
     <delete id="delete_cal">
-        DELETE FROM CALENDAR_MAIN
+        DELETE FROM calendar_main
         WHERE cal_no = #{cal_no}
     </delete>
 </mapper>
