@@ -87,9 +87,7 @@ function updateTodo() {
         const todoItem = document.createElement('div');
         todoItem.className = 'todo-item';
         todoItem.innerHTML = `
-            <strong>${title}</strong>
-            <p>${details ? details : ''}</p>
-            <small>${startDate} ~ ${endDate ? endDate : ''}</small>
+        <strong>${title}</strong>
         `;
 
         targetDay.appendChild(todoItem); // 해당 날짜에 추가

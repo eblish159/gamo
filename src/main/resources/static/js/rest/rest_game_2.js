@@ -23,25 +23,25 @@ rps_button.forEach((btn) => {
 // 가위 0 바위 1 보 2
 function rps_check() {
     let arry = { 0: '가위', 1: '바위', 2: '보' };
-    if (com == 0 && id == 2) {
+    if (com == 0 && user == 2) {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");
         rps_dec.innerHTML = `컴퓨터 승!!<br>
         컴퓨터:${arry[com]} vs 유저:${arry[user]}`;
-    } else if (id == 0 && com == 2) {
+    } else if (user == 0 && com == 2) {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");
         rps_dec.innerHTML = `유저 승!!<br>
         컴퓨터:${arry[com]} vs 유저:${arry[user]}`;
-    } else if (com < id) {
+    } else if (com < user) {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");
         rps_dec.innerHTML = `유저 승!!<br>
         컴퓨터:${arry[com]} vs 유저:${arry[user]}`;
-    } else if (id < com) {
+    } else if (user < com) {
         rps_start.classList.toggle("hide");
         rps_content.classList.toggle("show");
         rps_dec.classList.add("show");

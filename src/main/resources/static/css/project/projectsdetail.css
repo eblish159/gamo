@@ -7,7 +7,7 @@
 
 .projecttwo {
   font-family: 'DM Sans', sans-serif;
-  background-color: #f3f6fd;
+  background-color: #1b1b1b; /* 다크 테마 배경 */
   margin: 0;
   margin-top: 50px;
   border-radius: 9px;
@@ -31,11 +31,11 @@
 
 .projecttwo .projects-section {
   flex: 1;
-  background-color: #fff;
+  background-color: #0e0e0e; /* 섹션 배경 */
   border-radius: 32px;
   padding: 32px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 0.5px solid rgba(206, 205, 205, 0.774);;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 어두운 그림자 */
+  border: 0.5px solid #252424; /* 테두리 */
 }
 
 .projecttwo .projects-section-header {
@@ -50,6 +50,7 @@
   line-height: 32px;
   font-weight: 700;
   margin: 0;
+  color: #ffffff; /* 텍스트 색상 */
 }
 
 .projecttwo .project-boxes {
@@ -66,10 +67,9 @@
   border-radius: 30px;
   padding: 16px;
   height: 300px;
+  background-color: #1b1b1b; /* 프로젝트 박스 배경 */
+  border: 1px solid #252424; /* 테두리 */
 }
-
-
-
 
 .projecttwo .project-box-header {
   display: flex;
@@ -77,19 +77,18 @@
   margin-bottom: 16px;
 }
 
-.projecttwo .project-box-header span{
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
+.projecttwo .project-box-header span {
+  color: #white; /* 강조 텍스트 */
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.projecttwo .project-box-content-header p{
-    color: black;
-    font-size: 13px;
-    margin-top: 10px;
+.projecttwo .project-box-content-header p {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
 }
-
-
 
 .projecttwo .project-box-footer {
   display: flex;
@@ -107,7 +106,7 @@
 
 .projecttwo .save-delete-project .btn-save,
 .projecttwo .save-delete-project .btn-delete {
-  background-color: orange;
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
@@ -116,110 +115,108 @@
 }
 
 .projecttwo .save-delete-project .btn-save:hover {
-  background-color: darkorange;
+  background-color: #0056b3;
 }
 
 .projecttwo .save-delete-project .btn-delete {
-  background-color: darkorange;
+  background-color: #ff4d4d;
 }
 
 .projecttwo .save-delete-project .btn-delete:hover {
-  background-color: darkred;
+  background-color: #cc3c3c;
 }
 
 .projecttwo #addParticipantBtn {
-    background-color: #4CAF50; /* 녹색 */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+  background-color: #007bff; /* 파란색 */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .projecttwo #addParticipantBtn:hover {
-    background-color: #45a049;
+  background-color: #0056b3;
 }
 
 .projecttwo #participant-info {
-    margin-top: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    font-family: 'Arial', sans-serif;
-    max-width: 400px;
-    text-align: left; /* 왼쪽 정렬. */
-    font-size: 16px;
-    color: #333;
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #252424;
+  border-radius: 8px;
+  background-color: #0e0e0e;
+  font-family: 'Arial', sans-serif;
+  max-width: 400px;
+  text-align: left;
+  font-size: 16px;
+  color: #cccccc;
 }
-
 
 .projecttwo #participant-info p {
-    margin: 5px 0; /* 각 줄 간격 */
-    font-size: 16px;
-    color: #333;
+  margin: 5px 0;
+  font-size: 16px;
+  color: #cccccc;
 }
 
-
 .projecttwo .participant-container {
-    margin-top: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    font-family: 'Arial', sans-serif;
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #252424;
+  border-radius: 8px;
+  background-color: #0e0e0e;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  max-width: 300px;
+  font-family: 'Arial', sans-serif;
 }
 
 .projecttwo .participant-detail {
-    margin: 5px 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #cccccc;
+  text-align: center;
 }
 
 .projecttwo .participant-detail:first-child {
-    color: #4f94d1; /* 사용자 ID 색상 */
+  color: #fff; /* 사용자 ID 색상 */
 }
 
 .projecttwo .participant-detail:last-child {
-    color: #28a745; /* 사용자 이름 색상 */
+  color: #fff; /* 사용자 이름 색상 */
 }
 
-
-/* 할일 섹션 (할일 목록) */
+/* 할일 섹션 */
 .projecttwo .todoprojects-section {
   flex: 1;
-  background-color: #fff;
+  background-color: #;
   padding: 20px;
   border-radius: 32px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   margin-left: 20px;
   display: flex;
   flex-direction: column;
-  border: 0.5px solid rgba(206, 205, 205, 0.774);;
+  border: 0.5px solid #252424;
 }
 
 .projecttwo .todoprojects-section-header {
   font-size: 24px;
   margin-bottom: 16px;
+  color: #ffffff;
 }
 
 .projecttwo .todoproject-box {
   padding: 10px;
-  background-color: #fff;
-  border: 0.5px solid gray;
+  background-color: #1b1b1b;
+  border: 1px solid #252424;
   border-radius: 8px;
   margin-bottom: 10px;
   transition: background-color 0.3s ease;
 }
 
 .projecttwo .todoproject-box:hover {
-  background-color: #fafcff;
+  background-color: #007bff;
 }
 
 .projecttwo .todoproject-header {
@@ -229,41 +226,18 @@
 
 .projecttwo .name {
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
 }
 
 .projecttwo .todoproject-line {
   margin: 5px 0;
-  color: #666;
+  color: #cccccc;
 }
 
 .projecttwo .progress-status {
-  font-size: 18px; /* 진행률 텍스트 크기 증가 */
+  font-size: 18px;
   font-weight: bold;
-}
-
-
-
-.projecttwo .status {
-  font-size: 5px;
-  color: #999;
-  text-align: right;
-}
-
-.projecttwo .progress-container {
-  display: flex;
-  gap: 5px;
-}
-
-.projecttwo .todoproject-line.status {
-  font-size: 12px; /* 원하는 폰트 크기로 변경 */
-  font-weight: bold; /* 글자를 두껍게 */
-}
-
-.projecttwo .progress-status {
-  font-size: 12px; /* 진행률 퍼센트 텍스트 크기 */
-  font-weight: bold;
-  color: #4f94d1; /* 원하는 텍스트 색상으로 변경 */
+  color: #007bff;
 }
 
 .projecttwo .progress-btn {
@@ -276,7 +250,7 @@
 }
 
 .projecttwo .progress-btn:hover {
-  background-color: #3b7ea0;
+  background-color: #0056b3;
 }
 
 /* 할일 목록 삭제 버튼 */
@@ -287,7 +261,7 @@
 }
 
 .projecttwo .add-todo-btn, .remove-todo-btn {
-  background-color: orange;
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
@@ -296,7 +270,6 @@
   margin-left: 10px;
 }
 
-/* 할일 내용 입력 폼 */
 .projecttwo .todo-input {
   display: flex;
   flex-direction: column;
@@ -307,20 +280,24 @@
   padding: 10px;
   margin: 5px 0;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #252424;
   resize: vertical;
   min-height: 100px;
+  background-color: #1b1b1b;
+  color: #ffffff;
 }
 
 .projecttwo .todo-input input {
   padding: 10px;
   margin: 5px 0;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #252424;
+  background-color: #1b1b1b;
+  color: #ffffff;
 }
 
 .projecttwo .save-todo-btn {
-  background-color: orange;
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
@@ -329,20 +306,7 @@
   margin-top: 10px;
 }
 
-/* 모바일 최적화 *//*
-@media screen and (max-width: 880px) {
-  .projects-and-todoprojects {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .projects-section,
-  .todoprojects-section {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .todoprojects-section {
-    margin-top: 20px;
-  }*/
+.projecttwo .save-todo-btn:hover {
+  background-color: #0056b3;
 }
+

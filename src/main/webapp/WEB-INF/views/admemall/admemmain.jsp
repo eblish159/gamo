@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -14,18 +15,16 @@
         <div style="display: flex; align-items: center;">
             <div class="search-container">
 
-                <input type="text" class="search-input" placeholder="검색어 입력" />
+                <input type="text" class="search-input" placeholder="검색어 입력" name="searchKeyword" />
 
-                <select class="search-select">
+                <select class="search-select" name="searchCondition">
                     <option value="title">아이디</option>
                     <option value="author">이름</option>
-                    <option value="date">가입일</option>
-                    <option value="number">번호</option>
                 </select>
 
-                <button class="btn-search">검색</button>
+                <button type="button" class="btn-search" onclick="submit_search()">검색</button>
             </div>
-        <button class="btn-new-post" onclick="openAddMemberModal()">회원추가</button>
+        <button class="btn-new-post" onclick="openAddMemberModal()">직원추가</button>
         </div>
     </div>
 
@@ -33,32 +32,31 @@
 
         <thead>
         <tr>
-            <th><input type="checkbox" id="select-all" /></th>
-            <th class="col-no">번호</th>
             <th class="col-title">아이디</th>
             <th class="col-author">이름</th>
+            <th class="col-phone">전화번호</th>
             <th class="col-date">가입일</th>
+            <th class="col-del">퇴사처리</th>
         </tr>
         </thead>
 
         <tbody>
-
-        <tr>
-            <td><input type="checkbox" class="row-checkbox" /></td>
-            <td>1</td>
-            <td><a href="/board/view?id=1">wlsqo09</a></td>
-            <td>문진배</td>
-            <td>2024-12-08</td>
-        </tr>
-
-        <tr>
-            <td><input type="checkbox" class="row-checkbox" /></td>
-            <td>2</td>
-            <td><a href="/board/view?id=2">idealtype123</a></td>
-            <td>이상형</td>
-            <td>2024-12-07</td>
-        </tr>
-        <!-- 추가적인 글 데이터 -->
+            <c:if test="${empty members}">
+                <tr>
+                    <td colspan="5" align="center">회원정보가 없습니다.</td>
+                </tr>
+            </c:if>
+            <c:forEach var="member" items="${members}">
+                <tr>
+                    <td>${member.member_id}</td>
+                    <td>${member.name}</td>
+                    <td>${member.phone}</td>
+                    <td>${member.created_date}</td>
+                    <td>
+                        <a href="${contextPath}/admin/delMember?id=${member.member_id}" onclick="return confirm('퇴사 처리하시겠습니까?')">퇴사승인</a>
+                    </td>
+                </tr>
+            </c:forEach>
         </tbody>
     </table>
 
@@ -75,36 +73,39 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>회원 추가</h2>
-            <form id="add-member-form">
+            <form id="add-member-form" action="/admin/addMember" method="post">
                 <label for="member-id">아이디</label>
-                <input type="text" id="member-id" placeholder="아이디를 입력하세요" />
+                <input type="text" id="member-id" name="member_id" placeholder="아이디를 입력하세요" />
 
                 <label for="member-password">패스워드</label>
-                <input type="password" id="member-password" placeholder="패스워드를 입력하세요" />
+                <input type="password" id="member-password" name="member_pw" placeholder="패스워드를 입력하세요" />
 
                 <label for="member-name">이름</label>
-                <input type="text" id="member-name" placeholder="이름을 입력하세요" />
+                <input type="text" id="member-name" name="name" placeholder="이름을 입력하세요" />
 
                 <label for="member-phone">핸드폰번호</label>
-                <input type="text" id="member-phone" placeholder="핸드폰번호를 입력하세요" />
+                <input type="text" id="member-phone" name="phone" placeholder="핸드폰번호를 입력하세요" />
 
                 <label for="member-date">입사일</label>
-                <input type="date" id="member-date" />
+                <input type="date" id="member-date" name="created_date" />
 
                 <label for="member-game">게임</label>
-                <select id="member-game">
-                    <option value="on">ON</option>
-                    <option value="off">OFF</option>
+                <select id="member-game" name="gameonoff">
+                    <option value="y">ON</option>
+                    <option value="n">OFF</option>
                 </select>
 
-                <button type="button" class="btn-add-member">추가</button>
+                <label for="member-role">권한</label>
+                <select id="member-role" name="role">
+                    <option value=1>사원</option>
+                    <option value=0>임원</option>
+                </select>
+
+                <button type="submit" class="btn-add-member">추가</button>
             </form>
         </div>
     </div>
-
+    <script src="<c:url value='/js/admem/admem.js'/>"></script>
 </div>
-
-<script src="<c:url value='/js/admem/admem.js'/>"></script>
-
 </body>
 </html>

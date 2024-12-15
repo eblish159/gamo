@@ -3,8 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="fs.four.gamo.member.dao.LoginDAO">
-    <!-- Login Result Map -->
-    <resultMap id="LoginResultMap" type="fs.four.gamo.member.vo.LoginVO">
+    <resultMap id="loginResult" type="fs.four.gamo.member.vo.LoginVO">
         <result property="member_id" column="member_id" />
         <result property="member_pw" column="member_pw" />
         <result property="name" column="name" />
@@ -19,25 +18,11 @@
         <result property="role" column="role" />
     </resultMap>
 
-    <!-- 로그인 쿼리 -->
-    <select id="loginById" parameterType="fs.four.gamo.member.vo.LoginVO" resultMap="LoginResultMap">
-        SELECT
-        member_id AS member_id,
-        member_pw AS member_pw,
-        name AS name,
-        phone AS phone,
-        gameonoff AS gameonoff,
-        img_name AS img_name,
-        img_path AS img_path,
-        created_date AS created_date,
-        created_id AS created_id,
-        updated_date AS updated_date,
-        updated_id AS updated_id,
-        role AS role
-        FROM
-        member
-        WHERE
-        member_id = #{member_id}
-        AND member_pw = #{member_pw}
+    <select id="loginById" parameterType="loginVO" resultMap="loginResult">
+        <![CDATA[
+            SELECT *
+            FROM member
+            WHERE member_id=#{member_id}
+        ]]>
     </select>
 </mapper>

@@ -45,6 +45,8 @@ public class LoginController {
             System.out.println("로그인 성공 - member_id: " + loginVO.getMember_id());
             System.out.println("로그인 성공 - name: " + loginVO.getName());
 
+            session.setAttribute("member_id", loginVO.getMember_id());
+
             String action = (String) session.getAttribute("action");
             session.removeAttribute("action");
 
@@ -64,8 +66,6 @@ public class LoginController {
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
-        session.removeAttribute("loginVO");
-        session.setAttribute("isLogOn", false);
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("/member/login");

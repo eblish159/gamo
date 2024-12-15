@@ -1,17 +1,30 @@
 package fs.four.gamo.calendar.service;
 
-import fs.four.gamo.calendar.dao.CalendarMainDAO;
+import fs.four.gamo.calendar.dao.CalendarDAO;
 import fs.four.gamo.calendar.vo.CalendarMainVO;
+import fs.four.gamo.member.vo.LoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CalendarMainService {
     @Autowired
-    private CalendarMainDAO calendarMainDAO;
+    private CalendarDAO calendarDAO;
 
-    public CalendarMainVO calendar(CalendarMainVO calendarMainVO) throws Exception{
+    public List<CalendarMainVO> list_cal() {
+        System.out.println(calendarDAO.toString());
+        return calendarDAO.listCalendar();
+    }
+
+    public void addEvent(CalendarMainVO calendarMainVO) {
+        calendarDAO.calendarEvents(calendarMainVO);
         System.out.println(calendarMainVO.toString());
-        return calendarMainDAO.CalendarEventsById(calendarMainVO);
+    }
+
+    public void delEvent(Long cal_no) {
+        calendarDAO.delete_cal(cal_no);
+        System.out.println(cal_no);
     }
 }

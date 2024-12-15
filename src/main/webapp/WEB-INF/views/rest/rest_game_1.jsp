@@ -12,7 +12,6 @@
             <option>게임선택</option>
             <option value="/rest1">업다운게임</option>
             <option value="/rest2">가위바위보</option>
-            <option value="/rest3">슬롯머신</option>
         </select>
         <div class="updown_form">
             <p class="updown_title">업다운</p>
