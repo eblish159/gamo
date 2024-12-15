@@ -1,245 +1,112 @@
-/* 기본 초기화 */
+/* 기본 스타일 초기화 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.projectone {
-  color: #ffffff; /* 텍스트 색상 */
-  background-color: #1b1b1b; /* 전체 배경 */
-  border-radius: 9px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-/* 페이지 컨테이너 */
-.projectone .page {
-  margin: 50px auto;
-  width: 100%;
-  height: 1000px;
-  background: #0e0e0e; /* 컨테이너 배경 */
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+.project-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 페이지 헤더 */
-.projectone .page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  gap: 15px; /* 간격 추가 */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.projectone .project-header-buttons {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* 버튼 사이 간격 */
+.page-header h2 {
+    font-size: 24px;
+    color: #333;
 }
 
-.projectone .page-header h2 {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ffffff; /* 헤더 텍스트 색상 */
-  text-transform: uppercase;
+.header-buttons {
+    display: flex;
+    gap: 10px;
 }
 
-/* 검색창 */
-.projectone .project-search {
-  display: flex;
-  align-items: center;
-  gap: 5px; /* 검색창과 버튼 간의 간격 */
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.projectone .page-header .project-search input {
-  flex-grow: 1; /* 검색창 너비를 동적으로 조절 */
-  padding: 8px 10px;
-  border: 1px solid #252424; /* 검색창 테두리 */
-  border-radius: 5px;
+.search-bar button, .add-btn, .end-project-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.projectone .page-header .project-search button {
-  background-color: #007bff; /* 검색 버튼 배경 */
-  color: #ffffff; /* 검색 버튼 텍스트 */
-  cursor: pointer;
-  padding: 8px 15px;
-  border-radius: 5px;
+.search-bar button:hover, .add-btn:hover, .end-project-btn:hover {
+    background-color: #0056b3;
 }
 
-/* 카테고리 드롭다운 버튼 */
-.projectone .project-category-dropdown {
-  position: relative;
-  display: inline-block;
+/* 프로젝트 리스트 헤더와 데이터 일치 */
+.project-list {
+    list-style: none;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
 }
 
-.projectone .category-btn {
-  padding: 8px 15px;
-  background-color: #007bff; /* 드롭다운 버튼 배경 */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.project-header-row,
+.project-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 1fr; /* 제목과 각 열의 비율 설정 */
+    gap: 10px;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
 }
 
-.projectone .category-btn:hover {
-  background-color: #0056b3; /* 버튼 호버 색상 */
+.project-header-row {
+    font-weight: bold;
+    color: #555;
+    background-color: #f9f9f9;
 }
 
-/* 카테고리 드롭다운 내용 */
-.projectone .category-dropdown-content {
-  display: none; /* 기본적으로 숨김 */
-  position: absolute;
-  background-color: #1b1b1b; /* 드롭다운 배경 */
-  min-width: 160px;
-  z-index: 1;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+.project-row {
+    color: #333;
+    transition: background-color 0.3s ease;
 }
 
-.projectone .category-dropdown-content a {
-  color: #ffffff; /* 드롭다운 링크 색상 */
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
+.project-row:hover {
+    background-color: #f1f1f1;
 }
 
-.projectone .category-dropdown-content a:hover {
-  background-color: #333; /* 드롭다운 링크 호버 배경 */
+.project-title a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
 }
 
-/* 드롭다운 클릭 시 보이게 */
-.projectone .project-category-dropdown:hover .category-dropdown-content {
-  display: block;
+.project-title a:hover {
+    text-decoration: underline;
 }
 
-.joined-details {
-  margin-left: 100px;
-  margin-right: 100px;
+/* 종료된 프로젝트 버튼 */
+.end-project-btn-container {
+    margin-top: 20px;
+    text-align: center;
 }
 
-.category {
-  margin-left: 145px;
+.end-project-btn {
+    padding: 10px 20px;
+    font-size: 1em;
 }
-
-/* 추가 버튼 스타일 */
-.projectone .add-project-btn {
-  padding: 10px 20px;
-  background-color: #007bff; /* 추가 버튼 배경 */
-  color: white; /* 버튼 텍스트 */
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.projectone .add-project-btn:hover {
-  background-color: #0056b3; /* 추가 버튼 호버 색상 */
-}
-
-/* 프로젝트 리스트 */
-.projectone .project-list {
-  list-style: none;
-}
-
-.projectone .project-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #252424;
-}
-
-/* 프로젝트 세부사항 (가로 정렬) */
-.projectone .project-details {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-/* 프로젝트 링크 스타일 */
-.projectone .project-link {
-  font-weight: bold;
-  color: #007bff; /* 링크 색상 */
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease;
-  margin-left: 30px;
-}
-
-.projectone .project-link:hover {
-  color: #ffffff; /* 링크 호버 색상 */
-}
-
-/* 이메일 스타일 */
-.projectone .status {
-  font-size: 14px;
-  color: #cccccc; /* 상태 텍스트 색상 */
-  white-space: nowrap;
-  margin-left: 45px;
-  margin-right: 45px;
-}
-
-/* 가입 날짜 스타일 */
-.projectone .date {
-  font-size: 14px;
-  color: #999999; /* 날짜 텍스트 색상 */
-  white-space: nowrap;
-}
-
-/* 마지막 프로젝트 항목 스타일 (마지막 줄 경계선 제거) */
-.projectone .project-item:last-child {
-  border-bottom: none;
-}
-
-/* 페이지네이션 */
-.projectone .pagination {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.projectone .pagination li {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.projectone .pagination li a {
-  padding: 5px 10px;
-  border: 1px solid #252424; /* 페이지네이션 테두리 */
-  border-radius: 5px;
-  color: #007bff; /* 페이지네이션 텍스트 색상 */
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.projectone .pagination li a.active,
-.projectone .pagination li a:hover {
-  background-color: #007bff; /* 활성/호버 배경 */
-  color: #ffffff; /* 활성/호버 텍스트 색상 */
-}
-
-/* 종료된 프로젝트 버튼 스타일 */
-.projectone .end-project-btn-container {
-  text-align: center; /* 버튼을 중앙에 배치 */
-  margin-top: 30px; /* 버튼과 상단 컨텐츠 간의 간격 */
-  margin-left: 600px;
-}
-
-.projectone .end-project-btn {
-  padding: 10px 20px;
-  background-color: #ff4d4d; /* 버튼 색상 */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.projectone .end-project-btn:hover {
-  background-color: #cc3c3c; /* 버튼 호버 시 색상 변화 */
-}
-
-
-
