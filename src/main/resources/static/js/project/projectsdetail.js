@@ -185,7 +185,7 @@ document.querySelector('.todoprojects')?.addEventListener('click', function (e) 
                                 alert(`참여 성공: ID: ${data.member_id}, 이름: ${data.name}`);
                                 loadParticipants(projectNo); // 목록 갱신
                             } else {
-                                alert("참여자 추가 실패.");
+                                alert("이미 등록된 참가자입니다.");
                             }
                         })
                         .catch(error => console.error('Error adding participant:', error));
@@ -343,7 +343,7 @@ saveProjectButton?.addEventListener('click', function () {
         .then((response) => response.text())
         .then((result) => {
             if (result === 'SUCCESS') {
-                alert('프로젝트 진행률이 성공적으로 저장되었습니다.');
+                alert('현재 프로젝트 진행률이 저장되었습니다.');
             } else {
                 alert('진행률 저장에 실패했습니다.');
             }
@@ -353,6 +353,7 @@ saveProjectButton?.addEventListener('click', function () {
 
 // 할일 추가 폼 표시/숨기기 기능
 document.querySelector('.add-todo-btn')?.addEventListener('click', function () {
+
   const todoInput = document.querySelector('.todo-input');
   if (todoInput) {
     todoInput.style.display = todoInput.style.display === 'flex' ? 'none' : 'flex';
