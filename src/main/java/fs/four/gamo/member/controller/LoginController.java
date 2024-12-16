@@ -71,8 +71,12 @@ public class LoginController {
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
 
+        if (session != null) {
+            session.invalidate();
+        }
+
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("/member/login");
+        mav.setViewName("redirect:/login");
         return mav;
     }
 

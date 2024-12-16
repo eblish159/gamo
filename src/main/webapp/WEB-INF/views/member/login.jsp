@@ -14,11 +14,13 @@
         <link rel="stylesheet" href="<c:url value='/css/login/login.css'/>">
     </head>
     <body>
-        <form class="login_form" action="${contextPath}/login" method="post">
+        <form id="loginForm" class="login_form" action="${contextPath}/login" method="post">
             <p class="login_title">GAMO</p>
             <input type="text" name="member_id" class="input_login" placeholder="아이디">
             <input type="password" name="member_pw"class="input_login" placeholder="비밀번호">
-            <button type="submit" class="btn_login">로그인</button>
+            <button type="submit" id="loginButton" class="btn_login">로그인</button>
         </form>
+        <div id="spaceship"></div>
+        <script src="${pageContext.request.contextPath}/js/login/login.js"></script>
     </body>
 </html>
