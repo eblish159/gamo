@@ -17,7 +17,7 @@
             <input
                     type="image"
                     class="btn"
-                    src="../img/scissors.png"
+                    src="<c:url value='/img/scissors.png'/>"
                     data-id="0"
                     width="120px"
                     height="120px"
@@ -25,7 +25,7 @@
             <input
                     type="image"
                     class="btn"
-                    src="../img/rock.png"
+                    src="<c:url value='/img/rock.png'/>"
                     data-id="1"
                     width="120px"
                     height="120px"
@@ -33,7 +33,7 @@
             <input
                     type="image"
                     class="btn"
-                    src="../img/paper.png"
+                    src="<c:url value='/img/paper.png'/>"
                     data-id="2"
                     width="120px"
                     height="120px"

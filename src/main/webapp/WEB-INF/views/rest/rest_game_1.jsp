@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>로그인 게임 - 업다운</title>
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/rest/rest_game_1.css">
+        <link rel="stylesheet" href="<c:url value='/css/rest/rest_game1.css'/>">
     </head>
     <body>
         <select class="sel" onchange="location.href = this.value">
@@ -34,6 +35,6 @@
                 </button>
             </div>
         </div>
-        <script src="${pageContext.request.contextPath}/js/rest/rest_game_1.js"></script>
+        <script src="<c:url value='/js/rest/rest_game1.js'/>"></script>
     </body>
 </html>
