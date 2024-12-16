@@ -64,7 +64,6 @@ document.getElementById('add-todo-btn').addEventListener('click', function () {
 
 function closetodoModal() {
     const modal = document.getElementById('todo-modal');
-    modal.style.display = 'none'; // 모달 숨기기
 }
 
 function updateTodo() {
@@ -117,11 +116,6 @@ function openTodoModal() {
 }
 
 
-
-
-
-
-
  function updateProgress() {
     const allTasks = document.querySelectorAll('.task-checkbox');
     const completedTasks = document.querySelectorAll('.task-checkbox:checked');
@@ -148,3 +142,38 @@ function openTodoModal() {
 
 // 초기화
 updateProgress();
+
+
+ // 오늘 날짜를 가져오는 함수
+
+const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // 월은 항상 2자리로
+
+        // <input> 요소의 값 설정
+        const calendarInput = document.getElementById('calendar-date');
+        if (calendarInput) {
+            calendarInput.value = `${year}-${month}`;
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const days = document.querySelectorAll(".day"); // 모든 날짜 요소 가져오기
+    const detailHeader = document.querySelector("#selected-date"); // 날짜 업데이트 대상 가져오기
+
+    days.forEach(day => {
+        day.addEventListener("click", function () {
+            const selectedDate = day.getAttribute("data-date"); // 클릭된 날짜 가져오기
+            if (selectedDate) {
+                detailHeader.textContent = `${selectedDate}`; // 상세내용 날짜 업데이트
+                document.querySelector(".schedule-modal").style.display = "block"; // 모달 열기
+            }
+        });
+    });
+});
+
+// 모달 닫기 기능 추가
+function closescheduleModal() {
+    document.querySelector(".schedule-modal").style.display = "none";
+}

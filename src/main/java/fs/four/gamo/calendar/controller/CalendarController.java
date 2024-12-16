@@ -7,6 +7,7 @@ import fs.four.gamo.member.vo.LoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -59,13 +60,13 @@ public class CalendarController {
     @PostMapping("/addEvent")
     public String addEvent(@ModelAttribute CalendarMainVO calendarMainVO) {
         calendarMainService.addEvent(calendarMainVO);
-        return "redirect:/calendar";
+        return "redirect:/calendar?status=success";
     }
 
-    @GetMapping("/delEvent")
+    @PostMapping("/delEvent")
     public String delEvent(@RequestParam("id") Long cal_no) {
         calendarMainService.delEvent(cal_no);
         System.out.println(cal_no);
-        return "redirect:/calendar";
+        return "redirect:/calendar?status=success";
     }
 }
