@@ -1,6 +1,5 @@
 package fs.four.gamo.calendar.controller;
 
-import fs.four.gamo.board.vo.BoardVO;
 import fs.four.gamo.calendar.dao.CalendarDAO;
 import fs.four.gamo.calendar.service.CalendarMainService;
 import fs.four.gamo.calendar.vo.CalendarMainVO;
@@ -8,6 +7,7 @@ import fs.four.gamo.member.vo.LoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,24 +49,24 @@ public class CalendarController {
         return "layout";
     }
 
-    @GetMapping("/calList")
-    public String listCal(Model model) {
-        List<CalendarMainVO> eventCal = calendarMainService.listCal();
-        model.addAttribute("contentPage", "/calendarContent/calendar");
-        model.addAttribute("eventCal", eventCal);
-
+    @GetMapping("/callist")
+    public String list_cal(Model model) {
+        List<CalendarMainVO> eventcal = calendarMainService.list_cal();
+        model.addAttribute("eventcal", eventcal);
+        model.addAttribute("contentPage", "calendarContent/calendar");
         return "layout";
     }
 
     @PostMapping("/addEvent")
     public String addEvent(@ModelAttribute CalendarMainVO calendarMainVO) {
         calendarMainService.addEvent(calendarMainVO);
-        return "redirect:/calendar";
+        return "redirect:/calendar?status=success";
     }
 
-    @GetMapping("/delEvent")
+    @PostMapping("/delEvent")
     public String delEvent(@RequestParam("id") Long cal_no) {
         calendarMainService.delEvent(cal_no);
-        return "redirect:/calendar";
+        System.out.println(cal_no);
+        return "redirect:/calendar?status=success";
     }
 }

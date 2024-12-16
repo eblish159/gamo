@@ -55,7 +55,7 @@
               </div>
             </div>
 
-    <!-- 레벨별 이미지 안내 모달 -->
+    <!-- 레벨별 이미지 안내 모달z -->
     <div class="modal" id="levelModal">
         <div class="modal-content">
             <h3>레벨별 이미지</h3>

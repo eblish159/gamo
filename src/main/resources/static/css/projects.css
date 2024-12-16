@@ -1,227 +1,108 @@
-/* 기본 초기화 */
+/* 기본 스타일 초기화 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.projectone {
-  color: #222;
-  background-color: #e1f1f6;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-/* 페이지 컨테이너 */
-.projectone .page {
-  margin: 50px auto;
-  width: 100%;
-  background: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.project-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 페이지 헤더 */
-.projectone .page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.projectone .page-header h2 {
-  font-size: 22px;
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
+.page-header h2 {
+    font-size: 24px;
+    color: #333;
 }
 
-.projectone .page-header .project-search input,
-.projectone .page-header .project-search button {
-  padding: 8px 10px;
-  border: 1px solid #eaeaea;
-  border-radius: 5px;
+.header-buttons {
+    display: flex;
+    gap: 10px;
 }
 
-.projectone .page-header .project-search button {
-  background-color: #4ba6c3;
-  color: #fff;
-  cursor: pointer;
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-/* 카테고리 드롭다운 버튼 */
-.projectone .project-category-dropdown {
-  position: relative;
-  display: inline-block;
+.search-bar button, .add-btn, .end-project-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.projectone .category-btn {
-  padding: 8px 15px;
-  background-color: #4ba6c3;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.search-bar button:hover, .add-btn:hover, .end-project-btn:hover {
+    background-color: #0056b3;
 }
 
-.projectone .category-btn:hover {
-  background-color: #357a8a;
+/* 프로젝트 리스트 테이블 */
+.project-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
-/* 카테고리 드롭다운 내용 */
-.projectone .category-dropdown-content {
-  display: none; /* 기본적으로 숨김 */
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  z-index: 1;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.project-list th, .project-list td {
+    text-align: center;
+    padding: 12px 8px;
+    border: 1px solid #ddd;
 }
 
-.projectone .category-dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
+.project-list th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    color: #555;
 }
 
-.projectone .category-dropdown-content a:hover {
-  background-color: #ddd;
+.project-list td {
+    background-color: #fff;
 }
 
-/* 드롭다운 클릭 시 보이게 */
-.projectone .project-category-dropdown:hover .category-dropdown-content {
-  display: block;
+.project-list tr:hover td {
+    background-color: #f9f9f9;
 }
 
-/* 추가 버튼 스타일 */
-.projectone .add-project-btn {
-  padding: 10px 20px;
-  background-color: #4ba6c3;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* 링크 스타일 */
+.project-title a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
 }
 
-.projectone .add-project-btn:hover {
-  background-color: #357a8a;
-}
-
-/* 프로젝트 리스트 */
-.projectone .project-list {
-  list-style: none;
-}
-
-.projectone .project-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #eaeaea;
-}
-
-/* 프로젝트 세부사항 */
-.projectone .project-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-}
-
-/* 프로젝트 링크 스타일 */
-.projectone .project-link {
-  font-weight: bold;
-  color: #4ba6c3;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.projectone .project-link:hover {
-  color: #222;
-  text-decoration: underline;
-}
-
-/* 상태 표시 */
-.projectone .status {
-  font-size: 14px;
-  color: #888;
-  white-space: nowrap;
-}
-
-/* 날짜 스타일 */
-.projectone .date {
-  font-size: 14px;
-  color: #666;
-  margin-left: 10px;
-}
-
-/* 날짜 범위 스타일 */
-.projectone .date-range {
-  font-size: 14px;
-  color: #333;
-  font-style: italic;
-}
-
-/* 카테고리 스타일 */
-.projectone .category {
-  font-size: 14px;
-  color: #4ba6c3;
-  font-weight: bold;
-}
-
-/* 마지막 프로젝트 항목 스타일 */
-.projectone .project-item:last-child {
-  border-bottom: none;
+.project-title a:hover {
+    text-decoration: underline;
 }
 
 /* 종료된 프로젝트 버튼 */
-.projectone .end-project-btn-container {
-  margin-top: 20px;
-  text-align: right;
+.end-project-btn-container {
+    margin-top: 20px;
+    text-align: center;
 }
 
-.projectone .end-project-btn {
-  padding: 10px 20px;
-  background-color: #4ba6c3;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.projectone .end-project-btn:hover {
-  background-color: #357a8a;
-}
-
-/* 페이지네이션 */
-.projectone .pagination {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.projectone .pagination li {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.projectone .pagination li a {
-  padding: 5px 10px;
-  border: 1px solid #eaeaea;
-  border-radius: 5px;
-  color: #4ba6c3;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.projectone .pagination li a.active,
-.projectone .pagination li a:hover {
-  background-color: #4ba6c3;
-  color: #fff;
+.end-project-btn {
+    padding: 10px 20px;
+    font-size: 1em;
 }
