@@ -13,5 +13,5 @@ public interface BoardDAO {
     public void boardInsert(BoardVO boardVO)throws DataAccessException;
     public void boardUpdate(BoardVO boardVO)throws DataAccessException;
     public void boardDelete(Long Board_No)throws DataAccessException;
-
+    public int boardCount()throws DataAccessException;
 }

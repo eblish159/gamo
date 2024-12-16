@@ -60,12 +60,42 @@
         </tbody>
     </table>
 
-    <div class="board-pagination">
+<%--    <div class="board-pagination">
         <a href="#" class="page-link">이전</a>
         <a href="#" class="page-link active">1</a>
         <a href="#" class="page-link">2</a>
         <a href="#" class="page-link">3</a>
         <a href="#" class="page-link">다음</a>
+    </div>--%>
+    <div class="board-pagination">
+        <c:if test="${totalPages > 1}">
+            <div class="pagination">
+                <c:if test="${currentPage > 1}">
+                    <a class="page-link" href="/admin?page=${currentPage - 1}">
+                        이전
+                    </a>
+                </c:if>
+                <c:if test="${currentPage == 1}">
+                    <a class="page-link" href="/admin?page=${currentPage}">
+                        이전
+                    </a>
+                </c:if>
+
+                <c:forEach var="i" begin="1" end="${totalPages}">
+                    <a class="page-link ${currentPage == i ? 'active' : ''}" href="/admin?page=${i}">${i}</a>
+                </c:forEach>
+                <c:if test="${currentPage < totalPages}">
+                    <a class="page-link" href="/admin?page=${currentPage + 1}">
+                        다음
+                    </a>
+                </c:if>
+                <c:if test="${currentPage == totalPages}">
+                    <a class="page-link" href="/admin?page=${totalPages}">
+                        다음
+                    </a>
+                </c:if>
+            </div>
+        </c:if>
     </div>
 
      <!-- 회원 추가 모달 -->

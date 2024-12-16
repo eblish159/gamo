@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface CalendarDAO {
-    List<CalendarMainVO> getCalendarEvents();
+    List<CalendarMainVO> listCalendar();
     public void calendarEvents(CalendarMainVO calendarMainVO);
     public void delete_cal(Long cal_no);
 }

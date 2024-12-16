@@ -11,14 +11,20 @@
     <div class="write-header">
         <h1>${board == null ? '새 글 작성' : '게시글 수정'}</h1>
     </div>
-    <form action="<c:if test='${board != null}'>${pageContext.request.contextPath}/board/update/${board.board_no}</c:if>
-                    <c:if test='${board == null}'>${pageContext.request.contextPath}/board/boardWrite</c:if>"
-          method="post" enctype="multipart/form-data" class="write-form">
-        <c:if test="${board != null}">
-            <input type="hidden" name="board_no" value="${board.board_no}">
-        </c:if>
+    <c:if test='${board != null}'>
+        <form action="${pageContext.request.contextPath}/board/update/${board.board_no}" method="post" class="write-form">
+        <input type="hidden" name="board_no" value="${board.board_no}">
+    </c:if>
+    <c:if test='${board == null}'>
+        <form action="${pageContext.request.contextPath}/board/boardWrite" method="post" enctype="multipart/form-data" class="write-form">
+    </c:if>
         <div class="form-group">
-            <label for="title" class="form-label">제목</label>
+            <c:if test='${board != null}'>
+                <label for="title" class="form-label">수정할 제목</label>
+            </c:if>
+            <c:if test='${board == null}'>
+                <label for="title" class="form-label">제목</label>
+            </c:if>
             <input type="text"
                    id="title"
                    name="board_title"
@@ -29,7 +35,12 @@
         </div>
 
         <div class="form-group">
-            <label for="content" class="form-label">내용</label>
+            <c:if test='${board != null}'>
+                <label for="content" class="form-label">수정할 내용</label>
+            </c:if>
+            <c:if test='${board == null}'>
+                <label for="content" class="form-label">내용</label>
+            </c:if>
             <textarea id="content"
                       name="board_content"
                       class="form-textarea"
@@ -40,7 +51,7 @@
         <div class="button-group">
             <c:choose>
                 <c:when test="${board != null}">
-                    <button type="submit" class="btn-submit" onclick="submitForm()">수정</button>
+                    <button type="submit" class="btn-submit">수정</button>
                 </c:when>
                 <c:otherwise>
                     <button type="submit" class="btn-submit">작성</button>

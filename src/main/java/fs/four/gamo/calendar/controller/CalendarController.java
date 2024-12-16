@@ -1,5 +1,6 @@
 package fs.four.gamo.calendar.controller;
 
+import fs.four.gamo.board.vo.BoardVO;
 import fs.four.gamo.calendar.dao.CalendarDAO;
 import fs.four.gamo.calendar.service.CalendarMainService;
 import fs.four.gamo.calendar.vo.CalendarMainVO;
@@ -48,11 +49,12 @@ public class CalendarController {
         return "layout";
     }
 
-    @GetMapping("/callist")
-    public String list_cal(Model model) {
-        List<CalendarMainVO> eventcal = calendarMainService.list_cal();
-        model.addAttribute("eventcal", eventcal);
-        model.addAttribute("contentPage", "calendarContent/calendar");
+    @GetMapping("/calList")
+    public String listCal(Model model) {
+        List<CalendarMainVO> eventCal = calendarMainService.listCal();
+        model.addAttribute("contentPage", "/calendarContent/calendar");
+        model.addAttribute("eventCal", eventCal);
+
         return "layout";
     }
 

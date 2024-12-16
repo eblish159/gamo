@@ -1,0 +1,101 @@
+body {
+    background-image: url(../../img/stars.jpg);
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sel {
+    position: absolute;
+    left: 350px;
+    top: 125px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.updown_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    color: white;
+    border: 10px solid white;
+    border-radius: 50px;
+    width: 400px;
+    height: 500px;
+}
+.updown_form .updown_content.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.updown_form .updown_content {
+    display: none;
+}
+.updown_form .updown_title {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 70px;
+}
+.updown_form .updown_content .info_div {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.updown_form .updown_content .info_div .updown_info {
+    font-size: 30px;
+    text-align: center;
+}
+.updown_form .updown_content .updown_input {
+    display: block;
+    font-size: 20px;
+    padding: 5px;
+    width: 65px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.updown_form .updown_content .updown_input.hide {
+    display: none;
+}
+.updown_form .updown_content .updown_button {
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 60px;
+    background-color: #4ccb32;
+    color: white;
+    cursor: pointer;
+}
+.updown_form .updown_content .updown_button:hover {
+    background-color: #8c8c8c;
+}
+.updown_form .start_updown .updown_run {
+    display: block;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100px;
+    margin: 10px;
+    margin-bottom: 70px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #4ccb32;
+}
+.updown_form .start_updown .updown_run:hover {
+    background-color: #8c8c8c;
+}
+.updown_form .start_updown.hide {
+    display: none;
+}

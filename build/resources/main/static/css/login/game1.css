@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70dvh;
+    color: white;
+    background-image: url(/img/stars.jpg);
+    background-size: cover;
+}
+img {
+    width: 150px;
+    height: 150px;
+}
+.select {
+    display: none;
+}
+.select.on {
+    display: flex;
+}
+.btn {
+    display: flex;
+    margin: 10px;
+    border: none;
+    border-radius: 50%;
+}
+.view {
+    display: none;
+}
+.view.on {
+    display: flex;
+}
+.start {
+    margin: 10px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    width: 120px;
+    height: 120px;
+}
+.start:hover {
+    background-color: rgb(45, 111, 233);
+}
+.start.on {
+    display: none;
+}
+.back {
+    margin: 10px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: rgb(73, 80, 95);
+    width: 120px;
+    height: 120px;
+}
+.back:hover {
+    background-color: rgb(36, 39, 46);
+}
+.btn-cotainer {
+    display: flex;
+    float: left;
+}
+.imgResult {
+    display: none;
+}
+.imgResult.on {
+    display: flex;
+    margin: 10px;
+}
+.imgResult.on img {
+    margin: 0 25px;
+}
+.result {
+    display: flex;
+    text-align: center;
+    margin: 20px;
+}
+
+.game1_info {
+    font-size: 30px;
+    font-weight: 20px;
+}

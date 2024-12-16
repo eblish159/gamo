@@ -16,15 +16,15 @@ public class AdminService {
         return adminDAO.findAllMember();
     }
 
-    public List<LoginVO> searchMembers(String searchKeyword, String searchCondition) {
-        return adminDAO.searchMembers(searchKeyword, searchCondition);
-    }
-
     public void addMember(LoginVO loginVO) {
         adminDAO.addMember(loginVO);
     }
 
     public void delMember(String member_id) {
         adminDAO.delMember(member_id);
+    }
+
+    public int memberCount() throws Exception {
+        return adminDAO.memberCount();
     }
 }

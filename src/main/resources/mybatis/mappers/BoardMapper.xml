@@ -24,6 +24,11 @@
         WHERE board_no = #{board_no}
     </select>
 
+    <select id="boardCount" resultType="int">
+        SELECT COUNT(*)
+        FROM board
+    </select>
+
     <insert id="boardInsert" parameterType="fs.four.gamo.board.vo.BoardVO">
         INSERT INTO board (board_title, board_content, member_id, created_date)
         VALUES (#{board_title}, #{board_content}, #{member_id}, SYSDATE)

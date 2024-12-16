@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 @Controller
 public class LoginController {
@@ -44,16 +45,19 @@ public class LoginController {
             session.setAttribute("isLogOn", true);
             System.out.println("로그인 성공 - member_id: " + loginVO.getMember_id());
             System.out.println("로그인 성공 - name: " + loginVO.getName());
+            System.out.println("로그인 성공 - gameonoff: " + loginVO.getGameonoff());
 
             session.setAttribute("member_id", loginVO.getMember_id());
 
             String action = (String) session.getAttribute("action");
             session.removeAttribute("action");
 
-            if (action != null) {
-                mav.setViewName("redirect:" + action);
+            if ("y".equalsIgnoreCase(loginVO.getGameonoff())) {
+                String[] pages = {"/game1", "/game2"};
+                String randomPage = pages[new Random().nextInt(pages.length)];
+                mav.setViewName("redirect:" + randomPage); // 랜덤 페이지로 리다이렉트
             } else {
-                mav.setViewName("redirect:/");
+                mav.setViewName("redirect:/"); // 메인 페이지로 리다이렉트
             }
         } else {
             rAttr.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다!!");
@@ -89,6 +93,16 @@ public class LoginController {
             response.put("error", "세션 정보가 없습니다.");
         }
         return response;
+    }
+
+    @GetMapping("/game1")
+    public String loginGame1() {
+        return "/member/game1";
+    }
+
+    @GetMapping("/game2")
+    public String loginGame2() {
+        return "member/game2";
     }
 
 

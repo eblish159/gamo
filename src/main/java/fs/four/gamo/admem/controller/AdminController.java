@@ -1,6 +1,7 @@
 package fs.four.gamo.admem.controller;
 
 import fs.four.gamo.admem.service.AdminService;
+import fs.four.gamo.board.vo.BoardVO;
 import fs.four.gamo.member.vo.LoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,20 +21,25 @@ public class AdminController {
     private AdminService adminService;
 
     @GetMapping("/admin")
-    public String listMembers(@RequestParam(value = "searchKeyword", required = false) String searchKeyword,
-                              @RequestParam(value = "searchCondition", required = false) String searchCondition,
-                              Model model) {
+    public String listMembers(@RequestParam(value = "page", defaultValue = "1") int currentPage, Model model)  throws Exception {
+        int memberSize = 10;
+        int memberCount = adminService.memberCount();
+        int totalPages = (int) Math.ceil((double) memberCount / memberSize);
 
-        List<LoginVO> members;
-
-        if (searchKeyword != null && !searchKeyword.isEmpty() && searchCondition != null) {
-            members = adminService.searchMembers(searchKeyword, searchCondition);
-        } else {
-            members = adminService.listMembers();
+        if (currentPage < 1) {
+            currentPage = 1;
+        } else if (currentPage > totalPages) {
+            currentPage = totalPages;
         }
 
-        model.addAttribute("members", members);
+        int memberStart = (currentPage - 1) * memberSize;
+        int memberEnd = Math.min(memberStart + memberSize, memberCount);
+        List<LoginVO> members= adminService.listMembers().subList(memberStart, memberEnd);
         model.addAttribute("contentPage", "admemall/admemmain");
+        model.addAttribute("members", members);
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("currentPage", currentPage);
+
         return "layout";
     }
 

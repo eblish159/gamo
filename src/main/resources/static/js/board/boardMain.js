@@ -89,10 +89,6 @@
         }
     });
 
-    function submitForm() {
-        document.getElementById("boardForm").submit();
-    }
-
 
 
 

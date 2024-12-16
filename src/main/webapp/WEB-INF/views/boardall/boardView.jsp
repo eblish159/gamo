@@ -27,7 +27,7 @@
                         <button type="submit" class="btn-delete" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</button>
                     </form>
                 </c:if>
-                <button type="button" class="btn-cancel" onclick="history.back()">목록</button>
+                <button type="button" class="btn-cancel" onclick="location.href='/board'">목록</button>
             </div>
         </div>
         <script src="<c:url value='/js/board/boardMain.js' />"></script>

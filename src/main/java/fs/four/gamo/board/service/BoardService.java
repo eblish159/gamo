@@ -33,4 +33,8 @@ public class BoardService {
     public void boardDelete(Long Board_No) {
         boardDAO.boardDelete(Board_No);
     }
+
+    public int boardCount() throws Exception {
+        return boardDAO.boardCount();
+    }
 }
