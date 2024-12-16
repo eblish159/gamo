@@ -28,20 +28,18 @@
     <!-- Calendar days -->
             <div class="empty"></div> <!-- For empty cells -->
             <div class="empty"></div>
-            <div class="day">1<div></div></div>
-            <div class="day">2</div>
-            <div class="day">3</div>
-            <div class="day">4<div></div></div>
-            <div class="day">5</div>
-            <div class="day">6</div>
-            <div class="day">7<div></div></div>
-
-            <div class="day">8<div></div>
+            <div id="day-2024-12-1" class="day">1<div></div></div>
+            <div id="day-2024-12-2" class="day" data-date="2024-12-02">2</div>
+            <div id="day-2024-12-3" class="day">3</div>
+            <div id="day-2024-12-4" class="day">4<div></div></div>
+            <div id="day-2024-12-5" class="day">5</div>
+            <div id="day-2024-12-6" class="day">6</div>
+            <div id="day-2024-12-7" class="day">7<div></div></div>
+            <div id="day-2024-12-8" class="day">8<div></div>
             <div></div></div>
-
-            <div class="day">9<div></div></div>
-            <div class="day">10</div>
-            <div class="day">11<div></div></div>
+            <div id="day-2024-12-9" class="day">9<div></div></div>
+            <div id="day-2024-12-10" class="day">10</div>
+            <div id="day-2024-12-11" class="day">11<div></div></div>
             <div id="day-2024-12-12" class="day">12</div>
             <div id="day-2024-12-13" class="day">13
                 <c:forEach var="day" items="${eventcal}">
@@ -51,30 +49,30 @@
                 </c:forEach>
             </div>
             <div id="day-2024-12-14" class="day">14</div>
-            <div class="day">15<div></div></div>
-            <div class="day">16</div>
-            <div class="day">17</div>
-            <div class="day">18<div></div></div>
-            <div class="day">19</div>
-            <div class="day">20</div>
-            <div class="day">21</div>
-            <div class="day">22</div>
-            <div class="day">23<div></div></div>
-            <div class="day">24<div></div></div>
-            <div class="day">25<div></div></div>
-            <div class="day">26</div>
-            <div class="day">27</div>
-            <div class="day">28<div></div></div>
-            <div class="day">29<div></div></div>
-            <div class="day">30</div>
-            <div class="day">31</div>
+            <div id="day-2024-12-15" class="day">15<div></div></div>
+            <div id="day-2024-12-16" class="day">16</div>
+            <div id="day-2024-12-17" class="day">17</div>
+            <div id="day-2024-12-18" class="day">18<div></div></div>
+            <div id="day-2024-12-19" class="day">19</div>
+            <div id="day-2024-12-20" class="day">20</div>
+            <div id="day-2024-12-21" class="day">21</div>
+            <div id="day-2024-12-22" class="day">22</div>
+            <div id="day-2024-12-23" class="day">23<div></div></div>
+            <div id="day-2024-12-24" class="day">24<div></div></div>
+            <div id="day-2024-12-25" class="day">25<div></div></div>
+            <div id="day-2024-12-26" class="day">26</div>
+            <div id="day-2024-12-27" class="day">27</div>
+            <div id="day-2024-12-28" class="day">28<div></div></div>
+            <div id="day-2024-12-29" class="day">29<div></div></div>
+            <div id="day-2024-12-30" class="day">30</div>
+            <div id="day-2024-12-31" class="day">31</div>
         </div>
       <div class="search-container">
           <a href="javascript:void(0);" id="add-todo-btn" class="todo">할 일 추가</a>
       </div>
     </div>
 
-     <div class="todo-modal" id="todo-modal" style="display: none;">
+     <div class="todo-modal" id="todo-modal">
          <div class="modal-header">
              <select id="header-dropdown" class="dropdown-menu" name="gubun">
                  <option value=1 selected>ToDo</option>
@@ -113,66 +111,60 @@
          </div>
      </div>
 
-
-
-
-    <div class="schedule-modal">
-            <div class="modal-header">
-                <h2>상세내용</h2>
-                <!-- 모달 닫기 버튼 -->
-                <button class="schedule-close-btn" onclick="closescheduleModal()">X</button>
-            </div>
-            <div class="modal-body">
-                <c:forEach var="day" items="${eventcal}" varStatus="status">
-                <c:if test="${status.index == 0}">
-                    <span class="date">${day.date} ${day.dayOfWeek}</span>
-                    <div class="details">
-                        <p>${day.description}</p>
-                        <p>${day.time}</p>
-                    </div>
-                    <h2>2024.12.01(todo)</h2>
-                    <div class="select-day">
-                       프로젝트 칸반내용 추가해야함
-                    </div>
-                    <h2>할일목록</h2>
-                    <div class="schdule-calendar-container">
-                           <div class="calendar-scroll">
-                               <!-- 1일부터 31일까지 날짜 반복 -->
-                               <div class="schdule-calendar-item" id="day-8">
-                                   <span class="date">2024.3.8(todo)</span>
-                                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <div class="task-details">회사 중요 스케줄 입니다.</div>
-                               </div>
-                               <div class="schdule-calendar-item" id="day-9">
-                                   <span class="date">2024.3.9(schedule)</span>
-                                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <div class="task-details">회사 중요 스케줄 입니다.</div>
-                               </div>
-                               <div class="schdule-calendar-item" id="day-10">
-                                   <span class="date">2024.3.10(todo)</span>
-                                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <div class="task-details">회사 중요 스케줄 입니다.</div>
-                               </div>
-                               <div class="schdule-calendar-item" id="day-11">
-                                   <span class="date">2024.3.11(schedule)</span>
-                                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
-                                   <div class="task-details">회사 중요 스케줄 입니다.</div>
-                               </div>
-
-                       <!-- 더 많은 날짜 반복 -->
-                   </div>
-                   <div class="progress-container">
-                       <h3>EXP</h3>
-                       <div class="progress-bar">
-                           <div class="progress-fill" id="progress-fill"></div>
-                       </div>
-                       <p id="progress-text">0%</p>
-                           </div>
-                        </div>
-                    </c:if>
-                </c:forEach>
-            </div>
+<div class="schedule-modal">
+    <div class="modal-header">
+        <h2>상세내용</h2>
+        <button class="schedule-close-btn" onclick="closescheduleModal()">X</button>
+    </div>
+     <h2 id="selected-date">24.12.08</h2>
+        <div class="select-day">
+           프로젝트 내용 추가해야함
         </div>
-        <script src="${pageContext.request.contextPath}/js/calendarcontent/schdule.js"></script>
-        </body>
-        </html>
+        <h2>할일목록</h2>
+        <div class="schdule-calendar-container">
+           <div class="calendar-scroll">
+               <!-- 1일부터 31일까지 날짜 반복 -->
+               <div class="schdule-calendar-item" id="day-8">
+                   <span class="date">2024.12.8(todo)</span>
+                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
+                   <div class="task-details">회사 중요 스케줄 입니다.</div>
+               </div>
+               <div class="schdule-calendar-item" id="day-9">
+                   <span class="date">2024.12.9(schedule)</span>
+                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
+                   <div class="task-details">회사 중요 스케줄 입니다.</div>
+               </div>
+               <div class="schdule-calendar-item" id="day-10">
+                   <span class="date">2024.12.10(todo)</span>
+                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
+                   <div class="task-details">회사 중요 스케줄 입니다.</div>
+               </div>
+               <div class="schdule-calendar-item" id="day-11">
+                   <span class="date">2024.12.11(schedule)</span>
+                   <input type="checkbox" class="task-checkbox" onchange="updateProgress()">
+                   <div class="task-details">회사 중요 스케줄 입니다.</div>
+               </div>
+        </div>
+       <div class="progress-container">
+           <h3>EXP</h3>
+           <div class="progress-bar">
+               <div class="progress-fill" id="progress-fill"></div>
+           </div>
+           <p id="progress-text">0%</p>
+               </div>
+            </div>
+        <div class="modal-body">
+            <c:forEach var="day" items="${eventcal}" varStatus="status">
+            <c:if test="${status.index == 0}">
+                <span class="date">${day.date} ${day.dayOfWeek}</span>
+                <div class="details">
+                    <p>${day.description}</p>
+                    <p>${day.time}</p>
+                </div>
+            </c:if>
+        </c:forEach>
+    </div>
+</div>
+<script src="${pageContext.request.contextPath}/js/calendarcontent/schdule.js"></script>
+</body>
+</html>
