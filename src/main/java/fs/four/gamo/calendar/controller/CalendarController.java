@@ -51,7 +51,7 @@ public class CalendarController {
 
     @GetMapping("/callist")
     public String list_cal(Model model) {
-        List<CalendarMainVO> eventcal = calendarMainService.list_cal();
+        List<CalendarMainVO> eventcal = calendarMainService.listCal();
         model.addAttribute("eventcal", eventcal);
         model.addAttribute("contentPage", "calendarContent/calendar");
         return "layout";
