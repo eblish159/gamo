@@ -16,7 +16,7 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-    // 프로젝트 리스트 페이지
+    // .프로젝트 리스트 페이지
     @GetMapping("/project")
     public String project(Model model) {
         model.addAttribute("pageTitle", "프로젝트");
